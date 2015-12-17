@@ -10,18 +10,18 @@
 
 ?>
 	<?php ea_structural_wrap( 'site-inner', 'close' ); ?>
-	</div><!-- #content -->
+	</div>
 
 	<?php tha_footer_before(); ?>	
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer class="site-footer" role="contentinfo">
 		<?php ea_structural_wrap( 'footer' ); ?>
 		<?php tha_footer_top(); ?>
 		<p>Copyright &copy; <?php echo date( 'Y' );?></p>
 		<?php tha_footer_bottom(); ?>
-	</footer><!-- #colophon -->
+	</footer>
 	<?php tha_footer_after(); ?>
 	<?php ea_structural_wrap( 'footer', 'close' ); ?>
-</div><!-- #page -->
+</div>
 
 <?php tha_body_bottom(); ?>
 <?php wp_footer(); ?>

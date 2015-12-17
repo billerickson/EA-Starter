@@ -11,8 +11,8 @@
 get_header(); ?>
 
 	<?php tha_content_before(); ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="content-area">
+		<main class="site-main" role="main">
 		<?php tha_content_top(); ?>
 
 		<?php
@@ -40,8 +40,8 @@ get_header(); ?>
 		endif; ?>
 
 		<?php tha_content_bottom(); ?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 	<?php tha_content_after(); ?>
 
 <?php

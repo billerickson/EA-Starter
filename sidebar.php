@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'primary-sidebar' ) ) {
 ?>
 
 <?php tha_sidebars_before(); ?>
-<aside id="secondary" class="widget-area" role="complementary">
+<aside class="widget-area" role="complementary">
 	<?php tha_sidebar_top(); ?>
 	<?php dynamic_sidebar( 'primary-sidebar' ); ?>
 	<?php tha_sidebar_bottom(); ?>
