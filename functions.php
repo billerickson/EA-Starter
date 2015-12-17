@@ -25,6 +25,9 @@ function ea_setup() {
 	 * to change 'ea' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'ea', get_template_directory() . '/languages' );
+	
+	// Editor Styles
+	add_editor_style( 'css/editor-style.css' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
