@@ -1,10 +1,11 @@
 <?php
 /**
- * The sidebar containing the main widget area.
+ * EA Starter
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package ea
+ * @package      EAStarter
+ * @since        1.0.0
+ * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
+ * @license      GPL-2.0+
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

@@ -1,12 +1,14 @@
 <?php
 /**
- * ea functions and definitions.
+ * EA Starter
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package ea
+ * @package      EAStarter
+ * @since        1.0.0
+ * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
+ * @license      GPL-2.0+
  */
-
+ 
+ 
 if ( ! function_exists( 'ea_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.

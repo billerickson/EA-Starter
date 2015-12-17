@@ -1,12 +1,11 @@
 <?php
 /**
- * The header for our theme.
+ * EA Starter
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package ea
+ * @package      EAStarter
+ * @since        1.0.0
+ * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
+ * @license      GPL-2.0+
  */
 
 ?><!DOCTYPE html>

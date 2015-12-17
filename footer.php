@@ -1,12 +1,11 @@
 <?php
 /**
- * The template for displaying the footer.
+ * EA Starter
  *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package ea
+ * @package      EAStarter
+ * @since        1.0.0
+ * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
+ * @license      GPL-2.0+
  */
 
 ?>
