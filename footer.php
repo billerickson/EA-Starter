@@ -9,15 +9,18 @@
  */
 
 ?>
+	<?php ea_structural_wrap( 'site-inner', 'close' ); ?>
 	</div><!-- #content -->
 
 	<?php tha_footer_before(); ?>	
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php ea_structural_wrap( 'footer' ); ?>
 		<?php tha_footer_top(); ?>
 		<p>Copyright &copy; <?php echo date( 'Y' );?></p>
 		<?php tha_footer_bottom(); ?>
 	</footer><!-- #colophon -->
 	<?php tha_footer_after(); ?>
+	<?php ea_structural_wrap( 'footer', 'close' ); ?>
 </div><!-- #page -->
 
 <?php tha_body_bottom(); ?>

@@ -26,6 +26,9 @@ function ea_setup() {
 	 */
 	load_theme_textdomain( 'ea', get_template_directory() . '/languages' );
 	
+	// Structural Wraps
+	add_theme_support( 'ea-structural-wraps', array( 'header', 'site-inner', 'footer' ) );
+	
 	// Editor Styles
 	add_editor_style( 'css/editor-style.css' );
 

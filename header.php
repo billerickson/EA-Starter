@@ -28,6 +28,7 @@
 
 	<?php tha_header_before(); ?>
 	<header id="masthead" class="site-header" role="banner">
+		<?php ea_structural_wrap( 'header' ); ?>
 		<?php tha_header_top(); ?>
 		<div class="site-branding">
 			<?php
@@ -50,7 +51,9 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	<?php tha_header_bottom(); ?>
+	<?php ea_structural_wrap( 'header', 'close' ); ?>
 	</header><!-- #masthead -->
 	<?php tha_header_after(); ?>
 
 	<div id="content" class="site-content">
+	<?php ea_structural_wrap( 'site-inner' ); ?>
