@@ -132,6 +132,9 @@ add_action( 'widgets_init', 'ea_widgets_init' );
  */
 function ea_scripts() {
 	wp_enqueue_style( 'ea-style', get_stylesheet_uri() );
+	
+	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
+	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
