@@ -104,3 +104,8 @@ function ea_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ea_scripts' );
+
+/**
+ * Include Theme Hooks
+ */
+require get_template_directory() . '/inc/tha-theme-hooks.php';
