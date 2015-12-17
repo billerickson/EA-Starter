@@ -65,6 +65,12 @@ function ea_setup() {
 endif;
 add_action( 'after_setup_theme', 'ea_setup' );
 
+// Theme Hooks
+require get_template_directory() . '/inc/tha-theme-hooks.php';
+
+// Base Theme Features
+require get_template_directory() . '/inc/base.php';
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -107,8 +113,13 @@ function ea_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'ea_scripts' );
 
-// Theme Hooks
-require get_template_directory() . '/inc/tha-theme-hooks.php';
-
-// Base Theme Features
-require get_template_directory() . '/inc/base.php';
+/**
+ * Blog Template 
+ *
+ */
+function ea_blog_template( $template ) {
+	if( is_home() )
+		$template = get_query_template( 'archive' );
+	return $template;
+}
+add_filter( 'template_include', 'ea_blog_template' );
