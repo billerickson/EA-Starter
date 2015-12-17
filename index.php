@@ -24,7 +24,7 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 
 				tha_entry_before();
-				get_template_part( 'template-parts/content' );
+				get_template_part( 'template-parts/content', apply_filters( 'ea_content_template', false ) );
 				tha_entry_after(); 
 				
 			endwhile;

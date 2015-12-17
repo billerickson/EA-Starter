@@ -20,7 +20,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php ea_posted_on(); ?>
+			<?php ea_entry_meta(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>

@@ -10,16 +10,17 @@
 
 ?>
 	</div><!-- #content -->
-	
+
+	<?php tha_footer_before(); ?>	
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ea' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'ea' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'ea' ), 'ea', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+		<?php tha_footer_top(); ?>
+		<p>Copyright &copy; <?php echo date( 'Y' );?></p>
+		<?php tha_footer_bottom(); ?>
 	</footer><!-- #colophon -->
+	<?php tha_footer_after(); ?>
 </div><!-- #page -->
 
+<?php tha_body_bottom(); ?>
 <?php wp_footer(); ?>
 
 </body>

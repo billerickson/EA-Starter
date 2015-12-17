@@ -1,13 +1,11 @@
 <?php
 /**
- * The template for displaying comments.
+ * EA Starter
  *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package ea
+ * @package      EAStarter
+ * @since        1.0.0
+ * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
+ * @license      GPL-2.0+
  */
 
 /*
@@ -20,6 +18,7 @@ if ( post_password_required() ) {
 }
 ?>
 
+<?php tha_comments_before(); ?>
 <div id="comments" class="comments-area">
 
 	<?php
@@ -83,3 +82,4 @@ if ( post_password_required() ) {
 	?>
 
 </div><!-- #comments -->
+<?php tha_comments_after(); ?>

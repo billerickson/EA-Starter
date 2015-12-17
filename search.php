@@ -1,48 +1,34 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * EA Starter
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package ea
+ * @package      EAStarter
+ * @since        1.0.0
+ * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
+ * @license      GPL-2.0+
  */
 
-get_header(); ?>
+/**
+ * Search Title
+ *
+ */
+function ea_search_title() {
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	echo '<header class="page-header">
+		<h1 class="page-title">Search Results for: <span>' . get_search_query() . '</span></h1>
+	</header>';
 
-		<?php
-		if ( have_posts() ) : ?>
+}
+add_filter( 'tha_content_while_before', 'ea_search_title' );
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'ea' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+/**
+ * Search Content
+ *
+ */
+function ea_search_content( $type ) {
+	return 'search';
+}
+add_filter( 'ea_content_template', 'ea_search_content' );
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+// Build the page
+require get_template_directory() . '/index.php';
