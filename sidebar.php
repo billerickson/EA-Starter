@@ -8,7 +8,7 @@
  * @license      GPL-2.0+
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'primary-sidebar' ) ) {
 	return;
 }
 ?>
@@ -16,7 +16,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 <?php tha_sidebars_before(); ?>
 <aside id="secondary" class="widget-area" role="complementary">
 	<?php tha_sidebar_top(); ?>
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<?php dynamic_sidebar( 'primary-sidebar' ); ?>
 	<?php tha_sidebar_bottom(); ?>
 </aside><!-- #secondary -->
 <?php tha_sidebars_after(); ?>

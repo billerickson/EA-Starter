@@ -84,13 +84,13 @@ add_action( 'after_setup_theme', 'ea_content_width', 0 );
  */
 function ea_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'ea' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Primary Sidebar', 'ea' ),
+		'id'            => 'primary-sidebar',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'ea_widgets_init' );
@@ -107,7 +107,8 @@ function ea_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'ea_scripts' );
 
-/**
- * Include Theme Hooks
- */
+// Theme Hooks
 require get_template_directory() . '/inc/tha-theme-hooks.php';
+
+// Base Theme Features
+require get_template_directory() . '/inc/base.php';
