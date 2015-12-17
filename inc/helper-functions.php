@@ -109,3 +109,27 @@ function ea_column_class( $type, $count, $tablet_type = false ) {
 		
 	return $output;
 }
+
+/**
+ * Return Full Width Content 
+ * used when filtering 'ea_page_layout'
+ */
+function ea_return_full_width_content() {
+	return 'full-width-content';
+}
+
+/**
+ * Return Content Sidebar 
+ * used when filtering 'ea_page_layout'
+ */
+function ea_return_content_sidebar() {
+	return 'content-sidebar';
+}
+
+/**
+ * Return Sidebar Content 
+ * used when filtering 'ea_page_layout'
+ */
+function ea_return_sidebar_content() {
+	return 'sidebar-content';
+}

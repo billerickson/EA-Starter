@@ -10,6 +10,10 @@
 
 if ( ! is_active_sidebar( 'primary-sidebar' ) ) {
 	return;
+	
+$layout = apply_filters( 'ea_page_layout', false );
+if( ! in_array( $layout, array( 'content-sidebar', 'sidebar-content' ) ) )
+	return;
 }
 ?>
 

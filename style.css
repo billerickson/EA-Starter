@@ -723,11 +723,11 @@ img.block {
 	width: 64.912280702%; /* 740/1140 */
 }
 
-.sidebar-content .content {
+.sidebar-content .content-area {
 	float: right;
 }
 
-.full-width-content .content {
+.full-width-content .content-area {
 	width: 100%;
 }
 
