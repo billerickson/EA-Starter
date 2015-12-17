@@ -74,6 +74,9 @@ require get_template_directory() . '/inc/tha-theme-hooks.php';
 // Base Theme Features
 require get_template_directory() . '/inc/base.php';
 
+// Helper Functions
+require get_template_directory() . '/inc/helper-functions.php';
+
 /**
  * Dont Update the Theme
  *
