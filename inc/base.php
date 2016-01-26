@@ -61,6 +61,19 @@ function ea_structural_wrap( $context = '', $output = 'open', $echo = true ) {
 }
 
 /**
+ * Content Template Part 
+ *
+ */
+function ea_content_template( $part ) {
+	if( is_page() )
+		$part = 'page';
+	if( is_search() )
+		$part = 'search';
+	return $part;
+}
+add_filter( 'ea_content_template', 'ea_content_template' );
+
+/**
  * Entry Meta
  *
  */
