@@ -18,9 +18,9 @@
 		<?php tha_footer_top(); ?>
 		<p>Copyright &copy; <?php echo date( 'Y' );?></p>
 		<?php tha_footer_bottom(); ?>
+		<?php ea_structural_wrap( 'footer', 'close' ); ?>
 	</footer>
 	<?php tha_footer_after(); ?>
-	<?php ea_structural_wrap( 'footer', 'close' ); ?>
 </div>
 
 <?php tha_body_bottom(); ?>
