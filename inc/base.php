@@ -9,6 +9,23 @@
  */
 
 /**
+ * Page Layout 
+ *
+ */
+function ea_page_layout( $classes ) {
+	
+	$available_layouts = array( 'full-width-content', 'content-sidebar', 'sidebar-content' );
+	$default_layout = 'full-width-content';
+	
+	$layout = apply_filters( 'ea_page_layout', $default_layout );
+	$layout = in_array( $layout, $available_layouts ) ? $layout : $available_layouts[0];
+	
+	$classes[] = $layout;
+	return $classes;
+}
+add_filter( 'body_class', 'ea_page_layout' );
+
+/**
  * Structural Wraps
  *
  */
