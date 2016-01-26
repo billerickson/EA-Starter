@@ -131,7 +131,7 @@ add_action( 'tha_content_while_after', 'ea_archive_navigation' );
  */
 function ea_single_navigation() {
 
-	if( is_singular() )
+	if( is_singular( 'post' ) )
 		the_post_navigation();
 
 }
