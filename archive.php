@@ -24,9 +24,9 @@ add_filter( 'body_class', 'ea_archive_body_class' );
  */
 function ea_archive_header() {
 
-	echo '<header class="page-header">';
-	the_archive_title( '<h1 class="page-title">', '</h1>' );
-	the_archive_description( '<div class="taxonomy-description">', '</div>' );
+	echo '<header class="archive-intro">';
+	the_archive_title( '<h1 class="archive-title">', '</h1>' );
+	the_archive_description( '<div class="archive-description">', '</div>' );
 	echo '</header>';
 
 }
