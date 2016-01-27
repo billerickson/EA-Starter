@@ -61,6 +61,38 @@ function ea_structural_wrap( $context = '', $output = 'open', $echo = true ) {
 }
 
 /**
+ * Default Loop
+ *
+ */
+function ea_default_loop() {
+
+	if ( have_posts() ) :
+
+		tha_content_while_before();
+
+		/* Start the Loop */
+		while ( have_posts() ) : the_post();
+
+			tha_entry_before();
+			get_template_part( 'template-parts/content', apply_filters( 'ea_content_template', false ) );
+			tha_entry_after(); 
+			
+		endwhile;
+
+		tha_content_while_after();
+
+	else :
+
+		tha_entry_before();
+		get_template_part( 'template-parts/content', 'none' );
+		tha_entry_after(); 
+
+	endif;
+
+}
+add_action( 'tha_content_loop', 'ea_default_loop' );
+
+/**
  * Content Template Part 
  *
  */

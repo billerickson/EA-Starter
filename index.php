@@ -14,31 +14,7 @@ get_header(); ?>
 	<div class="content-area">
 		<main class="site-main" role="main">
 		<?php tha_content_top(); ?>
-
-		<?php
-		if ( have_posts() ) :
-
-			tha_content_while_before();
-
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				tha_entry_before();
-				get_template_part( 'template-parts/content', apply_filters( 'ea_content_template', false ) );
-				tha_entry_after(); 
-				
-			endwhile;
-
-			tha_content_while_after();
-
-		else :
-
-			tha_entry_before();
-			get_template_part( 'template-parts/content', 'none' );
-			tha_entry_after(); 
-
-		endif; ?>
-
+		<?php tha_content_loop(); ?>
 		<?php tha_content_bottom(); ?>
 		</main>
 	</div>

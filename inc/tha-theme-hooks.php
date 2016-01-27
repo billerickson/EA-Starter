@@ -159,6 +159,10 @@ function tha_content_before() {
 	do_action( 'tha_content_before' );
 }
 
+function tha_content_loop() {
+	do_action( 'tha_content_loop' );
+}
+
 function tha_content_after() {
 	do_action( 'tha_content_after' );
 }
