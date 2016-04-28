@@ -11,27 +11,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-
-		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php ea_entry_meta(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+		<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+		<?php tha_entry_content_before(); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-			tha_entry_content_before();
-			the_excerpt();
-			tha_entry_content_after();
-		?>
+		<?php the_excerpt(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php ea_entry_footer(); ?>
+		<?php tha_entry_content_after(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -121,12 +121,21 @@ add_filter( 'ea_content_template', 'ea_content_template' );
  */
 function ea_entry_meta() {
 
-	$author = 'By <a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" class="entry-author">' . get_the_author() . '</a> ';
-	$posted_on = 'on <time class="entry-date" datetime="' . get_the_time( 'U' ) . '">' . get_the_date() . '</time> ';
-	$comments  = 'with <a href="' . get_comments_link() . '" class="entry-comments"> ' . get_comments_number() . ' ' . _n( 'Comment', 'Comments', get_comments_number(), 'ea' ) . '</a>';
-	$entry_meta = $author . $posted_on . $comments;
+	$entry_meta = '';
 
-	echo apply_filters( 'ea_entry_meta', $entry_meta );
+	if( 'post' == get_post_type)  {
+
+		$author = 'By <a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" class="entry-author">' . get_the_author() . '</a> ';
+		$posted_on = 'on <time class="entry-date" datetime="' . get_the_time( 'U' ) . '">' . get_the_date() . '</time> ';
+		$comments  = 'with <a href="' . get_comments_link() . '" class="entry-comments"> ' . get_comments_number() . ' ' . _n( 'Comment', 'Comments', get_comments_number(), 'ea' ) . '</a>';
+		$entry_meta = $author . $posted_on . $comments;
+
+	}
+
+	$entry_meta = apply_filters( 'ea_entry_meta', $entry_meta );
+	
+	if( $entry_meta )
+		echo '<div class="entry-meta">' . $entry_meta . '</div>';
 
 }
 add_action( 'tha_entry_content_before', 'ea_entry_meta' );

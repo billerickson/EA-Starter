@@ -17,19 +17,12 @@
 			} else {
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php ea_entry_meta(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+		?>
+		<?php tha_entry_content_before(); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
-			tha_entry_content_before();
-		
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ea' ), array( 'span' => array( 'class' => array() ) ) ),
@@ -40,12 +33,10 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
 				'after'  => '</div>',
 			) );
-			
-			tha_entry_content_after();
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php ea_entry_footer(); ?>
+		<?php tha_entry_content_after(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
