@@ -129,6 +129,7 @@ function ea_entry_meta() {
 	echo apply_filters( 'ea_entry_meta', $entry_meta );
 
 }
+add_action( 'tha_entry_content_before', 'ea_entry_meta' );
 
 /**
  * Entry Footer 
@@ -154,6 +155,7 @@ function ea_entry_footer() {
 
 	echo apply_filters( 'ea_entry_footer', $output );
 }
+add_action( 'tha_entry_content_after', 'ea_entry_footer' );
 
 /**
  * Archive Navigation 
