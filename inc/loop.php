@@ -9,29 +9,17 @@
  */
 
 /**
- * Page Layout 
+ * Body Classes
  *
  */
-function ea_page_layout() {
-	
-	$available_layouts = array( 'full-width-content', 'content-sidebar', 'sidebar-content' );
-	$default_layout = 'full-width-content';
-	
-	$layout = apply_filters( 'ea_page_layout', $default_layout );
-	$layout = in_array( $layout, $available_layouts ) ? $layout : $available_layouts[0];
-	
-	return sanitize_title_with_dashes( $layout );
-}
+function ea_body_classes( $classes ) {
 
-/**
- * Page Layout Body Class
- *
- */
-function ea_page_layout_body_class( $classes ) {
+	// Page Layout
 	$classes[] = ea_page_layout();
+	
 	return $classes;
 }
-add_filter( 'body_class', 'ea_page_layout_body_class' );
+add_filter( 'body_class', 'ea_body_classes' );
 
 /**
  * Structural Wraps
