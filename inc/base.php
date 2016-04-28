@@ -123,7 +123,7 @@ function ea_entry_meta() {
 
 	$entry_meta = '';
 
-	if( 'post' == get_post_type)  {
+	if( 'post' == get_post_type() )  {
 
 		$author = 'By <a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" class="entry-author">' . get_the_author() . '</a> ';
 		$posted_on = 'on <time class="entry-date" datetime="' . get_the_time( 'U' ) . '">' . get_the_date() . '</time> ';
