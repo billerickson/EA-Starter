@@ -8,13 +8,12 @@
  * @license      GPL-2.0+
  */
 
-if ( ! is_active_sidebar( 'primary-sidebar' ) ) {
+if ( ! is_active_sidebar( 'primary-sidebar' ) )
 	return;
 	
 $layout = apply_filters( 'ea_page_layout', false );
 if( ! in_array( $layout, array( 'content-sidebar', 'sidebar-content' ) ) )
 	return;
-}
 ?>
 
 <?php tha_sidebars_before(); ?>
