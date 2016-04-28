@@ -58,6 +58,20 @@ function ea_default_loop() {
 add_action( 'tha_content_loop', 'ea_default_loop' );
 
 /**
+ * Archive Header 
+ *
+ */
+function ea_archive_header() {
+
+	echo '<header class="archive-intro">';
+	the_archive_title( '<h1 class="archive-title">', '</h1>' );
+	the_archive_description( '<div class="archive-description">', '</div>' );
+	echo '</header>';
+
+}
+add_action( 'tha_content_while_before', 'ea_archive_header' );
+
+/**
  * Content Template Part 
  *
  */
