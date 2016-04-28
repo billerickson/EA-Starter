@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying results in search pages.
+ * Template part for displaying post archive.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -11,18 +11,25 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php
 
-		<?php if ( 'post' === get_post_type() ) : ?>
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+
+		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php ea_posted_on(); ?>
+			<?php ea_entry_meta(); ?>
 		</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<?php
+		endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+		<?php
+			tha_entry_content_before();
+			the_excerpt();
+			tha_entry_content_after();
+		?>
+	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php ea_entry_footer(); ?>

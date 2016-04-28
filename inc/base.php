@@ -107,8 +107,10 @@ add_action( 'tha_content_loop', 'ea_default_loop' );
 function ea_content_template( $part ) {
 	if( is_page() )
 		$part = 'page';
-	if( is_search() )
-		$part = 'search';
+	if( is_single() )
+		$part = 'post';
+	if( is_home() || is_archive() || is_search() )
+		$part = 'archive';
 	return $part;
 }
 add_filter( 'ea_content_template', 'ea_content_template' );
