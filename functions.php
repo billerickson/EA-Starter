@@ -74,8 +74,8 @@ add_action( 'after_setup_theme', 'ea_setup' );
 // Theme Hooks
 require get_template_directory() . '/inc/tha-theme-hooks.php';
 
-// Base Theme Features
-require get_template_directory() . '/inc/base.php';
+// Main Loop Functions
+require get_template_directory() . '/inc/loop.php';
 
 // Helper Functions
 require get_template_directory() . '/inc/helper-functions.php';
