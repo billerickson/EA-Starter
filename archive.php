@@ -9,16 +9,6 @@
  */
 
 /**
- * Archive Body Class
- *
- */
-function ea_archive_body_class( $classes ) {
-	$classes[] = 'blog-archive';
-	return $classes;
-}
-add_filter( 'body_class', 'ea_archive_body_class' );
-
-/**
  * Archive Header 
  *
  */
