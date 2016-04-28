@@ -172,9 +172,9 @@ function ea_structural_wrap( $context = '', $output = 'open', $echo = true ) {
 function ea_page_layout() {
 	
 	$available_layouts = array( 'full-width-content', 'content-sidebar', 'sidebar-content' );
-	$default_layout = 'full-width-content';
+	$layout = 'full-width-content';
 	
-	$layout = apply_filters( 'ea_page_layout', $default_layout );
+	$layout = apply_filters( 'ea_page_layout', $layout );
 	$layout = in_array( $layout, $available_layouts ) ? $layout : $available_layouts[0];
 	
 	return sanitize_title_with_dashes( $layout );
