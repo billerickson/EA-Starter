@@ -131,6 +131,41 @@ function ea_column_class( $type, $count, $tablet_type = false ) {
 }
 
 /**
+ * Structural Wraps
+ *
+ */
+function ea_structural_wrap( $context = '', $output = 'open', $echo = true ) {
+
+	$wraps = get_theme_support( 'ea-structural-wraps' );
+	
+	//* If theme doesn't support structural wraps, bail.
+	if ( ! $wraps )
+		return;
+		
+	if ( ! in_array( $context, (array) $wraps[0] ) )
+		return '';
+		
+	//* Save original output param
+	$original_output = $output;
+	
+	switch ( $output ) {
+		case 'open':
+			$output = '<div class="wrap">';
+			break;
+		case 'close':
+			$output = '</div>';
+			break;
+	}
+	
+	$output = apply_filters( "ea_structural_wrap-{$context}", $output, $original_output );
+	
+	if ( $echo )
+		echo $output;
+	else
+		return $output;
+}
+
+/**
  * Page Layout 
  *
  */
