@@ -63,9 +63,23 @@ add_action( 'tha_content_loop', 'ea_default_loop' );
  */
 function ea_archive_header() {
 
+	$title = $description = false;
+	
+	if( is_search() )
+		$title = 'Search Results for: <em>' . get_search_query() . '</em>';
+	if( is_archive() ) {
+		$title = get_the_archive_title();
+		$description = get_the_archive_description();
+	}
+	
+	if( empty( $title ) && empty( $description ) )
+		return;
+
 	echo '<header class="archive-intro">';
-	the_archive_title( '<h1 class="archive-title">', '</h1>' );
-	the_archive_description( '<div class="archive-description">', '</div>' );
+	if( ! empty( $title ) )
+		echo '<h1 class="archive-title">' . $title . '</h1>';
+	if( ! empty( $description ) )
+		echo '<div class="archive-description">' . apply_filters( 'ea_the_content', $description ) . '</div>';
 	echo '</header>';
 
 }
