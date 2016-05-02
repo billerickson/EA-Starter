@@ -121,15 +121,11 @@ add_action( 'after_setup_theme', 'ea_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function ea_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Primary Sidebar', 'ea' ),
-		'id'            => 'primary-sidebar',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
+
+	register_sidebar( ea_widget_area_args( array(
+		'name' => esc_html__( 'Primary Sidebar', 'ea' ),
+	) ) );
+
 }
 add_action( 'widgets_init', 'ea_widgets_init' );
 
