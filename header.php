@@ -46,9 +46,13 @@
 			endif; ?>
 		</div>
 
-		<nav class="nav-primary nav-menu" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav>
+		<?php 
+		if( has_nav_menu( 'primary' ) {
+			echo '<nav class="nav-primary nav-menu" role="navigation">';
+			wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); 
+			echo '</nav>';
+		?>
+		
 	<?php tha_header_bottom(); ?>
 	<?php ea_structural_wrap( 'header', 'close' ); ?>
 	</header>
