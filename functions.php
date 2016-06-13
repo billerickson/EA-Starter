@@ -143,14 +143,3 @@ function ea_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ea_scripts' );
-
-/**
- * Blog Template 
- *
- */
-function ea_blog_template( $template ) {
-	if( is_home() )
-		$template = get_query_template( 'archive' );
-	return $template;
-}
-add_filter( 'template_include', 'ea_blog_template' );
