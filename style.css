@@ -925,20 +925,19 @@ p.site-title {
 /* Entry Navigation
 --------------------------------------------- */
 
-.pagination {
-	margin: 40px 0;
+.nav-links {
 	overflow: hidden;
 	width: 100%;
 }
 
-.pagination li {
-	display: inline-block;
+.nav-links .nav-previous {
+	float: right;
 }
 
-.pagination li a {
-	display: block;
-	padding: 8px 12px;
+.nav-links .nav-next {
+	float: left;
 }
+
 
 /* Comments
 --------------------------------------------- */
