@@ -47,10 +47,11 @@
 		</div>
 
 		<?php 
-		if( has_nav_menu( 'primary' ) {
+		if( has_nav_menu( 'primary' ) ) {
 			echo '<nav class="nav-primary nav-menu" role="navigation">';
 			wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); 
 			echo '</nav>';
+		}
 		?>
 		
 	<?php tha_header_bottom(); ?>
