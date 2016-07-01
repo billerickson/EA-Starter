@@ -18,10 +18,11 @@
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 		?>
-		<?php tha_entry_content_before(); ?>
+		<?php tha_entry_top(); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php tha_entry_content_before(); ?>
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
@@ -34,9 +35,10 @@
 				'after'  => '</div>',
 			) );
 		?>
+		<?php tha_entry_content_after(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php tha_entry_content_after(); ?>
+	<?php tha_entry_bottom(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
