@@ -39,7 +39,7 @@ function ea_default_loop() {
 		while ( have_posts() ) : the_post();
 
 			tha_entry_before();
-			get_template_part( 'template-parts/content', apply_filters( 'ea_content_template', false ) );
+			get_template_part( 'template-parts/content', get_post_type() );
 			tha_entry_after(); 
 			
 		endwhile;
@@ -84,21 +84,6 @@ function ea_archive_header() {
 
 }
 add_action( 'tha_content_while_before', 'ea_archive_header' );
-
-/**
- * Content Template Part 
- *
- */
-function ea_content_template( $part ) {
-	if( is_page() )
-		$part = 'page';
-	if( is_single() )
-		$part = 'post';
-	if( is_home() || is_archive() || is_search() )
-		$part = 'archive';
-	return $part;
-}
-add_filter( 'ea_content_template', 'ea_content_template' );
 
 /**
  * Entry Meta
