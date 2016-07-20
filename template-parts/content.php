@@ -7,44 +7,42 @@
  * @package ea
  */
 
-?>
+echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
+	echo '<header class="entry-header">';
 		if ( is_singular() ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		} else {
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
-		?>
-		<?php tha_entry_top(); ?>
-	</header><!-- .entry-header -->
+		tha_entry_top();
+	echo '</header>';
 
-	<div class="entry-content">
-		<?php tha_entry_content_before(); ?>
-		<?php
-			if( is_singular() ) {
+	echo '<div class="entry-content">';
+		tha_entry_content_before();
 
-				the_content( sprintf(
-					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ea' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
-	
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
-					'after'  => '</div>',
-				) );
-			} else {
-			
-				the_excerpt();
-			}
-		?>
-		<?php tha_entry_content_after(); ?>
-	</div><!-- .entry-content -->
+		if( is_singular() ) {
 
-	<footer class="entry-footer">
-	<?php tha_entry_bottom(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+			the_content( sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ea' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
+
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
+				'after'  => '</div>',
+			) );
+		} else {
+		
+			the_excerpt();
+		}
+
+		tha_entry_content_after();
+	echo '</div>';
+
+	echo '<footer class="entry-footer">';
+		tha_entry_bottom();
+	echo '</footer>';
+
+echo '</article>';

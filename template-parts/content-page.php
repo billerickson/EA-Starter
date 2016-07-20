@@ -7,36 +7,30 @@
  * @package ea
  */
 
-?>
+echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
+	echo '<header class="entry-header">';
 		if( is_singular() ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		} else {
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
-		?>
-		<?php tha_entry_top(); ?>
-	</header><!-- .entry-header -->
+		tha_entry_top();
+	echo '</header>';
 
-	<div class="entry-content">
-		<?php tha_entry_content_before(); ?>
-		<?php
+	echo '<div class="entry-content">';
+		tha_entry_content_before();
+		the_content();
 
-			the_content();
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
-				'after'  => '</div>',
-			) );
-		?>
-		<?php tha_entry_content_after(); ?>
-	</div><!-- .entry-content -->
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
+			'after'  => '</div>',
+		) );
+		tha_entry_content_after();
+	echo '</div>';
 	
-	<footer class="entry-footer">
-	<?php tha_entry_bottom(); ?>
-	</footer><!-- .entry-footer -->
+	echo '<footer class="entry-footer">';
+	tha_entry_bottom();
+	echo '</footer>';
 	
-</article><!-- #post-## -->
+echo '</article>';
