@@ -57,3 +57,24 @@ function ea_clean_post_classes( $classes ) {
 	return array_intersect( $classes, $allowed_classes );
 }
 add_filter( 'post_class', 'ea_clean_post_classes' );
+
+/**
+ * Clean Body Classes
+ *
+ */
+function ea_clean_body_classes( $classes ) {
+
+	if( ! is_array( $classes ) )
+		return $classes;
+		
+	$allowed_classes = array(
+		'single',
+		'page',
+		'single-' . get_post_type(),
+		'admin-bar',
+		ea_page_layout()
+	);
+	
+	return array_intersect( $classes, $allowed_classes );
+}
+add_filter( 'body_class', 'ea_clean_body_classes' );
