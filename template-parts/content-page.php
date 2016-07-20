@@ -7,7 +7,7 @@
  * @package ea
  */
 
-echo '<article id="post-' . get_the_ID() . '" class="' . join( ' ', get_post_class() ) . '">';
+echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
 	echo '<header class="entry-header">';
 		if( is_singular() ) {
