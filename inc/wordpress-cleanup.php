@@ -19,3 +19,23 @@ function ea_header_meta_tags() {
 	echo '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '">';
 }
 add_action( 'wp_head', 'ea_header_meta_tags' );
+
+/**
+ * Clean Nav Menu Classes
+ *
+ */
+function ea_clean_nav_menu_classes( $classes ) {
+
+	if( ! is_array( $classes ) )
+		return $classes;
+		
+	$allowed_classes = array(
+		'menu-item',
+		'current-menu-item',
+		'current-menu-ancestor',
+		'menu-item-has-children',
+	);
+	
+	return array_intersect( $classes, $allowed_classes );
+}
+add_filter( 'nav_menu_css_class', 'ea_clean_nav_menu_classes' );
