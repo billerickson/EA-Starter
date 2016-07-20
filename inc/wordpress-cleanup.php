@@ -38,7 +38,7 @@ function ea_clean_nav_menu_classes( $classes ) {
 	
 	return array_intersect( $classes, $allowed_classes );
 }
-add_filter( 'nav_menu_css_class', 'ea_clean_nav_menu_classes' );
+add_filter( 'nav_menu_css_class', 'ea_clean_nav_menu_classes', 5 );
 
 /**
  * Clean Post Classes 
@@ -56,7 +56,7 @@ function ea_clean_post_classes( $classes ) {
 	
 	return array_intersect( $classes, $allowed_classes );
 }
-add_filter( 'post_class', 'ea_clean_post_classes' );
+add_filter( 'post_class', 'ea_clean_post_classes', 5 );
 
 /**
  * Clean Body Classes
@@ -77,4 +77,4 @@ function ea_clean_body_classes( $classes ) {
 	
 	return array_intersect( $classes, $allowed_classes );
 }
-add_filter( 'body_class', 'ea_clean_body_classes' );
+add_filter( 'body_class', 'ea_clean_body_classes', 5 );
