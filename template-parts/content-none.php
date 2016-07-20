@@ -7,27 +7,22 @@
  * @package ea
  */
 
-?>
 
-<section class="no-results not-found">
-	<header class="entry-header">
-		<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'ea' ); ?></h1>
-	</header><!-- .entry-header -->
+echo '<section class="no-results not-found">';
 
-	<div class="entry-content">
+	echo '<header class="entry-header"><h1 class="entry-title">' . esc_html__( 'Nothing Found', 'ea' ) . '</h1></header>';
+	echo '<div class="entry-content">';
+	
+	if ( is_search() ) {
 
-		<?php if ( is_search() ) : ?>
+		echo '<p>' . esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ea' ) . '</p>';
+		get_search_form();
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ea' ); ?></p>
-			<?php
-				get_search_form();
+	} else {
+		
+		echo '<p>' . esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ea' ) . '</p>';	
+		get_search_form();
+	}
 
-		else : ?>
-
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ea' ); ?></p>
-			<?php
-				get_search_form();
-
-		endif; ?>
-	</div><!-- .entry-content -->
-</section><!-- .no-results -->
+	echo '</div>';
+echo '</section>';
