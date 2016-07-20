@@ -12,7 +12,7 @@ $layout = ea_page_layout();
 if( ! in_array( $layout, array( 'content-sidebar', 'sidebar-content' ) ) )
 	return;
 
-$sidebar = 'primary-sidebar';
+$sidebar = apply_filters( 'ea_sidebar', 'primary-sidebar' );
 if ( ! is_active_sidebar( $sidebar ) )
 	return;
 	
