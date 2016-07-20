@@ -39,3 +39,21 @@ function ea_clean_nav_menu_classes( $classes ) {
 	return array_intersect( $classes, $allowed_classes );
 }
 add_filter( 'nav_menu_css_class', 'ea_clean_nav_menu_classes' );
+
+/**
+ * Clean Post Classes 
+ *
+ */
+function ea_clean_post_classes( $classes ) {
+
+	if( ! is_array( $classes ) )
+		return $classes;
+		
+	$allowed_classes = array(
+		'hentry',
+		'type-' . get_post_type(),
+	);
+	
+	return array_intersect( $classes, $allowed_classes );
+}
+add_filter( 'post_class', 'ea_clean_post_classes' );
