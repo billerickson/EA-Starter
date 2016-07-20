@@ -74,6 +74,9 @@ add_action( 'after_setup_theme', 'ea_setup' );
 // Theme Hooks
 require get_template_directory() . '/inc/tha-theme-hooks.php';
 
+// WordPress Cleanup
+require get_template_directory() . '/inc/wordpress-cleanup.php';
+
 // Main Loop Functions
 require get_template_directory() . '/inc/loop.php';
 

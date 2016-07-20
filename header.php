@@ -14,10 +14,6 @@ echo '<html ' . get_language_attributes() . '>';
 
 echo '<head>';
 	tha_head_top();
-	echo '<meta charset="' . get_bloginfo( 'charset' ) . '">';
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
-	echo '<link rel="profile" href="http://gmpg.org/xfn/11">';
-	echo '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '">';
 	wp_head();
 	tha_head_bottom();
 echo '</head>';
