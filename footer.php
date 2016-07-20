@@ -8,23 +8,23 @@
  * @license      GPL-2.0+
  */
 
-?>
-	<?php ea_structural_wrap( 'site-inner', 'close' ); ?>
-	</div>
+ea_structural_wrap( 'site-inner', 'close' );
+echo '</div>';
 
-	<?php tha_footer_before(); ?>	
-	<footer class="site-footer" role="contentinfo">
-		<?php ea_structural_wrap( 'footer' ); ?>
-		<?php tha_footer_top(); ?>
-		<p>Copyright &copy; <?php echo date( 'Y' );?></p>
-		<?php tha_footer_bottom(); ?>
-		<?php ea_structural_wrap( 'footer', 'close' ); ?>
-	</footer>
-	<?php tha_footer_after(); ?>
-</div>
+tha_footer_before();
+echo '<footer class="site-footer" role="contentinfo">';
+ea_structural_wrap( 'footer' );
+tha_footer_top();
 
-<?php tha_body_bottom(); ?>
-<?php wp_footer(); ?>
+echo '<p>Copyright &copy; ' . date( 'Y' ) . '</p>';
 
-</body>
-</html>
+tha_footer_bottom();
+ea_structural_wrap( 'footer', 'close' );
+echo '</footer>';
+tha_footer_after();
+
+echo '</div>';
+tha_body_bottom();
+wp_footer();
+
+echo '</body></html>';
