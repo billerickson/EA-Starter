@@ -24,7 +24,7 @@ jQuery(function($){
 		if (!container.is(e.target) && container.has(e.target).length === 0) { 
 			$.sidr('close', 'sidr-mobile-menu'); 
 		}
-	});
+	}));
 	
 	// Smooth scrolling anchor links
 	function ea_scroll( hash ) {
