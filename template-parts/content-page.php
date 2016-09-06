@@ -20,12 +20,22 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
 	echo '<div class="entry-content">';
 		tha_entry_content_before();
-		the_content();
+		
+		if( is_singular() ) {
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
-			'after'  => '</div>',
-		) );
+			the_content();
+	
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
+				'after'  => '</div>',
+			) );
+			
+		} else {
+		
+			the_excerpt();
+			
+		}
+		
 		tha_entry_content_after();
 	echo '</div>';
 	
