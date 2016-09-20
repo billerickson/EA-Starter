@@ -16,11 +16,11 @@ function ea_body_classes( $classes ) {
 
 	// Page Layout
 	$classes[] = ea_page_layout();
-	
+
 	// Blog Archive
 	if( is_home() || is_archive() || is_search() )
 		$classes[] = 'blog-archive';
-	
+
 	return $classes;
 }
 add_filter( 'body_class', 'ea_body_classes' );
@@ -40,8 +40,8 @@ function ea_default_loop() {
 
 			tha_entry_before();
 			get_template_part( 'template-parts/content', get_post_type() );
-			tha_entry_after(); 
-			
+			tha_entry_after();
+
 		endwhile;
 
 		tha_content_while_after();
@@ -50,7 +50,7 @@ function ea_default_loop() {
 
 		tha_entry_before();
 		get_template_part( 'template-parts/content', 'none' );
-		tha_entry_after(); 
+		tha_entry_after();
 
 	endif;
 
@@ -58,20 +58,20 @@ function ea_default_loop() {
 add_action( 'tha_content_loop', 'ea_default_loop' );
 
 /**
- * Archive Header 
+ * Archive Header
  *
  */
 function ea_archive_header() {
 
 	$title = $description = false;
-	
+
 	if( is_search() )
 		$title = 'Search Results for: <em>' . get_search_query() . '</em>';
 	if( is_archive() ) {
 		$title = get_the_archive_title();
 		$description = get_the_archive_description();
 	}
-	
+
 	if( empty( $title ) && empty( $description ) )
 		return;
 
@@ -86,7 +86,7 @@ function ea_archive_header() {
 add_action( 'tha_content_while_before', 'ea_archive_header' );
 
 /**
- * Archive Navigation 
+ * Archive Navigation
  *
  */
 function ea_archive_navigation() {
@@ -98,7 +98,7 @@ function ea_archive_navigation() {
 add_action( 'tha_content_while_after', 'ea_archive_navigation' );
 
 /**
- * Post Comments 
+ * Post Comments
  *
  */
 function ea_comments() {

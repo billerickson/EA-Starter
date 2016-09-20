@@ -7,7 +7,7 @@
  * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
  */
- 
+
 // Theme Hooks
 require get_template_directory() . '/inc/tha-theme-hooks.php';
 
@@ -20,7 +20,7 @@ require get_template_directory() . '/inc/loop.php';
 // Helper Functions
 require get_template_directory() . '/inc/helper-functions.php';
 
- 
+
 if ( ! function_exists( 'ea_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -37,10 +37,10 @@ function ea_setup() {
 	 * to change 'ea' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'ea', get_template_directory() . '/languages' );
-	
+
 	// Structural Wraps
 	add_theme_support( 'ea-structural-wraps', array( 'header', 'site-inner', 'footer' ) );
-	
+
 	// Editor Styles
 	add_editor_style( 'css/editor-style.css' );
 
@@ -104,7 +104,7 @@ function ea_dont_update_theme( $r, $url ) {
  	$r['body']['themes'] = json_encode( $themes );
  	return $r;
  }
-add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 ); 
+add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -137,7 +137,7 @@ add_action( 'widgets_init', 'ea_widgets_init' );
  */
 function ea_scripts() {
 	wp_enqueue_style( 'ea-style', get_stylesheet_uri() );
-	
+
 	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
 	wp_enqueue_script( 'sidr', get_stylesheet_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2.2.1', true );
 	wp_enqueue_script( 'ea-global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery', 'sidr' ), '1.0', true );
@@ -148,7 +148,7 @@ function ea_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'ea_scripts' );
 
-/** 
+/**
  * Add "Styles" drop-down to TinyMCE
  *
  * @since 1.0.0
@@ -161,8 +161,8 @@ function ea_mce_editor_buttons( $buttons ) {
 }
 add_filter( 'mce_buttons_2', 'ea_mce_editor_buttons' );
 
-/** 
- * Add styles/classes to the TinyMCE "Formats" drop-down 
+/**
+ * Add styles/classes to the TinyMCE "Formats" drop-down
  *
  * @since 1.0.0
  * @param array $settings

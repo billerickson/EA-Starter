@@ -40,11 +40,11 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
 				'after'  => '</div>',
 			) );
-		} else { 
-		
+		} else {
+
 			the_excerpt();
 		}
-			
+
 		tha_entry_content_after();
 	echo '</div>';
 
@@ -53,17 +53,17 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
 		// Entry Footer
 		$output = '';
-		
+
 		$categories_list = get_the_category_list( esc_html__( ', ', 'ea' ) );
 		if ( $categories_list ) {
 			$output .= '<span class="entry-categories">' . esc_html__( 'Posted in', 'ea' ) . $categories_list . '</span>';
 		}
-	
+
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'ea' ) );
 		if ( $tags_list ) {
 			$output .= '<span class="entry-tags">' . esc_html__( 'Tagged', 'ea' ) . $tags_list . '</span>';
 		}
-		
+
 		if( $output )
 			echo '<p>' . $output . '</p>';
 

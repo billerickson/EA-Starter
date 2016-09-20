@@ -15,7 +15,7 @@ if( ! in_array( $layout, array( 'content-sidebar', 'sidebar-content' ) ) )
 $sidebar = apply_filters( 'ea_sidebar', 'primary-sidebar' );
 if ( ! is_active_sidebar( $sidebar ) )
 	return;
-	
+
 tha_sidebars_before();
 echo '<aside class="widget-area" role="complementary">';
 	tha_sidebar_top();

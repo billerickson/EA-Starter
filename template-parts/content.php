@@ -34,7 +34,7 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 				'after'  => '</div>',
 			) );
 		} else {
-		
+
 			the_excerpt();
 		}
 

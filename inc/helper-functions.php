@@ -39,7 +39,7 @@ function ea_cf( $key = '', $id = '', $echo = false, $prepend = false, $append = 
 		$value = $prepend . $value;
 	if( $value && $append )
 		$value .= $append;
-		
+
 	if ( $echo ) {
 		echo $value;
 	} else {
@@ -59,17 +59,17 @@ function ea_first_term( $taxonomy = 'category', $field = 'name', $post_id = fals
 
 	$post_id = $post_id ? $post_id : get_the_ID();
 	$terms = get_the_terms( $post_id, $taxonomy );
-	
+
 	if( empty( $terms ) || is_wp_error( $terms ) )
 		return false;
-		
+
 	// If there's only one term, use that
 	if( 1 == count( $terms ) ) {
 		$term = array_shift( $terms );
 
 	// If there's more than one...
-	} else {	
-	
+	} else {
+
 		// Sort by term order if available
 		// @uses WP Term Order plugin
 		if( isset( $terms[0]->order ) ) {
@@ -77,23 +77,23 @@ function ea_first_term( $taxonomy = 'category', $field = 'name', $post_id = fals
 			foreach( $terms as $term )
 				$list[$term->order] = $term;
 			ksort( $list, SORT_NUMERIC );
-		
+
 		// Or sort by post count
 		} else {
-			$list = array();	
+			$list = array();
 			foreach( $terms as $term )
 				$list[$term->count] = $term;
 			ksort( $list, SORT_NUMERIC );
-			$list = array_reverse( $list );		
+			$list = array_reverse( $list );
 		}
-		
+
 		$term = array_shift( $list );
 	}
-		
-	// Output 	
+
+	// Output
 	if( $field && isset( $term->$field ) )
 		return $term->$field;
-	
+
 	else
 		return $term;
 }
@@ -123,10 +123,10 @@ function ea_column_class( $type, $count, $tablet_type = false ) {
 	$classes = array( '', '', 'one-half', 'one-third', 'one-fourth', 'one-fifth', 'one-sixth' );
 	if( !empty( $classes[$type] ) )
 		$output = ea_class( $classes[$type], 'first', 0 == $count % $type );
-		
+
 	if( $tablet_type && !empty( $classes[$tablet_type] ) )
 		$output .= ' ' . ea_class( 'tablet-' . $classes[$tablet_type], 'tablet-first', 0 == $count % $tablet_type );
-		
+
 	return $output;
 }
 
@@ -148,10 +148,10 @@ function ea_widget_area_args( $args = array() ) {
 		'after_title'   => '</h3>',
 	);
 	$args = wp_parse_args( $args, $defaults );
-	
+
 	if( !empty( $args['name'] ) && empty( $args['id'] ) )
 		$args['id'] = sanitize_title_with_dashes( $args['name'] );
-		
+
 	return $args;
 
 }
@@ -163,17 +163,17 @@ function ea_widget_area_args( $args = array() ) {
 function ea_structural_wrap( $context = '', $output = 'open', $echo = true ) {
 
 	$wraps = get_theme_support( 'ea-structural-wraps' );
-	
+
 	//* If theme doesn't support structural wraps, bail.
 	if ( ! $wraps )
 		return;
-		
+
 	if ( ! in_array( $context, (array) $wraps[0] ) )
 		return '';
-		
+
 	//* Save original output param
 	$original_output = $output;
-	
+
 	switch ( $output ) {
 		case 'open':
 			$output = '<div class="wrap">';
@@ -182,9 +182,9 @@ function ea_structural_wrap( $context = '', $output = 'open', $echo = true ) {
 			$output = '</div>';
 			break;
 	}
-	
+
 	$output = apply_filters( "ea_structural_wrap-{$context}", $output, $original_output );
-	
+
 	if ( $echo )
 		echo $output;
 	else
@@ -192,22 +192,22 @@ function ea_structural_wrap( $context = '', $output = 'open', $echo = true ) {
 }
 
 /**
- * Page Layout 
+ * Page Layout
  *
  */
 function ea_page_layout() {
-	
+
 	$available_layouts = array( 'full-width-content', 'content-sidebar', 'sidebar-content' );
 	$layout = 'full-width-content';
-	
+
 	$layout = apply_filters( 'ea_page_layout', $layout );
 	$layout = in_array( $layout, $available_layouts ) ? $layout : $available_layouts[0];
-	
+
 	return sanitize_title_with_dashes( $layout );
 }
 
 /**
- * Return Full Width Content 
+ * Return Full Width Content
  * used when filtering 'ea_page_layout'
  */
 function ea_return_full_width_content() {
@@ -215,7 +215,7 @@ function ea_return_full_width_content() {
 }
 
 /**
- * Return Content Sidebar 
+ * Return Content Sidebar
  * used when filtering 'ea_page_layout'
  */
 function ea_return_content_sidebar() {
@@ -223,7 +223,7 @@ function ea_return_content_sidebar() {
 }
 
 /**
- * Return Sidebar Content 
+ * Return Sidebar Content
  * used when filtering 'ea_page_layout'
  */
 function ea_return_sidebar_content() {
