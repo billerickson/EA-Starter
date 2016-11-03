@@ -136,7 +136,7 @@ add_action( 'widgets_init', 'ea_widgets_init' );
  * Enqueue scripts and styles.
  */
 function ea_scripts() {
-	wp_enqueue_style( 'ea-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), '1.0' );
 
 	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
 	wp_enqueue_script( 'sidr', get_stylesheet_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2.2.1', true );
