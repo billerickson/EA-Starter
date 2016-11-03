@@ -39,3 +39,18 @@ input[type="search"] {
 	content: " ";
 	display: table;
 }
+
+/* Admin Bar
+--------------------------------------------- */
+
+@include media(">tablet") {
+  .admin-bar .site-container {
+    padding-top: 32px;
+  }
+}
+
+@include media("<=tablet") {
+  #wpadminbar {
+    display: none !important;
+  }
+}

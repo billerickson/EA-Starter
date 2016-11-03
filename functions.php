@@ -8,25 +8,12 @@
  * @license      GPL-2.0+
  */
 
-// Theme Hooks
 require get_template_directory() . '/inc/tha-theme-hooks.php';
-
-// WordPress Cleanup
 require get_template_directory() . '/inc/wordpress-cleanup.php';
-
-// Helper Functions
 require get_template_directory() . '/inc/helper-functions.php';
-
-// Navigation
 require get_template_directory() . '/inc/navigation.php';
-
-// Sidebar Layout
 require get_template_directory() . '/inc/sidebar-layouts.php';
-
-// Main Loop Functions
 require get_template_directory() . '/inc/loop.php';
-
-// TinyMCE Customizations
 require get_template_directory() . '/inc/tinymce.php';
 
 
@@ -52,6 +39,9 @@ function ea_setup() {
 
 	// Editor Styles
 	add_editor_style( 'css/editor-style.css' );
+
+	// Admin Bar Styling
+	add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );

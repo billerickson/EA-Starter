@@ -174,6 +174,16 @@ input[type="search"] {
   content: " ";
   display: table; }
 
+/* Admin Bar
+--------------------------------------------- */
+@media (min-width: 769px) {
+  .admin-bar .site-container {
+    padding-top: 32px; } }
+
+@media (max-width: 768px) {
+  #wpadminbar {
+    display: none !important; } }
+
 /* Forms
 --------------------------------------------- */
 input,
