@@ -8,6 +8,9 @@
  * @license      GPL-2.0+
  */
 
+if( ! function_exists( 'ea_page_layout' ) )
+	return;
+	
 $layout = ea_page_layout();
 if( ! in_array( $layout, array( 'content-sidebar', 'sidebar-content' ) ) )
 	return;
