@@ -14,11 +14,14 @@ require get_template_directory() . '/inc/tha-theme-hooks.php';
 // WordPress Cleanup
 require get_template_directory() . '/inc/wordpress-cleanup.php';
 
-// Main Loop Functions
-require get_template_directory() . '/inc/loop.php';
-
 // Helper Functions
 require get_template_directory() . '/inc/helper-functions.php';
+
+// Navigation
+require get_template_directory() . '/inc/navigation.php';
+
+// Main Loop Functions
+require get_template_directory() . '/inc/loop.php';
 
 
 if ( ! function_exists( 'ea_setup' ) ) :
@@ -65,6 +68,7 @@ function ea_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'ea' ),
+		'mobile'  => esc_html__( 'Mobile Menu', 'ea' ),
 	) );
 
 	/*
