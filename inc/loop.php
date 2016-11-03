@@ -50,8 +50,9 @@
 function ea_body_classes( $classes ) {
 
 	// Blog Archive
-	if( is_home() || is_archive() || is_search() )
-		$classes[] = 'blog-archive';
+	if( is_home() || is_archive() || is_search() ) {
+    $classes[] = 'archive';
+  }
 
 	return $classes;
 }
