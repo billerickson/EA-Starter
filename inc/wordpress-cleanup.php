@@ -42,7 +42,7 @@
  	$GLOBALS['content_width'] = apply_filters( 'ea_content_width', 640 );
  }
  add_action( 'after_setup_theme', 'ea_content_width', 0 );
- 
+
 /**
  * Header Meta Tags
  *
@@ -84,10 +84,20 @@ function ea_clean_post_classes( $classes ) {
 	if( ! is_array( $classes ) )
 		return $classes;
 
-	$allowed_classes = array(
-		'hentry',
-		'type-' . get_post_type(),
-	);
+    $allowed_classes = array(
+  		'hentry',
+  		'type-' . get_post_type(),
+      'one-half',
+      'one-third',
+      'two-thirds',
+      'one-fourth',
+      'two-fourths',
+      'three-fourths',
+      'one-fifth',
+      'two-fifths',
+      'three-fifths',
+      'four-fifths',
+   	);
 
 	return array_intersect( $classes, $allowed_classes );
 }
