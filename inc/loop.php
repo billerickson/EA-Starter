@@ -72,7 +72,11 @@ function ea_default_loop() {
 		while ( have_posts() ) : the_post();
 
 			tha_entry_before();
-			get_template_part( 'template-parts/content', get_post_type() );
+      if( is_singular() ) {
+				get_template_part( 'template-parts/content', get_post_type() );
+			} else {
+				get_template_part( 'template-parts/archive', get_post_type() );
+      }
 			tha_entry_after();
 
 		endwhile;

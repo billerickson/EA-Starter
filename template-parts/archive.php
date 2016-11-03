@@ -10,20 +10,13 @@
 echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
 	echo '<header class="entry-header">';
-		the_title( '<h1 class="entry-title">', '</h1>' );
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		tha_entry_top();
 	echo '</header>';
 
 	echo '<div class="entry-content">';
 		tha_entry_content_before();
-
-		the_content();
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
-			'after'  => '</div>',
-		) );
-
+		the_excerpt();
 		tha_entry_content_after();
 	echo '</div>';
 
