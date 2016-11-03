@@ -8,18 +8,51 @@
  * @license      GPL-2.0+
  */
 
+ /**
+  * Structural Wraps
+  *
+  */
+ function ea_structural_wrap( $context = '', $output = 'open', $echo = true ) {
+
+ 	$wraps = get_theme_support( 'ea-structural-wraps' );
+
+ 	//* If theme doesn't support structural wraps, bail.
+ 	if ( ! $wraps )
+ 		return;
+
+ 	if ( ! in_array( $context, (array) $wraps[0] ) )
+ 		return '';
+
+ 	//* Save original output param
+ 	$original_output = $output;
+
+ 	switch ( $output ) {
+ 		case 'open':
+ 			$output = '<div class="wrap">';
+ 			break;
+ 		case 'close':
+ 			$output = '</div>';
+ 			break;
+ 	}
+
+ 	$output = apply_filters( "ea_structural_wrap-{$context}", $output, $original_output );
+
+ 	if ( $echo )
+ 		echo $output;
+ 	else
+ 		return $output;
+ }
+
 /**
  * Body Classes
  *
  */
 function ea_body_classes( $classes ) {
 
-	// Page Layout
-	$classes[] = ea_page_layout();
-
 	// Blog Archive
-	if( is_home() || is_archive() || is_search() )
-		$classes[] = 'blog-archive';
+	if( is_home() || is_archive() || is_search() ) {
+    $classes[] = 'archive';
+  }
 
 	return $classes;
 }
@@ -39,7 +72,11 @@ function ea_default_loop() {
 		while ( have_posts() ) : the_post();
 
 			tha_entry_before();
-			get_template_part( 'template-parts/content', get_post_type() );
+      if( is_singular() ) {
+				get_template_part( 'template-parts/content', get_post_type() );
+			} else {
+				get_template_part( 'template-parts/archive', get_post_type() );
+      }
 			tha_entry_after();
 
 		endwhile;
@@ -84,6 +121,20 @@ function ea_archive_header() {
 
 }
 add_action( 'tha_content_while_before', 'ea_archive_header' );
+
+/**
+ * Archive Title, remove prefix
+ *
+ */
+function ea_archive_title_remove_prefix( $title ) {
+	$title_pieces = explode( ': ', $title );
+	if( count( $title_pieces ) > 1 ) {
+		unset( $title_pieces[0] );
+		$title = join( ': ', $title_pieces );
+	}
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'ea_archive_title_remove_prefix' );
 
 /**
  * Archive Navigation

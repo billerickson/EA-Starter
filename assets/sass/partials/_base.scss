@@ -1,0 +1,16 @@
+// Font weights
+$light: 300;
+$regular: 400;
+$bold: 700;
+
+// Base Font
+$base-font-family: sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 18px;
+$base-line-height: 1.4;
+
+// Colors
+$blue: #29ABD8;
+$dark-blue: #2892B7;
+
+@import "../modules/all";

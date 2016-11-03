@@ -34,13 +34,6 @@ echo '<div class="site-container">';
 		echo '<p class="site-description">' . get_bloginfo( 'description' ) . '</p>';
 		echo '</div>';
 
-		if( has_nav_menu( 'primary' ) ) {
-			echo '<nav class="nav-primary nav-menu" role="navigation">';
-			wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
-			echo '</nav>';
-			echo '<a class="mobile-menu-toggle" href="#"><i class="icon-menu"></i><i class="icon-close"></i></a>';
-		}
-
 		tha_header_bottom();
 		ea_structural_wrap( 'header', 'close' );
 	echo '</header>';

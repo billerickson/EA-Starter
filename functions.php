@@ -8,17 +8,13 @@
  * @license      GPL-2.0+
  */
 
-// Theme Hooks
 require get_template_directory() . '/inc/tha-theme-hooks.php';
-
-// WordPress Cleanup
 require get_template_directory() . '/inc/wordpress-cleanup.php';
-
-// Main Loop Functions
-require get_template_directory() . '/inc/loop.php';
-
-// Helper Functions
 require get_template_directory() . '/inc/helper-functions.php';
+require get_template_directory() . '/inc/navigation.php';
+require get_template_directory() . '/inc/sidebar-layouts.php';
+require get_template_directory() . '/inc/loop.php';
+require get_template_directory() . '/inc/tinymce.php';
 
 
 if ( ! function_exists( 'ea_setup' ) ) :
@@ -44,6 +40,9 @@ function ea_setup() {
 	// Editor Styles
 	add_editor_style( 'css/editor-style.css' );
 
+	// Admin Bar Styling
+	add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -65,6 +64,7 @@ function ea_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'ea' ),
+		'mobile'  => esc_html__( 'Mobile Menu', 'ea' ),
 	) );
 
 	/*
@@ -84,59 +84,10 @@ endif;
 add_action( 'after_setup_theme', 'ea_setup' );
 
 /**
- * Dont Update the Theme
- *
- * If there is a theme in the repo with the same name, this prevents WP from prompting an update.
- *
- * @since  1.0.0
- * @author Bill Erickson
- * @link   http://www.billerickson.net/excluding-theme-from-updates
- * @param  array $r Existing request arguments
- * @param  string $url Request URL
- * @return array Amended request arguments
- */
-function ea_dont_update_theme( $r, $url ) {
-	if ( 0 !== strpos( $url, 'https://api.wordpress.org/themes/update-check/1.1/' ) )
- 		return $r; // Not a theme update request. Bail immediately.
- 	$themes = json_decode( $r['body']['themes'] );
- 	$child = get_option( 'stylesheet' );
-	unset( $themes->themes->$child );
- 	$r['body']['themes'] = json_encode( $themes );
- 	return $r;
- }
-add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function ea_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'ea_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'ea_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function ea_widgets_init() {
-
-	register_sidebar( ea_widget_area_args( array(
-		'name' => esc_html__( 'Primary Sidebar', 'ea' ),
-	) ) );
-
-}
-add_action( 'widgets_init', 'ea_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function ea_scripts() {
-	wp_enqueue_style( 'ea-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), '1.0' );
 
 	wp_enqueue_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
 	wp_enqueue_script( 'sidr', get_stylesheet_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2.2.1', true );
@@ -147,37 +98,3 @@ function ea_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ea_scripts' );
-
-/**
- * Add "Styles" drop-down to TinyMCE
- *
- * @since 1.0.0
- * @param array $buttons
- * @return array
- */
-function ea_mce_editor_buttons( $buttons ) {
-	array_unshift( $buttons, 'styleselect' );
-	return $buttons;
-}
-add_filter( 'mce_buttons_2', 'ea_mce_editor_buttons' );
-
-/**
- * Add styles/classes to the TinyMCE "Formats" drop-down
- *
- * @since 1.0.0
- * @param array $settings
- * @return array
- */
-function ea_mce_before_init( $settings ) {
-
-	$style_formats = array(
-		array(
-			'title'    => 'Button',
-			'selector' => 'a',
-			'classes'  => 'button',
-		),
-	);
-	$settings['style_formats'] = json_encode( $style_formats );
-	return $settings;
-}
-add_filter( 'tiny_mce_before_init', 'ea_mce_before_init' );

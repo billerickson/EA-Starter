@@ -1,0 +1,48 @@
+/* Structure and Layout
+---------------------------------------------------------------------------------------------------- */
+
+/* Site Containers
+--------------------------------------------- */
+
+.wrap {
+	margin: 0 auto;
+	max-width: 1140px;
+	padding: 0 20px;
+}
+
+.site-inner {
+	clear: both;
+}
+
+/* Column Widths and Positions
+--------------------------------------------- */
+
+@include media(">=tablet") {
+
+  /* Content */
+
+  .content-area {
+  	float: left;
+  	width: 64.912280702%; /* 740/1140 */
+  }
+
+  .sidebar-content .content-area {
+  	float: right;
+  }
+
+	.full-width-content .content-area {
+		width: 100%;
+	}
+
+  /* Primary Sidebar */
+
+  .widget-area {
+  	float: right;
+  	width: 31.578947368%; /* 360/1140 */
+  }
+
+  .sidebar-content .widget-area {
+  	float: left;
+  }
+
+}
