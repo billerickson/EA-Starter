@@ -20,6 +20,9 @@ require get_template_directory() . '/inc/helper-functions.php';
 // Navigation
 require get_template_directory() . '/inc/navigation.php';
 
+// Sidebar Layout
+require get_template_directory() . '/inc/sidebar-layouts.php';
+
 // Main Loop Functions
 require get_template_directory() . '/inc/loop.php';
 
@@ -121,20 +124,6 @@ function ea_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'ea_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'ea_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function ea_widgets_init() {
-
-	register_sidebar( ea_widget_area_args( array(
-		'name' => esc_html__( 'Primary Sidebar', 'ea' ),
-	) ) );
-
-}
-add_action( 'widgets_init', 'ea_widgets_init' );
 
 /**
  * Enqueue scripts and styles.

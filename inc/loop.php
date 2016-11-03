@@ -49,9 +49,6 @@
  */
 function ea_body_classes( $classes ) {
 
-	// Page Layout
-	$classes[] = ea_page_layout();
-
 	// Blog Archive
 	if( is_home() || is_archive() || is_search() )
 		$classes[] = 'blog-archive';
