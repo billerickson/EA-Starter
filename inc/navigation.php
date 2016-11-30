@@ -35,7 +35,8 @@ add_action( 'tha_header_bottom', 'ea_header_navigation' );
 function ea_mobile_menu() {
   if( has_nav_menu( 'mobile' ) ) {
     echo '<div id="sidr-mobile-menu" class="sidr right">';
-    wp_nav_menu( array( 'theme_location' => 'mobile' ) );
+      echo '<a class="sidr-menu-close" href="#">X</a>';
+      wp_nav_menu( array( 'theme_location' => 'mobile' ) );
     echo '</div></div>';
   }
 }

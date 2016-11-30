@@ -6,7 +6,6 @@ jQuery(function($){
 	// Mobile Menu
 	$('.mobile-menu-toggle').sidr({
 		name: 'sidr-mobile-menu',
-		source: '.nav-primary',
 		side: 'right',
 		renaming: false,
 	});
