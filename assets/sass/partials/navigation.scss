@@ -23,7 +23,7 @@
 
 .nav-menu a {
 	border: none;
-	color: #999;
+	color: $base_color;
 	display: block;
 	padding: 28px 24px;
 	position: relative;
@@ -32,15 +32,7 @@
 .nav-menu .menu-item:hover > a,
 .nav-menu .current-menu-item > a,
 .nav-menu .sub-menu .current-menu-item > a:hover {
-	color: #333;
-}
-
-.nav-menu .sub-menu .current-menu-item > a {
-	color: #999;
-}
-
-.nav-menu > .menu-item > a {
-	text-transform: uppercase;
+	color: $highlight;
 }
 
 .nav-menu .sub-menu {
@@ -53,7 +45,7 @@
 
 .nav-menu .sub-menu a {
 	background-color: #fff;
-	border: 1px solid #eee;
+	border: 1px solid $border_color;
 	border-top: none;
 	font-size: 14px;
 	padding: 16px 20px;
@@ -95,7 +87,7 @@
 }
 
 .sidr {
-	background: #2E1E12;
+	background: $base_color;
 	display:block;
 	position:fixed;
 	top:0;
@@ -121,7 +113,7 @@
 }
 
 .sidr .menu a {
-	background: #62483B;
+	background: $base_color;
 	color: #fff;
 	display: block;
 	font-size: 12px;
@@ -138,7 +130,7 @@
 }
 
 .sidr li.menu-item-has-children > .submenu-toggle {
-	background: #73584B;
+	background: $highlight;
 	cursor: pointer;
 	width: 48px;
 	height: 48px;

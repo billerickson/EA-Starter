@@ -5,9 +5,8 @@ input,
 select,
 textarea {
 	background-color: #fff;
-	border: 1px solid #ddd;
-	color: #999;
-	font-size: 14px;
+	border: 1px solid $border_color;
+	color: $base_color;
 	padding: 10px;
 	width: 100%;
 }
@@ -20,21 +19,20 @@ input[type="radio"] {
 
 input:focus,
 textarea:focus {
-	border-color: #999;
 	outline: none;
 }
 
 ::-moz-placeholder {
-	color: #999;
+	color: $base_color;
 	opacity: 1;
 }
 
 ::-ms-input-placeholder {
-	color: #999;
+	color: $base_color;
 }
 
 ::-webkit-input-placeholder {
-	color: #999;
+	color: $base_color;
 }
 
 input:focus::-webkit-input-placeholder,
@@ -52,10 +50,11 @@ input[type="reset"],
 input[type="submit"],
 .button,
 .button.button-invert:hover {
-	border: 1px solid $blue;
+	background: #fff;
+	border: 1px solid $highlight;
 	border-radius: 4px;
 	box-shadow: none;
-	color: #fff;
+	color: $highlight;
 	cursor: pointer;
 	padding: 10px;
 	text-decoration: none;
@@ -69,13 +68,13 @@ input:hover[type="reset"],
 input:hover[type="submit"],
 .button:hover,
 .button.button-invert {
-	background-color: $blue;
+	background-color: $highlight;
 	color: #fff;
 	text-decoration: none;
 }
 
 .entry-content .button:hover {
-	color: #fff;
+	color: $highlight;
 }
 
 .button {

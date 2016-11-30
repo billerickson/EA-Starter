@@ -10,7 +10,8 @@ $base-font-size: 18px;
 $base-line-height: 1.4;
 
 // Colors
-$blue: #29ABD8;
-$dark-blue: #2892B7;
+$base_color: #58595B;
+$highlight: #50BD3A;
+$border_color: #ccc;
 
 @import "../modules/all";
