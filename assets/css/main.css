@@ -765,14 +765,13 @@ img.block {
 --------------------------------------------- */
 @media (min-width: 768px) {
   /* Content */
-  .content-area {
+  .sidebar-content .content-area,
+  .content-sidebar .content-area {
     float: left;
     width: 64.912280702%;
     /* 740/1140 */ }
   .sidebar-content .content-area {
     float: right; }
-  .full-width-content .content-area {
-    width: 100%; }
   /* Primary Sidebar */
   .widget-area {
     float: right;
@@ -978,11 +977,11 @@ body.sidr-open:before {
   display: block; }
 
 .sidr ul.menu ul a {
-  background: #e8e8e8;
+  background: #f2f2f2;
   padding-left: 25px; }
 
 .sidr ul.menu ul ul a {
-  background: #d1d1d1;
+  background: #e6e6e6;
   padding-left: 38px; }
 
 /* Content Area
