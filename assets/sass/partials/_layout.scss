@@ -21,7 +21,8 @@
 
   /* Content */
 
-  .content-area {
+  .sidebar-content .content-area,
+	.content-sidebar .content-area {
   	float: left;
   	width: 64.912280702%; /* 740/1140 */
   }
@@ -29,10 +30,6 @@
   .sidebar-content .content-area {
   	float: right;
   }
-
-	.full-width-content .content-area {
-		width: 100%;
-	}
 
   /* Primary Sidebar */
 

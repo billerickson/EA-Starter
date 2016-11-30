@@ -54,7 +54,7 @@ function ea_setup() {
 	add_theme_support( 'ea-structural-wraps', array( 'header', 'site-inner', 'footer' ) );
 
 	// Editor Styles
-	add_editor_style( 'css/editor-style.css' );
+	add_editor_style( 'assets/css/editor-style.css' );
 
 	// Admin Bar Styling
 	add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
