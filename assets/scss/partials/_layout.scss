@@ -24,7 +24,7 @@
   .sidebar-content .content-area,
 	.content-sidebar .content-area {
   	float: left;
-  	width: 64.912280702%; /* 740/1140 */
+  	width: 740px / 1140px * 100%;
   }
 
   .sidebar-content .content-area {
@@ -35,7 +35,7 @@
 
   .widget-area {
   	float: right;
-  	width: 31.578947368%; /* 360/1140 */
+  	width: 360px / 1140px * 100%;
   }
 
   .sidebar-content .widget-area {
