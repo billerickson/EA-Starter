@@ -22,27 +22,7 @@ textarea:focus {
 	outline: none;
 }
 
-::-moz-placeholder {
-	color: $base_color;
-	opacity: 1;
-}
-
-::-ms-input-placeholder {
-	color: $base_color;
-}
-
-::-webkit-input-placeholder {
-	color: $base_color;
-}
-
-input:focus::-webkit-input-placeholder,
-input:focus::-moz-placeholder,
-input:focus:-ms-input-placeholder,
-textarea:focus::-webkit-input-placeholder,
-textarea:focus::-moz-placeholder,
-textarea:focus:-ms-input-placeholder {
-	color:transparent;
-}
+@include placeholder-color( $base_color );
 
 button,
 input[type="button"],
