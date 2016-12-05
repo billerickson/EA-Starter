@@ -70,6 +70,12 @@ function ea_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	/**
+	 * Set the content width in pixels, based on the theme's design and stylesheet.
+	 *
+	 */
+	 $GLOBALS['content_width'] = apply_filters( 'ea_content_width', 640 );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *

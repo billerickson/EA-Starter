@@ -31,18 +31,6 @@
   }
  add_filter( 'http_request_args', 'ea_dont_update_theme', 5, 2 );
 
- /**
-  * Set the content width in pixels, based on the theme's design and stylesheet.
-  *
-  * Priority 0 to make it available to lower priority callbacks.
-  *
-  * @global int $content_width
-  */
- function ea_content_width() {
- 	$GLOBALS['content_width'] = apply_filters( 'ea_content_width', 640 );
- }
- add_action( 'after_setup_theme', 'ea_content_width', 0 );
-
 /**
  * Header Meta Tags
  *
