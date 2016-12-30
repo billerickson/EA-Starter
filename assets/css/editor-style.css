@@ -503,6 +503,9 @@ img {
   height: auto;
   max-width: 100%; }
 
+body {
+  padding: 20px; }
+
 ul,
 ol {
   margin: 0 0 30px 30px; }
