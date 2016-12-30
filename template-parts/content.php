@@ -10,7 +10,6 @@
 echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
 	echo '<header class="entry-header">';
-		the_title( '<h1 class="entry-title">', '</h1>' );
 		tha_entry_top();
 	echo '</header>';
 

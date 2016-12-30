@@ -137,6 +137,19 @@ function ea_archive_title_remove_prefix( $title ) {
 add_filter( 'get_the_archive_title', 'ea_archive_title_remove_prefix' );
 
 /**
+ * Entry Title
+ *
+ */
+function ea_entry_title() {
+    if( is_singular() ) {
+        the_title( '<h1 class="entry-title">', '</h1>' );
+    } else {
+        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+    }
+}
+add_action( 'tha_entry_top', 'ea_entry_title' );
+
+/**
  * Archive Navigation
  *
  */

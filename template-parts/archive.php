@@ -10,7 +10,6 @@
 echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
 	echo '<header class="entry-header">';
-		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		tha_entry_top();
 	echo '</header>';
 
