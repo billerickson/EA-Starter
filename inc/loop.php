@@ -141,10 +141,12 @@ add_filter( 'get_the_archive_title', 'ea_archive_title_remove_prefix' );
  *
  */
 function ea_entry_title() {
-    if( is_singular() ) {
-        the_title( '<h1 class="entry-title">', '</h1>' );
-    } else {
-        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+
+    $title = apply_filters( 'ea_entry_title_text', get_the_title() );
+    if( $title && is_singular() ) {
+        echo '<h1 class="entry-title">' . $title . '</h1>';
+    } elseif( $title ) {
+        echo '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $title . '</a></h2>';
     }
 }
 add_action( 'tha_entry_top', 'ea_entry_title' );
