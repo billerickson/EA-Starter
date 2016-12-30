@@ -19,35 +19,6 @@ add_filter( 'ea_the_content', 'shortcode_unautop'  );
 add_filter( 'ea_the_content', 'do_shortcode'       );
 
 /**
- * Shortcut function for get_post_meta();
- *
- * @since 1.2.0
- * @param string $key
- * @param int $id
- * @param boolean $echo
- * @param string $prepend
- * @param string $append
- * @param string $escape
- * @return string
- */
-function ea_cf( $key = '', $id = '', $echo = false, $prepend = false, $append = false, $escape = false ) {
-	$id    = ( empty( $id ) ? get_the_ID() : $id );
-	$value = get_post_meta( $id, $key, true );
-	if( $escape )
-		$value = call_user_func( $escape, $value );
-	if( $value && $prepend )
-		$value = $prepend . $value;
-	if( $value && $append )
-		$value .= $append;
-
-	if ( $echo ) {
-		echo $value;
-	} else {
-		return $value;
-	}
-}
-
-/**
  * Get the first term attached to post
  *
  * @param string $taxonomy
