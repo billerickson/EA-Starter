@@ -1027,15 +1027,13 @@ body.sidr-open:before {
 
 /* Entry Navigation
 --------------------------------------------- */
-.nav-links {
+.posts-navigation {
   overflow: hidden;
   width: 100%; }
-
-.nav-links .nav-previous {
-  float: right; }
-
-.nav-links .nav-next {
-  float: left; }
+  .posts-navigation .nav-previous {
+    float: right; }
+  .posts-navigation .nav-next {
+    float: left; }
 
 /* Comments
 --------------------------------------------- */
