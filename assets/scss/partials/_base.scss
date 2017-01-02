@@ -10,4 +10,7 @@ $highlight: #50BD3A;
 $border_color: #ccc;
 $white: #fff;
 
+// Bootstrap
+@import "../vendors/bootstrap"; // Note: Unused CSS parts have been disabled
+
 @import "../modules/all";
