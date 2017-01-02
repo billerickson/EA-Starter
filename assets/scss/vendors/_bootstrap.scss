@@ -9,7 +9,7 @@
 @import "bootstrap/mixins";
 
 // Reset and dependencies
-//@import "bootstrap/normalize";
+@import "bootstrap/normalize";
 //@import "bootstrap/print"; - don't need print stuff
 //@import "bootstrap/glyphicons"; - using custom FontAwesome build instead
 
