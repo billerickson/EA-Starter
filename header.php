@@ -25,7 +25,7 @@ echo '<div class="site-container">';
 
 	tha_header_before();
 	echo '<header class="site-header" role="banner">';
-		ea_structural_wrap( 'header' );
+		echo '<div class="row"><div class="col-md-12">';
 		tha_header_top();
 
 		echo '<div class="site-branding">';
@@ -35,9 +35,9 @@ echo '<div class="site-container">';
 		echo '</div>';
 
 		tha_header_bottom();
-		ea_structural_wrap( 'header', 'close' );
+		echo '</div></div>';
 	echo '</header>';
 	tha_header_after();
 
 	echo '<div class="site-inner" id="main-content">';
-	ea_structural_wrap( 'site-inner' );
+	echo '<div class="row">';

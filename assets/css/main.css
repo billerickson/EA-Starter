@@ -1556,34 +1556,57 @@ img.block {
   text-decoration: none;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
 
-/* Structure and Layout
----------------------------------------------------------------------------------------------------- */
-/* Site Containers
---------------------------------------------- */
-.wrap {
-  margin: 0 auto;
-  max-width: 1140px;
-  padding: 0 20px; }
+.site-header,
+.site-inner,
+.site-footer {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1200px;
+  margin: 0 auto; }
+  .site-header:before, .site-header:after,
+  .site-inner:before,
+  .site-inner:after,
+  .site-footer:before,
+  .site-footer:after {
+    content: " ";
+    display: table; }
+  .site-header:after,
+  .site-inner:after,
+  .site-footer:after {
+    clear: both; }
 
-.site-inner {
-  clear: both; }
+.full-width-content .site-inner {
+  max-width: 900px; }
 
-/* Column Widths and Positions
---------------------------------------------- */
-@media (min-width: 768px) {
-  /* Content */
-  .sidebar-content .content-area,
-  .content-sidebar .content-area {
-    float: left;
-    width: 64.9122807018%; }
-  .sidebar-content .content-area {
-    float: right; }
-  /* Primary Sidebar */
-  .widget-area {
-    float: right;
-    width: 31.5789473684%; }
-  .sidebar-content .widget-area {
-    float: left; } }
+.content-sidebar .content-area,
+.sidebar-content .content-area {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (min-width: 768px) {
+    .content-sidebar .content-area,
+    .sidebar-content .content-area {
+      float: left;
+      width: 58.3333333333%; } }
+
+.content-sidebar .widget-area,
+.sidebar-content .widget-area {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (min-width: 768px) {
+    .content-sidebar .widget-area,
+    .sidebar-content .widget-area {
+      float: left;
+      width: 33.3333333333%; } }
+  @media (min-width: 768px) {
+    .content-sidebar .widget-area,
+    .sidebar-content .widget-area {
+      margin-left: 8.3333333333%; } }
 
 /* Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -1892,7 +1915,7 @@ li.comment {
 /* Site Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
-  padding: 40px 0;
+  padding-top: 40px;
   text-align: center; }
 
 .site-footer p {

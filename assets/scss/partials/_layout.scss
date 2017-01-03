@@ -1,45 +1,24 @@
-/* Structure and Layout
----------------------------------------------------------------------------------------------------- */
-
-/* Site Containers
---------------------------------------------- */
-
-.wrap {
-	margin: 0 auto;
-	max-width: 1140px;
-	padding: 0 20px;
+.site-header,
+.site-inner,
+.site-footer {
+    @include container-fixed;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.site-inner {
-	clear: both;
+.full-width-content .site-inner {
+    max-width: 900px;
 }
 
-/* Column Widths and Positions
---------------------------------------------- */
+.content-sidebar,
+.sidebar-content {
 
-@include media(">=tablet") {
+    .content-area {
+        @include make-sm-column(7);
+    }
 
-  /* Content */
-
-  .sidebar-content .content-area,
-	.content-sidebar .content-area {
-  	float: left;
-  	width: 740px / 1140px * 100%;
-  }
-
-  .sidebar-content .content-area {
-  	float: right;
-  }
-
-  /* Primary Sidebar */
-
-  .widget-area {
-  	float: right;
-  	width: 360px / 1140px * 100%;
-  }
-
-  .sidebar-content .widget-area {
-  	float: left;
-  }
-
+    .widget-area {
+        @include make-sm-column(4);
+        @include make-sm-column-offset(1);
+    }
 }
