@@ -91,15 +91,6 @@
 	}
 }
 
-.mobile-menu-toggle .icon-close,
-.sidr-open .mobile-menu-toggle .icon-menu {
-	display: none;
-}
-
-.sidr-open .mobile-menu-toggle .icon-close {
-	display: inline-block;
-}
-
 body.sidr-open:before {
 	content: '';
 	position: fixed;

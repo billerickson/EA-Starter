@@ -22,7 +22,7 @@ function ea_header_navigation() {
 
   if( has_nav_menu( 'mobile' ) ) {
     echo '<div class="nav-mobile">';
-      echo '<a class="mobile-menu-toggle" href="#"><span class="label">menu</span><i class="icon-menu"></i><i class="icon-close"></i></a>';
+      echo '<a class="mobile-menu-toggle" href="#"><span class="label">menu</span><i class="icon-menu"></i></a>';
     echo '</div>';
   }
 }
