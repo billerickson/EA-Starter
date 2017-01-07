@@ -1,13 +1,15 @@
-// Base Font
-$base-font-family: sans-serif;
-$base-font-weight: 400;
-$base-font-size: 18px;
-$base-line-height: 1.4;
-
 // Colors
 $base_color: #58595B;
 $highlight: #50BD3A;
 $border_color: #ccc;
 $white: #fff;
+
+// Breakpoints
+$breakpoints: (
+  'phone': 320px,
+  'mobile': 520px,
+  'tablet': 768px,
+  'desktop': 1024px
+);
 
 @import "../modules/all";

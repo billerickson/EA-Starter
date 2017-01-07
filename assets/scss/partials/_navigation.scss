@@ -98,122 +98,119 @@ body.sidr-open:before {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba( 0, 0, 0, .7);
+	background: rgba( 0, 0, 0, .5);
 	z-index:999998;
 }
 
 .sidr {
-	background: $white;
+	background: transparent;
 	display:block;
 	position:fixed;
 	top:0;
 	height:100%;
 	z-index:999999;
-	width:345px;
+	width:345px + 50px;
+	padding-left: 50px;
+	overflow: scroll;
 
-	@include media("<phone"){
-		width: calc(100% - 40px);
-	}
-}
-
-.sidr.right {
-	left:auto;
-	right:-345px;
-}
-
-.sidr.left {
-	left:-345px;
-	right:auto;
-}
-
-.sidr-menu-close {
-	background: $highlight;
-	color: $white;
-	display: none;
-	position: absolute;
-	left: -40px;
-	top: 0;
-	line-height: 40px;
-	height: 40px;
-	text-align: center;
-	width: 40px;
-	z-index:999999;
-
-	.sidr-open & {
-		display: block;
+	@include media("<mobile"){
+		width: 100%;
 	}
 
-	&:hover {
-		text-decoration: none;
+	& > div {
+		background: $white;
+		height: 100%;
 	}
-}
 
-.sidr .menu li {
-	list-style-type: none;
-}
+	.sidr-menu-close {
+		background: $highlight;
+		color: $white;
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		line-height: 50px;
+		height: 50px;
+		text-align: center;
+		width: 50px;
+		z-index:999999;
 
-.sidr .menu a {
-	background: $white;
-	border-bottom: 1px solid $border_color;
-	color: $highlight;
-	display: block;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 28px;
-	padding: 10px 10px 10px 20px;
-	text-decoration: none;
-	text-transform: uppercase;
-}
+		.sidr-open & {
+			display: block;
+		}
 
-.sidr li.menu-item-has-children {
-	position: relative;
-}
+		&:hover {
+			text-decoration: none;
+		}
+	}
 
-.sidr li.menu-item-has-children > .submenu-toggle {
-	background: $white;
-	cursor: pointer;
-	width: 48px;
-	height: 48px;
-	line-height: 48px;
-	text-align: center;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 99;
-}
+	&.right {
+		left: auto;
+		right: -520px;
+	}
 
-.sidr li.menu-item-has-children > .submenu-toggle:hover,
-.sidr li.menu-item-has-children.submenu-active > .submenu-toggle {
-	background: $highlight;
-	color: $white;
-}
+	&.left {
+		right: auto;
+		left: -520px;
+	}
 
-.sidr li.menu-item-has-children > .submenu-toggle:before {
-	content: '>';
-}
+	.menu {
 
-.sidr ul li.submenu-active > .submenu-toggle:before {
-	-moz-transform: rotate(90deg);
-	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
-	display: block;
-}
+		a {
+			background: $white;
+			border-bottom: 1px solid $border_color;
+			color: $highlight;
+			display: block;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 30px;
+			padding: 10px 10px 10px 20px;
+			text-decoration: none;
+		}
 
-.sidr ul li ul {
-  display: none;
-}
+		li {
+			list-style-type: none;
+			position: relative;
 
-.sidr ul li.submenu-active > ul {
-	display: block;
-}
+			&.menu-item-has-children > .submenu-toggle {
+				background: $white;
+				cursor: pointer;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				position: absolute;
+				top: 0;
+				right: 0;
+				z-index: 99;
 
-.sidr ul.menu ul a {
-	background: darken( $white, 5%);
-	padding-left: 25px;
-}
+				&:before {
+					@extend .icon-font;
+				}
+			}
 
-.sidr ul.menu ul ul a {
-	background: darken( $white, 10%);
-	padding-left: 38px;
+			.submenu-toggle:hover,
+			&.submenu-active > .submenu-toggle {
+				background: $highlight;
+				color: $white;
+			}
+
+			ul {
+				display: none;
+			}
+
+			&.submenu-active > ul {
+				display: block;
+			}
+
+			ul a {
+				background: darken( $white, 5%);
+			}
+
+			ul ul a {
+				background: darken( $white, 10%);
+			}
+
+		}
+	}
 }
