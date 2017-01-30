@@ -5,7 +5,7 @@
 --------------------------------------------- */
 
 body {
-	color: $base_color;
+	color: $base-color;
 	font-family: $base-font-family;
 	font-size: $base-font-size;
 	font-weight: $base-font-weight;
@@ -120,7 +120,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: $base_color;
+	color: $base-color;
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0;

@@ -1,24 +1,6 @@
-.site-header,
-.site-inner,
-.site-footer {
-    @include container-fixed;
-    max-width: 1200px;
+/* Add left/right padding to these containers */
+.full-section > .container-fluid {
+    @include container-fixed( $grid-gutter-width );
+    max-width: $max_width;
     margin: 0 auto;
-}
-
-.full-width-content .site-inner {
-    max-width: 900px;
-}
-
-.content-sidebar,
-.sidebar-content {
-
-    .content-area {
-        @include make-sm-column(7);
-    }
-
-    .widget-area {
-        @include make-sm-column(4);
-        @include make-sm-column-offset(1);
-    }
 }

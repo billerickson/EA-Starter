@@ -5,13 +5,23 @@ $base-font-size: 18px;
 $base-line-height: 1.4;
 
 // Colors
-$base_color: #58595B;
+$base-color: #58595B;
 $highlight: #50BD3A;
-$border_color: #ccc;
+$border-color: #ccc;
 $white: #fff;
 
-// Bootstrap
-@import "../vendors/bootstrap"; // Note: Unused CSS parts have been disabled
+// Breakpoints
+$breakpoints: (
+  'mobile': 520px,
+  'tablet': 768px,
+  'medium': 992px,
+  'large': 1200px,
+);
 
+// Bootstrap
+$max-width: 1140px;
+$grid-gutter-width: 30px;
+
+@import "../vendors/bootstrap"; // Note: Unused CSS parts have been disabled
 @import "../vendors/include-media";
 @import "../modules/helpers";
