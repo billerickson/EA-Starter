@@ -73,9 +73,9 @@ function ea_default_loop() {
 
 			tha_entry_before();
       if( is_singular() ) {
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'partials/content', get_post_type() );
 			} else {
-				get_template_part( 'template-parts/archive', get_post_type() );
+				get_template_part( 'partials/archive', get_post_type() );
       }
 			tha_entry_after();
 
@@ -86,7 +86,7 @@ function ea_default_loop() {
 	else :
 
 		tha_entry_before();
-		get_template_part( 'template-parts/content', 'none' );
+		get_template_part( 'partials/content', 'none' );
 		tha_entry_after();
 
 	endif;
