@@ -1655,6 +1655,18 @@ img.block {
     margin: 0;
     width: 100%; } }
 
+/* Bootstrap Grid
+--------------------------------------------- */
+.sample-grid {
+  background: #f0f0f0; }
+  .sample-grid .row {
+    background: #dfdfdf;
+    border-bottom: 1px solid #666; }
+    .sample-grid .row > div > div {
+      background: #ccc;
+      padding: 20px 0;
+      text-align: center; }
+
 /* Site Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {

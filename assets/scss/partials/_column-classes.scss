@@ -100,3 +100,24 @@
 	}
 
 }
+
+/* Bootstrap Grid
+--------------------------------------------- */
+
+.sample-grid {
+	background: #f0f0f0;
+
+	.row {
+		background: #dfdfdf;
+		border-bottom: 1px solid #666;
+
+		& > div {
+
+			& > div {
+				background: #ccc;
+				padding: 20px 0;
+				text-align: center;
+			}
+		}
+	}
+}
