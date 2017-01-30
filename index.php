@@ -13,7 +13,9 @@ get_header();
 tha_content_before();
 echo '<div class="content-area">';
 
-	echo '<main class="site-main" role="main">';
+	$classes = apply_filters( 'ea_site_main_class', array( 'col-md-8',  'col-md-offset-2' ) );
+	$classes[] = 'site-main';
+	echo '<main class="' . implode( ' ', $classes ) . '" role="main">';
 	tha_content_top();
 	tha_content_loop();
 	tha_content_bottom();

@@ -25,7 +25,7 @@ echo '<div class="site-container">';
 
 	tha_header_before();
 	echo '<header class="site-header full-section" role="banner">';
-		echo '<div class="container-fluid"><div class="row"><div class="col-12-sm">';
+		echo '<div class="container-fluid"><div class="row"><div class="col-sm-12">';
 		tha_header_top();
 
 		echo '<div class="site-branding">';
