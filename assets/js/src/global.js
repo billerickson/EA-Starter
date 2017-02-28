@@ -8,6 +8,7 @@ jQuery(function($){
 		name: 'sidr-mobile-menu',
 		side: 'right',
 		renaming: false,
+		displace: false,
 	});
 	$('.menu-item-has-children').prepend('<span class="submenu-toggle">' );
 	$('.menu-item-has-children.sidr-class-current-menu-item').addClass('submenu-active');
