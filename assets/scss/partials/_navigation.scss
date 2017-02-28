@@ -27,7 +27,7 @@
 
 		a {
 			border: none;
-			color: $base_color;
+			color: $base-color;
 			display: block;
 			font-size: 16px;
 			font-weight: 400;
@@ -113,8 +113,8 @@ body.sidr-open:before {
 	padding-left: 50px;
 	overflow: scroll;
 
-	@include media("<mobile"){
-		width: 100%;
+	@include media("<385px"){
+		width: calc(100% - 40px);
 	}
 
 	& > div {

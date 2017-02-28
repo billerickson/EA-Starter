@@ -6,7 +6,7 @@ select,
 textarea {
 	background-color: #fff;
 	border: 1px solid $border_color;
-	color: $base_color;
+	color: $base-color;
 	padding: 10px;
 	width: 100%;
 }
@@ -22,7 +22,7 @@ textarea:focus {
 	outline: none;
 }
 
-@include placeholder-color( $base_color );
+@include placeholder-color( $base-color );
 
 button,
 input[type="button"],

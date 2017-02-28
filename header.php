@@ -24,8 +24,8 @@ echo '<div class="site-container">';
 	echo '<a class="skip-link screen-reader-text" href="#main-content">' . esc_html__( 'Skip to content', 'ea' ) . '</a>';
 
 	tha_header_before();
-	echo '<header class="site-header" role="banner">';
-		ea_structural_wrap( 'header' );
+	echo '<header class="site-header full-section" role="banner">';
+		echo '<div class="container-fluid"><div class="row"><div class="col-sm-12">';
 		tha_header_top();
 
 		echo '<div class="site-branding">';
@@ -35,9 +35,6 @@ echo '<div class="site-container">';
 		echo '</div>';
 
 		tha_header_bottom();
-		ea_structural_wrap( 'header', 'close' );
+		echo '</div></div></div>';
 	echo '</header>';
 	tha_header_after();
-
-	echo '<div class="site-inner" id="main-content">';
-	ea_structural_wrap( 'site-inner' );

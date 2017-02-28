@@ -8,18 +8,17 @@
  * @license      GPL-2.0+
  */
 
-ea_structural_wrap( 'site-inner', 'close' );
-echo '</div>';
+echo '</div></div>';
 
 tha_footer_before();
-echo '<footer class="site-footer" role="contentinfo">';
-ea_structural_wrap( 'footer' );
+echo '<footer class="site-footer full-section" role="contentinfo">';
+echo '<div class="container-fluid"><div class="row"><div class="col-md-12">';
 tha_footer_top();
 
 echo '<p>Copyright &copy; ' . date( 'Y' ) . '</p>';
 
 tha_footer_bottom();
-ea_structural_wrap( 'footer', 'close' );
+echo '</div></div></div>';
 echo '</footer>';
 tha_footer_after();
 

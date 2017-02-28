@@ -1,45 +1,6 @@
-/* Structure and Layout
----------------------------------------------------------------------------------------------------- */
-
-/* Site Containers
---------------------------------------------- */
-
-.wrap {
-	margin: 0 auto;
-	max-width: 1140px;
-	padding: 0 20px;
-}
-
-.site-inner {
-	clear: both;
-}
-
-/* Column Widths and Positions
---------------------------------------------- */
-
-@include media(">=tablet") {
-
-  /* Content */
-
-  .sidebar-content .content-area,
-	.content-sidebar .content-area {
-  	float: left;
-  	width: 740px / 1140px * 100%;
-  }
-
-  .sidebar-content .content-area {
-  	float: right;
-  }
-
-  /* Primary Sidebar */
-
-  .widget-area {
-  	float: right;
-  	width: 360px / 1140px * 100%;
-  }
-
-  .sidebar-content .widget-area {
-  	float: left;
-  }
-
+/* Add left/right padding to these containers */
+.full-section > .container-fluid {
+    @include container-fixed( $grid-gutter-width );
+    max-width: $max_width;
+    margin: 0 auto;
 }
