@@ -75,6 +75,18 @@ add_filter( 'body_class', 'ea_layout_body_class', 5 );
  }
 
  /**
+  * Content/Sidebar Layout, Site Main Class
+  *
+  */
+ function ea_content_sidebar_main_class( $classes ) {
+     if( 'full-width-content' !== ea_page_layout() )
+        $classes = array( 'col-md-9' );
+    return $classes;
+ }
+ add_filter( 'ea_site_main_class', 'ea_content_sidebar_main_class' );
+
+
+ /**
   * Return Full Width Content
   * used when filtering 'ea_page_layout'
   */

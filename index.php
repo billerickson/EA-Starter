@@ -11,17 +11,16 @@
 get_header();
 
 tha_content_before();
-echo '<div class="content-area">';
 
-	$classes = apply_filters( 'ea_site_main_class', array( 'col-md-8',  'col-md-offset-2' ) );
-	$classes[] = 'site-main';
-	echo '<main class="' . implode( ' ', $classes ) . '" role="main">';
+	$classes = apply_filters( 'ea_site_main_class', array( 'col-md-10', 'col-md-offset-1' ) );
+	echo '<div class="' . implode( ' ', $classes ) . '"><main class="site-main" role="main">';
 	tha_content_top();
 	tha_content_loop();
 	tha_content_bottom();
-	echo '</main>';
+	echo '</main></div>';
 
-echo '</div>';
+	get_sidebar();
+
 tha_content_after();
 
 get_sidebar();
