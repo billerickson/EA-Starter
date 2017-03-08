@@ -10,17 +10,23 @@ $highlight: #50BD3A;
 $border-color: #ccc;
 $white: #fff;
 
+// Bootstrap
+$max-width: 1140px;
+$grid-gutter-width: 30px;
+
+// Sidr
+$sidr_width: 345px;
+$sidr_close: 44px;
+$sidr_total: $sidr_width + $sidr_close;
+
 // Breakpoints
 $breakpoints: (
   'mobile': 520px,
   'tablet': 768px,
   'medium': 992px,
   'large': 1200px,
+  'sidr_total': $sidr_total,
 );
-
-// Bootstrap
-$max-width: 1140px;
-$grid-gutter-width: 30px;
 
 @import "../vendors/bootstrap"; // Note: Unused CSS parts have been disabled
 @import "../vendors/include-media";

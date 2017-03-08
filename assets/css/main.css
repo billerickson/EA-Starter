@@ -1446,7 +1446,7 @@ input[type="search"]::-webkit-search-results-button {
 ---------------------------------------------------------------------------------------------------- */
 /* Icons
 --------------------------------------------- */
-.icon-font, .sidr .menu li.menu-item-has-children > .submenu-toggle:before {
+.icon-font {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -1780,13 +1780,6 @@ p.site-title {
 
 /* Mobile Menu
 --------------------------------------------- */
-.nav-mobile {
-  float: right;
-  width: auto; }
-  @media (min-width: 769px) {
-    .nav-mobile {
-      display: none; } }
-
 body.sidr-open:before {
   content: '';
   position: fixed;
@@ -1794,83 +1787,86 @@ body.sidr-open:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 999998; }
 
+.sidr-menu-close {
+  background: #50BD3A;
+  color: #fff;
+  display: none;
+  position: fixed;
+  right: 345px;
+  line-height: 44px;
+  height: 44px;
+  text-align: center;
+  width: 44px;
+  z-index: 999999; }
+  @media (max-width: 388px) {
+    .sidr-menu-close {
+      right: calc(100% - 44px); } }
+  .sidr-open .sidr-menu-close {
+    display: block; }
+  .sidr-menu-close:hover {
+    text-decoration: none; }
+
 .sidr {
-  background: transparent;
+  background: #fff;
   display: block;
   position: fixed;
   top: 0;
+  right: -600px;
   height: 100%;
   z-index: 999999;
-  width: 395px;
-  padding-left: 50px;
-  overflow: scroll; }
-  @media (max-width: 384px) {
-    .sidr {
-      width: calc(100% - 40px); } }
-  .sidr > div {
-    background: #fff;
-    height: 100%; }
-  .sidr .sidr-menu-close {
-    background: #50BD3A;
-    color: #fff;
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-    line-height: 50px;
-    height: 50px;
-    text-align: center;
-    width: 50px;
-    z-index: 999999; }
-    .sidr-open .sidr .sidr-menu-close {
-      display: block; }
-    .sidr .sidr-menu-close:hover {
-      text-decoration: none; }
-  .sidr.right {
-    left: auto;
-    right: -520px; }
-  .sidr.left {
-    right: auto;
-    left: -520px; }
-  .sidr .menu a {
-    background: #fff;
-    border-bottom: 1px solid #ccc;
-    color: #50BD3A;
-    display: block;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 10px 10px 10px 20px;
-    text-decoration: none; }
+  width: calc(100% - 44px);
+  max-width: 345px;
+  overflow-y: scroll; }
   .sidr .menu li {
     list-style-type: none;
     position: relative; }
+    .sidr .menu li a {
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      color: #50BD3A;
+      display: block;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      padding: 10px 10px 10px 20px;
+      text-decoration: none;
+      text-transform: uppercase; }
     .sidr .menu li.menu-item-has-children > .submenu-toggle {
       background: #fff;
       cursor: pointer;
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
       text-align: center;
       position: absolute;
       top: 0;
       right: 0;
       z-index: 99; }
-    .sidr .menu li .submenu-toggle:hover,
-    .sidr .menu li.submenu-active > .submenu-toggle {
+      .sidr .menu li.menu-item-has-children > .submenu-toggle:before {
+        content: '>'; }
+    .sidr .menu li.menu-item-has-children > .submenu-toggle:hover,
+    .sidr .menu li.menu-item-has-children.submenu-active > .submenu-toggle {
       background: #50BD3A;
       color: #fff; }
+    .sidr .menu li.menu-item-has-children.submenu-active > .submenu-toggle:before {
+      -moz-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+      display: block; }
     .sidr .menu li ul {
       display: none; }
+      .sidr .menu li ul li a {
+        background: #f2f2f2;
+        padding-left: 25px; }
+      .sidr .menu li ul li ul li a {
+        background: #e6e5e5;
+        padding-left: 35px; }
     .sidr .menu li.submenu-active > ul {
       display: block; }
-    .sidr .menu li ul a {
-      background: #f2f2f2; }
-    .sidr .menu li ul ul a {
-      background: #e6e5e5; }
 
 /* Content Area
 ---------------------------------------------------------------------------------------------------- */
