@@ -144,7 +144,7 @@ body.sidr-open:before {
 				display: block;
 				font-size: 16px;
 				font-weight: 400;
-				line-height: 28px;
+				line-height: $sidr_close - 20px;
 				padding: 10px 10px 10px 20px;
 				text-decoration: none;
 				text-transform: uppercase;
@@ -155,9 +155,9 @@ body.sidr-open:before {
 				& > .submenu-toggle {
 					background: $white;
 					cursor: pointer;
-					width: 48px;
-					height: 48px;
-					line-height: 48px;
+					width: $sidr_close;
+					height: $sidr_close;
+					line-height: $sidr_close;
 					text-align: center;
 					position: absolute;
 					top: 0;
