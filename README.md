@@ -7,6 +7,7 @@ We use the feature branches for active development, and the `master` branch for 
 - [Contribution Workflow](#contribution-workflow)
 - [Initial Setup](#initial-setup)
 - [Pushing changes to WPEngine](#pushing-changes-to-wpengine)
+- [Pushing changes using DeployHQ](#pushing-changes-using-deployhq)
 
 ### Structure
 
@@ -115,3 +116,13 @@ git remote add staging git@git.wpengine.com:staging/[theme-name].git
 ```
 
 Once you've completed the Contribution Workflow above, you can push to production using: `git push production master`.  For feature branches that require review, it's recommended that you [Copy Live to Staging](https://wpengine.com/support/staging/), then push changes to staging: `git push staging master`. Once approved, these changes can be merged to master and pushed to production.
+
+### Pushing changes using DeployHQ
+
+If you are not using WPEngine, or are not comfortable with the command line, you can use [DeployHQ](https://www.deployhq.com/) instead. Set up a free account and configure two separate deployments: staging and production. I recommend setting them to manual, not automatic, as the free account is limited to 10 deployments per day.
+
+1. Make changes to the site (either locally or using [GitHub visual editor](https://help.github.com/articles/editing-files-in-your-repository/)).
+2. If editing locally, push those changes to GitHub: `git push origin master`
+3. Log into DeployHQ and deploy those changes to staging.
+4. View the staging site and make sure everything works.
+5. Log into DeployHQ and deploy those changes to production.
