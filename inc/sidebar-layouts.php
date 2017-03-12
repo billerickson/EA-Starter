@@ -79,12 +79,27 @@ add_filter( 'body_class', 'ea_layout_body_class', 5 );
   *
   */
  function ea_content_sidebar_main_class( $classes ) {
-     if( 'full-width-content' !== ea_page_layout() )
+     if( 'full-width-content' !== ea_page_layout() ) {
         $classes = array( 'col-md-9' );
+        if( 'sidebar-content' == ea_page_layout() )
+            $classes[] = 'col-md-push-3';
+    }
     return $classes;
  }
  add_filter( 'ea_site_main_class', 'ea_content_sidebar_main_class' );
 
+ /**
+  * Sidebar classes
+  *
+  */
+ function ea_sidebar_class( $classes ) {
+     $classes = array( 'col-md-3' );
+     if( 'sidebar-content' == ea_page_layout() ) {
+         $classes[] = 'col-md-pull-9';
+     }
+     return $classes;
+ }
+add_filter( 'ea_sidebar_class', 'ea_sidebar_class' );
 
  /**
   * Return Full Width Content

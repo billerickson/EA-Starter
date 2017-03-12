@@ -55,22 +55,3 @@ function ea_landing_site_inner_markup_open() {
  	echo '</div>';
  }
  add_action( 'tha_content_after', 'ea_site_inner_markup_close', 1 );
-
-
- /**
-  * Sidebar Markup Open
-  *
-  */
- function ea_sidebar_markup_open() {
-     echo '<div class="col-md-3">';
- }
- add_action( 'tha_sidebars_before', 'ea_sidebar_markup_open', 20 );
-
- /**
-  * Sidebar Markup Close
-  *
-  */
- function ea_sidebar_markup_close() {
-     echo '</div>';
- }
- add_action( 'tha_sidebars_after', 'ea_sidebar_markup_close', 4 );

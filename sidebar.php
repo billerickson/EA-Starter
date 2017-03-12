@@ -10,7 +10,7 @@
 
 if( ! function_exists( 'ea_page_layout' ) )
 	return;
-	
+
 $layout = ea_page_layout();
 if( ! in_array( $layout, array( 'content-sidebar', 'sidebar-content' ) ) )
 	return;
@@ -20,9 +20,10 @@ if ( ! is_active_sidebar( $sidebar ) )
 	return;
 
 tha_sidebars_before();
-echo '<aside class="widget-area" role="complementary">';
+$classes = apply_filters( 'ea_sidebar_class', array( 'col-md-3' ) );
+echo '<div class="' . join( ' ', $classes ) . '"><aside class="sidebar-primary" role="complementary">';
 	tha_sidebar_top();
 	dynamic_sidebar( $sidebar );
 	tha_sidebar_bottom();
-echo '</aside>';
+echo '</aside></div>';
 tha_sidebars_after();
