@@ -3,4 +3,22 @@
     @include container-fixed( $grid-gutter-width );
     max-width: $max_width;
     margin: 0 auto;
+
+    @include media(">=tablet", "<medium") {
+        .col-sm-first {
+            clear: both;
+        }
+    }
+
+    @include media(">=medium", "<large") {
+        .col-md-first {
+            clear: both;
+        }
+    }
+
+    @include media(">=large") {
+        .col-lg-first {
+            clear: both;
+        }
+    }
 }
