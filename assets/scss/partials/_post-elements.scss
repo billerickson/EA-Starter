@@ -95,6 +95,16 @@
 	margin-left: 24px;
 }
 
+.wp-caption {
+	margin: 0 0 24px;
+}
+
+.wp-caption-text {
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+}
+
 img.centered,
 .aligncenter {
 	display: block;
@@ -126,16 +136,6 @@ img.alignright,
 
 img.block {
 	display: block;
-}
-
-.wp-caption {
-	margin: 0 0 24px;
-}
-
-.wp-caption-text {
-	font-size: 14px;
-	font-weight: 700;
-	text-align: center;
 }
 
 /* Screen Reader Text
