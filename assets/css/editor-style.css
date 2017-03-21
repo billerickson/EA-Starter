@@ -1255,7 +1255,7 @@ a:hover {
   text-decoration: underline; }
 
 p {
-  margin: 0 0 24px;
+  margin: 0 0 32px;
   padding: 0; }
 
 strong {
@@ -1268,12 +1268,11 @@ ul {
 
 blockquote {
   background: rgba(0, 0, 0, 0.1);
-  margin: 40px 40px 24px;
+  margin: 0 0 32px;
   font-style: italic;
-  padding: 15px 20px; }
-
-blockquote p:last-of-type {
-  margin: 0; }
+  padding: 0; }
+  blockquote p:last-of-type {
+    margin-bottom: 0; }
 
 code,
 pre {
@@ -1312,9 +1311,8 @@ img.wp-more-tag {
   width: 100%;
   height: 1px;
   border: none;
-  border-bottom: 1px solid #ccc;
-  margin: 0 0 20px;
-  padding: 20px 0 0; }
+  border-top: 1px solid #ccc;
+  margin: 0 0 32px; }
 
 /* Headings
 --------------------------------------------- */
