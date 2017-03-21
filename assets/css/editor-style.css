@@ -1325,7 +1325,6 @@ h4,
 h5,
 h6 {
   color: #58595B;
-  font-weight: 700;
   line-height: 1.2;
   margin: 0;
   margin-bottom: 16px;
@@ -1527,7 +1526,7 @@ input[type="search"]::-webkit-search-results-button {
 
 .wp-caption-text {
   font-size: 14px;
-  font-weight: 700;
+  font-style: italic;
   text-align: center; }
 
 img.centered,

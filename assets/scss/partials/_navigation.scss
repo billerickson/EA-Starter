@@ -30,7 +30,6 @@
 			color: $base-color;
 			display: block;
 			font-size: 16px;
-			font-weight: 400;
 			padding: 20px 22px 10px;
 			position: relative;
 		}
@@ -143,7 +142,6 @@ body.sidr-open:before {
 				color: $highlight;
 				display: block;
 				font-size: 16px;
-				font-weight: 400;
 				line-height: $sidr_close - 20px;
 				padding: 10px 10px 10px 20px;
 				text-decoration: none;
