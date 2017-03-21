@@ -12,8 +12,12 @@ $border-color: #ccc;
 $white: #fff;
 
 // Bootstrap
-$max-width: 1140px;
 $grid-gutter-width: 30px;
+$screen-xs: 520px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1200px;
+$max-width: 1356px;
 
 // Sidr
 $sidr_width: 345px;
@@ -22,10 +26,11 @@ $sidr_total: $sidr_width + $sidr_close;
 
 // Breakpoints
 $breakpoints: (
-  'mobile': 520px,
-  'tablet': 768px,
-  'medium': 992px,
-  'large': 1200px,
+  'mobile': $screen-xs,
+  'tablet': $screen-sm,
+  'medium': $screen-md,
+  'large' : $screen-lg,
+  'max'   : $max-width,
   'sidr_total': $sidr_total,
 );
 
