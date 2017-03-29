@@ -13,7 +13,7 @@
   *
   */
 function ea_site_inner_markup_open() {
-	echo '<div class="site-inner full-section" id="main-content">';
+	echo '<div class="site-inner" id="main-content">';
 }
 add_action( 'tha_header_after', 'ea_site_inner_markup_open', 40 );
 

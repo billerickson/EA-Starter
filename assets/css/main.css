@@ -1582,28 +1582,28 @@ img.block {
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
 
 /* Add left/right padding to these containers */
-.full-section > .container-fluid {
+.site-container .container-fluid {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
   max-width: 1356px;
   margin: 0 auto; }
-  .full-section > .container-fluid:before, .full-section > .container-fluid:after {
+  .site-container .container-fluid:before, .site-container .container-fluid:after {
     content: " ";
     display: table; }
-  .full-section > .container-fluid:after {
+  .site-container .container-fluid:after {
     clear: both; }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .full-section > .container-fluid .col-sm-first {
+  .site-container .container-fluid .col-sm-first {
     clear: both; } }
 
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .full-section > .container-fluid .col-md-first {
+  .site-container .container-fluid .col-md-first {
     clear: both; } }
   @media (min-width: 1200px) {
-    .full-section > .container-fluid .col-lg-first {
+    .site-container .container-fluid .col-lg-first {
       clear: both; } }
 
 /*

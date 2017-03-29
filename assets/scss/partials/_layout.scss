@@ -1,5 +1,5 @@
 /* Add left/right padding to these containers */
-.full-section > .container-fluid {
+.site-container .container-fluid {
     @include container-fixed( $grid-gutter-width );
     max-width: $max_width;
     margin: 0 auto;

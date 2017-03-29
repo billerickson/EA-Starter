@@ -9,7 +9,7 @@
  */
 
 tha_footer_before();
-echo '<footer class="site-footer full-section" role="contentinfo">';
+echo '<footer class="site-footer" role="contentinfo">';
 echo '<div class="container-fluid"><div class="row"><div class="col-md-12">';
 tha_footer_top();
 
