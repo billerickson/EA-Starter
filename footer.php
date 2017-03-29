@@ -9,15 +9,15 @@
  */
 
 tha_footer_before();
-echo '<footer class="site-footer" role="contentinfo">';
-echo '<div class="container-fluid"><div class="row"><div class="col-md-12">';
+echo '<footer class="site-footer" role="contentinfo"><div class="wrap">';
+echo '<div class="row"><div class="col-md-12">';
 tha_footer_top();
 
 echo '<p>Copyright &copy; ' . date( 'Y' ) . '</p>';
 
 tha_footer_bottom();
-echo '</div></div></div>';
-echo '</footer>';
+echo '</div></div>';
+echo '</div></footer>';
 tha_footer_after();
 
 echo '</div>';

@@ -30,7 +30,7 @@ function ea_landing_site_inner_markup_open() {
   *
   */
  function ea_content_area_markup_open() {
- 	echo '<div class="content-area container-fluid">';
+ 	echo '<div class="content-area wrap">';
  	if( apply_filters( 'ea_content_area_has_row', true ) )
  		echo '<div class="row">';
  }
