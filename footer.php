@@ -8,8 +8,6 @@
  * @license      GPL-2.0+
  */
 
-echo '</div></div>';
-
 tha_footer_before();
 echo '<footer class="site-footer full-section" role="contentinfo">';
 echo '<div class="container-fluid"><div class="row"><div class="col-md-12">';
