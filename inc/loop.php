@@ -65,7 +65,7 @@ add_action( 'tha_entry_top', 'ea_entry_title' );
  */
 function ea_comments() {
 
-	if ( is_singular() && ( comments_open() || get_comments_number() ) ) {
+	if ( is_single() && ( comments_open() || get_comments_number() ) ) {
 		comments_template();
 	}
 
