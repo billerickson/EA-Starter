@@ -19,6 +19,9 @@ jQuery(function($){
 	$('.sidr a').click(function(){
 		$.sidr('close', 'sidr-mobile-menu');
 	});
+	$('.sidr-menu-close').click(function(e){
+		e.preventDefault();
+	});
 	$(document).on( 'mouseup touchend', (function (e){
 		var container = $("#sidr-mobile-menu");
 		if (!container.is(e.target) && container.has(e.target).length === 0) {
