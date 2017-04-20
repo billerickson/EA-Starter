@@ -96,19 +96,30 @@ function ea_class( $base_classes, $optional_class, $conditional ) {
 /**
  * Column Classes
  *
- * @param int $type, number from 2-6
- * @param int $count, current count in the loop
- * @param int $tablet_type, number of columns used on tablets
+ * Adds "-first" classes when apprporiate for clearing float
+ * @see /assets/scss/partials/layout.scss
+ *
+ * @param array $classes, bootstrap-style classes, ex: array( 'col-lg-4', 'col-md-6' )
+ * @param int $current, current post in loop
  * @return string $classes
  */
-function ea_column_class( $type, $count, $tablet_type = false ) {
-	$output = '';
-	$classes = array( '', '', 'one-half', 'one-third', 'one-fourth', 'one-fifth', 'one-sixth' );
-	if( !empty( $classes[$type] ) )
-		$output = ea_class( $classes[$type], 'first', 0 == $count % $type );
+function ea_column_class( $classes = array(), $current = false ) {
 
-	if( $tablet_type && !empty( $classes[$tablet_type] ) )
-		$output .= ' ' . ea_class( 'tablet-' . $classes[$tablet_type], 'tablet-first', 0 == $count % $tablet_type );
+	if( false === $current )
+		return $classes;
 
-	return $output;
+	$columns = array( 2, 3, 4, 6 );
+	foreach( $columns as $column ) {
+		if( 0 == $current % $column ) {
+
+			$col = 12 / $column;
+			foreach( $classes as $class ) {
+				if( false != strstr( $class, (string) $col ) ) {
+					$classes[] = str_replace( $col, 'first', $class );
+				}
+			}
+		}
+	}
+
+	return $classes;
 }
