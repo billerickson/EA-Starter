@@ -96,7 +96,7 @@ function ea_class( $base_classes, $optional_class, $conditional ) {
 /**
  * Column Classes
  *
- * Adds "-first" classes when apprporiate for clearing float
+ * Adds "-first" classes when appropriate for clearing float
  * @see /assets/scss/partials/layout.scss
  *
  * @param array $classes, bootstrap-style classes, ex: array( 'col-lg-4', 'col-md-6' )
