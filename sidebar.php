@@ -17,7 +17,7 @@ if ( ! in_array( $layout, array( 'content-sidebar', 'sidebar-content' ) ) )
 
 $sidebar = apply_filters( 'ea_sidebar', 'primary-sidebar' );
 $display = is_active_sidebar( $sidebar );
-if ( ! apply_filters( 'ea_display_sidebar', $display ) ))
+if ( ! apply_filters( 'ea_display_sidebar', $display ) )
 	return;
 
 tha_sidebars_before();
