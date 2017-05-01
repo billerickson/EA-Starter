@@ -54,4 +54,4 @@ function ea_landing_site_inner_markup_open() {
  function ea_site_inner_markup_close() {
  	echo '</div>';
  }
- add_action( 'tha_content_after', 'ea_site_inner_markup_close', 1 );
+ add_action( 'tha_footer_before', 'ea_site_inner_markup_close', 1 );
