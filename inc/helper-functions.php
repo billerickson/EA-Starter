@@ -101,7 +101,7 @@ function ea_class( $base_classes, $optional_class, $conditional ) {
  *
  * @param array $classes, bootstrap-style classes, ex: array( 'col-lg-4', 'col-md-6' )
  * @param int $current, current post in loop
- * @return string $classes
+ * @return array $classes
  */
 function ea_column_class( $classes = array(), $current = false ) {
 
