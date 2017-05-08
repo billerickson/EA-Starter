@@ -1711,22 +1711,18 @@ img.block {
 .site-branding {
   float: left;
   width: 165px; }
-
-h1.site-title,
-p.site-title {
-  margin: 0; }
-
-.site-title a {
-  background-image: url(images/logo@2x.png);
-  background-image: url(images/logo.svg), none;
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: block;
-  height: 69px;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  width: 165px; }
+  .site-branding h1.site-title,
+  .site-branding p.site-title {
+    margin: 0; }
+  .site-branding .site-title a {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    text-indent: -9999em;
+    width: 100%;
+    height: 0;
+    padding-bottom: 41.8181818182%; }
 
 /* Site Navigation
 ---------------------------------------------------------------------------------------------------- */
