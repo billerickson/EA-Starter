@@ -33,6 +33,7 @@ Project structure unity across projects improves engineering efficiency and main
 |- assets/
 |  |- images/ ____________________________ # Theme images
 |  |- fonts/ _____________________________ # Custom/hosted fonts
+|  |- icons/ _____________________________ # Custom icon font (see below)
 |  |- js/
 |    |- src/ _____________________________ # Source JavaScript
 |    |- main.js __________________________ # Concatenated JavaScript
@@ -61,6 +62,7 @@ The `scss` folder is described separately, below to improve readability. It is b
 |-- partials/             # Partials
 |   |-- _base.scss        # imports for all modules + global project variables
 |   |-- _reset.scss       # Reset
+|   |-- _icons.scss       # Icons
 |   |-- _style-guide.scss # Main style guide for the site
 |   ...
 |
@@ -73,6 +75,18 @@ The `scss` folder is described separately, below to improve readability. It is b
 |-- editor-style.scss    # styles that apply only to backend editor
 ```
 
+#### Icon Font
+A custom icon font has been created using [IcoMoon](https://icomoon.io). A demo page showing all available icons is in /assets/icons/demo.html. To use an icon, add the appropriate class to an item (ex: `<i class="icon-facebook"></i>`).
+
+To add additional icons:
+1. Create a free account at [IcoMoon](https://icomoon.io).
+2. Click "Manage Projects" ([screenshot](https://cl.ly/3y242K2j2243)), then click "New Project" at the bottom.
+3. Click "Import Icons" in top left, and upload the file found in `/assets/icons/selection.json`. This will load all the current icons.
+4. Click "Import Icons" and upload new icons. They should be a square, black and white SVG with no borders/outlines. If there's an issue with the file, IcoMoon will let you know. You can find icons at [The Noun Project](https://thenounproject.com/).
+5. Once you've added your new icons, click "Generate Font" in bottom right corner, then click "Download". You'll get an `icomoon.zip` file.
+6. Unzip this file, and rename the resulting directory to `icons`. Replace the `/assets/icons` directory in the repo with your new icons directory.
+7. Copy the contents of `/assets/icons/style.css`, and paste in `/assets/scss/partials/_icons.scss`. Change the relative URL to the font files from `fonts/` to `../icons/fonts/`. This should be relative to the FINAL css file (`/assets/css/main.css`), not the SCSS partial.
+8. Rebuild the site's stylesheet using your preferred tool (CodeKit, Prepos, grunt...).
 
 ### Contribution Workflow
 1. Create an issue for your bug/feature if one doesn't already exist
