@@ -8,6 +8,11 @@
  * @license      GPL-2.0+
  */
 
+/*
+ BEFORE MODIFYING THIS THEME:
+ Please read the instructions here: https://github.com/billerickson/EA-Starter/blob/master/README.md
+*/
+
 require get_template_directory() . '/inc/tha-theme-hooks.php';
 require get_template_directory() . '/inc/wordpress-cleanup.php';
 require get_template_directory() . '/inc/helper-functions.php';
