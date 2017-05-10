@@ -23,7 +23,7 @@ Any theme dependencies on functionality plugins should be built with the use of 
 
 
 #### Code Compiling
-We are using [CodeKit](https://codekitapp.com/) to compile and compress SCSS into minified CSS, and JS into a combined and minified JS file. You can use an alternative tool (ex: grunt) but make sure to configure it to match the file organization below.
+We are using [CodeKit](https://codekitapp.com/) to compile and compress SCSS into minified CSS, and JS into a combined and minified JS file. You can use an alternative tool (ex: [Prepos](https://prepros.io/) or [gulp](http://gulpjs.com/)) but make sure to configure it to match the file organization below.
 
 #### File Organization
 
@@ -33,20 +33,17 @@ Project structure unity across projects improves engineering efficiency and main
 |- assets/
 |  |- images/ ____________________________ # Theme images
 |  |- fonts/ _____________________________ # Custom/hosted fonts
-|  |- icons/ _____________________________ # Custom icon font (see below)
+|  |- icons/ _____________________________ # Icon font (see below)
 |  |- js/
 |    |- src/ _____________________________ # Source JavaScript
-|    |- main.js __________________________ # Concatenated JavaScript
-|    |- main.min.js ______________________ # Minified JavaScript
+|    |- global-min.js ____________________ # Concatenated and Minified JavaScript
 |  |- css/
-|    |- main.css
-|    |- main.min.css
+|    |- main.css _________________________ # Concatenated and Minified CSS
 |    |- editor-style.css
 |  |- scss/ ______________________________ # See below for details
-|- includes/ _____________________________ # PHP classes and files
+|- inc/ __________________________________ # PHP classes and files
+|- partials/ _____________________________ # Template parts
 |- templates/ ____________________________ # Page templates
-|- template-parts/ _______________________ # Template parts
-|- languages/ ____________________________ # Translations
 ```
 
 The `scss` folder is described separately, below to improve readability. It is based on [How to structure a Sass project](http://thesassway.com/beginner/how-to-structure-a-sass-project):
@@ -54,21 +51,19 @@ The `scss` folder is described separately, below to improve readability. It is b
 ```
 |- assets/scss/
 |-- modules/              # Common modules
-|   |-- _all.scss         # Include to get all modules
-|   |-- _utility.scss     # Module name
-|   |-- _colors.scss      # Etc...
+|   |-- _helpers.scss     # Helper mixins
 |   ...
 |
 |-- partials/             # Partials
-|   |-- _base.scss        # imports for all modules + global project variables
+|   |-- _base.scss        # global project variables + import modules and vendors
 |   |-- _reset.scss       # Reset
 |   |-- _icons.scss       # Icons
 |   |-- _style-guide.scss # Main style guide for the site
 |   ...
 |
-|-- vendor/               # CSS or Sass from other projects
-|   |-- _colorpicker.scss
-|   |-- _jquery.ui.core.scss
+|-- vendor/                 # CSS or Sass from other projects
+|   |-- _include-media.scss
+|   |-- _bootstrap.scss     # Note that only some elements of bootstrap are included
 |   ...
 |
 |-- main.scss            # primary Sass file for frontend

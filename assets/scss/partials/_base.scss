@@ -34,6 +34,6 @@ $breakpoints: (
   'sidr_total': $sidr_total,
 );
 
-@import "../vendors/bootstrap"; // Note: Unused CSS parts have been disabled
-@import "../vendors/include-media";
+@import "../vendor/bootstrap"; // Note: Unused CSS parts have been disabled
+@import "../vendor/include-media";
 @import "../modules/helpers";
