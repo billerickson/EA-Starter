@@ -12,12 +12,18 @@ get_header();
 
 tha_content_before();
 
-	$classes = apply_filters( 'ea_site_main_class', array( 'col-md-10', 'col-md-offset-1' ) );
-	echo '<div class="' . implode( ' ', $classes ) . '"><main class="site-main" role="main">';
+	$classes = apply_filters( 'ea_site_main_class', array( 'col-md-12' ) );
+	if( !empty( $classes ) )
+		echo '<div class="' . join( ' ', $classes ) . '">';
+
+	echo '<main class="site-main" role="main">';
 	tha_content_top();
 	tha_content_loop();
 	tha_content_bottom();
-	echo '</main></div>';
+	echo '</main>';
+
+	if( !empty( $classes ) )
+		echo '</div>';
 
 	get_sidebar();
 
