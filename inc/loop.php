@@ -22,11 +22,11 @@ function ea_default_loop() {
 		while ( have_posts() ) : the_post();
 
 			tha_entry_before();
-      if( is_singular() ) {
-				get_template_part( 'partials/content', get_post_type() );
-			} else {
-				get_template_part( 'partials/archive', get_post_type() );
-      }
+
+			$partial = apply_filters( 'ea_loop_partial', is_singular() ? 'content' : 'archive' );
+			$context = apply_filters( 'ea_loop_partial_context', get_post_type() );
+			get_template_part( 'partials/' . $partial, $context );
+
 			tha_entry_after();
 
 		endwhile;
