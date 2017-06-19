@@ -1,3 +1,6 @@
+// @codekit-prepend "jquery.fitvids.js"
+// @codekit-prepend "jquery.sidr.min.js"
+
 jQuery(function($){
 
 	// FitVids
