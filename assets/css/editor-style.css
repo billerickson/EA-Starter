@@ -1521,10 +1521,12 @@ input[type="search"]::-webkit-search-results-button {
     font-size: 14px;
     text-align: center; }
   .wp-caption.alignleft {
+    float: left;
     margin: 0 32px 32px 0; }
   .wp-caption.aligncenter {
     margin: 0 auto 32px; }
   .wp-caption.alignright {
+    float: right;
     margin: 0 0 32px 32px; }
 
 img.alignnone {
