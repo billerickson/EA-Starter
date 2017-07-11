@@ -1,16 +1,16 @@
 <?php
 /**
- * EA Starter
+ * Functions
  *
  * @package      EAStarter
+ * @author       Bill Erickson
  * @since        1.0.0
- * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- */
+**/
 
 /*
  BEFORE MODIFYING THIS THEME:
- Please read the instructions here: https://github.com/billerickson/EA-Starter/blob/master/README.md
+ Please read the instructions here: https://github.com/billerickson/EA-Starter/wiki
 */
 
 require get_template_directory() . '/inc/tha-theme-hooks.php';

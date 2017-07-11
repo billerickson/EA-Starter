@@ -1,11 +1,12 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Singular partial
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package ea
- */
+ * @package      EAStarter
+ * @author       Bill Erickson
+ * @since        1.0.0
+ * @license      GPL-2.0+
+**/
 
 echo '<article class="' . join( ' ', get_post_class() ) . '">';
 

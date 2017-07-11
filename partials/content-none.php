@@ -1,11 +1,12 @@
 <?php
 /**
- * Template part for displaying a message that posts cannot be found.
+ * 404 / No Results partial
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package ea
- */
+ * @package      EAStarter
+ * @author       Bill Erickson
+ * @since        1.0.0
+ * @license      GPL-2.0+
+**/
 
 
 echo '<section class="no-results not-found">';

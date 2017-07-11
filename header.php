@@ -1,12 +1,12 @@
 <?php
 /**
- * EA Starter
+ * Site Header
  *
  * @package      EAStarter
+ * @author       Bill Erickson
  * @since        1.0.0
- * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- */
+**/
 
 echo '<!DOCTYPE html>';
 tha_html_before();

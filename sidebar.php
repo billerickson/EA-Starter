@@ -1,12 +1,12 @@
 <?php
 /**
- * EA Starter
+ * Sidebar
  *
  * @package      EAStarter
+ * @author       Bill Erickson
  * @since        1.0.0
- * @copyright    Copyright (c) 2014, Contributors to EA Genesis Child project
  * @license      GPL-2.0+
- */
+**/
 
 if ( ! function_exists( 'ea_page_layout' ) )
 	return;
