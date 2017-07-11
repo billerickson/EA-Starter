@@ -19,7 +19,7 @@ require get_template_directory() . '/inc/helper-functions.php';
 require get_template_directory() . '/inc/markup.php';
 require get_template_directory() . '/inc/archive.php';
 require get_template_directory() . '/inc/navigation.php';
-require get_template_directory() . '/inc/sidebar-layouts.php';
+//require get_template_directory() . '/inc/sidebar-layouts.php';
 require get_template_directory() . '/inc/loop.php';
 require get_template_directory() . '/inc/tinymce.php';
 
