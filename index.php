@@ -29,5 +29,4 @@ tha_content_before();
 
 tha_content_after();
 
-get_sidebar();
 get_footer();
