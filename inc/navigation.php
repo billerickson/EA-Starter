@@ -37,7 +37,7 @@ function ea_mobile_menu() {
     echo '<div id="sidr-mobile-menu" class="sidr right">';
       echo '<a class="sidr-menu-close" href="#">X</a>';
       wp_nav_menu( array( 'theme_location' => 'mobile' ) );
-    echo '</div></div>';
+    echo '</div>';
   }
 }
 add_action( 'wp_footer', 'ea_mobile_menu' );
