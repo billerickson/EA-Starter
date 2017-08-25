@@ -38,3 +38,4 @@ echo '<div class="site-container">';
 		echo '</div></div>';
 	echo '</div></header>';
 	tha_header_after();
+	echo '<div class="site-inner" id="main-content">';

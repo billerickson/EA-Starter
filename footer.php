@@ -8,6 +8,7 @@
  * @license      GPL-2.0+
 **/
 
+echo '</div>'; // .site-inner
 tha_footer_before();
 echo '<footer class="site-footer" role="contentinfo"><div class="wrap">';
 echo '<div class="row"><div class="col-md-12">';

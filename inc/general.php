@@ -19,6 +19,11 @@ function ea_archive_body_classes( $classes ) {
         $classes[] = 'archive';
     }
 
+	// Standard layout (content less wide then header/footer)
+	$standard = apply_filters( 'ea_standard_body_class', is_singular() || is_page() );
+	if( $standard )
+		$classes[] = 'layout-standard';
+
 	return $classes;
 }
 add_filter( 'body_class', 'ea_archive_body_classes' );
