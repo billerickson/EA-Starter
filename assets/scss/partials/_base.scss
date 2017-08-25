@@ -42,7 +42,6 @@ $grid-breakpoints: (
 	md: $screen-md,
 	lg: $screen-lg,
 	xl: $screen-xl,
-	xxl: 1201px,
 );
 
 @import "../vendor/bootstrap"; // Note: Unused CSS parts have been disabled
