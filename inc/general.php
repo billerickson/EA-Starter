@@ -1,6 +1,6 @@
 <?php
 /**
- * Archive Functions
+ * General Functions
  *
  * @package      EAStarter
  * @author       Bill Erickson
@@ -50,29 +50,3 @@ function ea_archive_header() {
 
 }
 add_action( 'tha_content_while_before', 'ea_archive_header' );
-
-/**
- * Archive Title, remove prefix
- *
- */
-function ea_archive_title_remove_prefix( $title ) {
-	$title_pieces = explode( ': ', $title );
-	if( count( $title_pieces ) > 1 ) {
-		unset( $title_pieces[0] );
-		$title = join( ': ', $title_pieces );
-	}
-	return $title;
-}
-add_filter( 'get_the_archive_title', 'ea_archive_title_remove_prefix' );
-
-/**
- * Archive Navigation
- *
- */
-function ea_archive_navigation() {
-
-	if( ! is_singular() )
-		the_posts_navigation();
-
-}
-add_action( 'tha_content_while_after', 'ea_archive_navigation' );

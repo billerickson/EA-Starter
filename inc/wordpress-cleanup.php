@@ -103,6 +103,20 @@ function ea_remove_custom_fields_metabox() {
 add_action( 'admin_menu' , 'ea_remove_custom_fields_metabox' );
 
 /**
+ * Archive Title, remove prefix
+ *
+ */
+function ea_archive_title_remove_prefix( $title ) {
+	$title_pieces = explode( ': ', $title );
+	if( count( $title_pieces ) > 1 ) {
+		unset( $title_pieces[0] );
+		$title = join( ': ', $title_pieces );
+	}
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'ea_archive_title_remove_prefix' );
+
+/**
  * Excerpt More
  *
  */

@@ -1237,6 +1237,18 @@ table th[class*="col-"] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-angle-down:before {
+  content: "\e902"; }
+
+.icon-angle-left:before {
+  content: "\e903"; }
+
+.icon-angle-right:before {
+  content: "\e904"; }
+
+.icon-angle-up:before {
+  content: "\e905"; }
+
 .icon-close:before {
   content: "\e900"; }
 
