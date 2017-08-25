@@ -1318,6 +1318,20 @@ img.wp-more-tag {
   border-top: 1px solid #ccc;
   margin: 0 0 32px; }
 
+/* Extra Paragraph Styles
+--------------------------------------------- */
+p.large {
+  font-size: base; }
+  @media (min-width: 1024px) {
+    p.large {
+      font-size: 20px; } }
+
+p.small {
+  font-size: 12px; }
+
+p.extra-margin {
+  margin-bottom: calc( 32px * 2); }
+
 /* List Items
 --------------------------------------------- */
 ol {
