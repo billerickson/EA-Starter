@@ -21,18 +21,18 @@ $bc_pinterest: #bd081c;
 $bc_email: $grey_2;
 $bc_print: $grey_2;
 
-// Breakpoints
-$screen-xs: 0;
-$screen-sm: 576px;
-$screen-md: 768px;
-$screen-lg: 1024px;
-$screen-xl: 1200px;
-$max-width: 1356px;
-
 // Sidr
 $sidr_width: 345px;
 $sidr_close: 44px;
 $sidr_total: $sidr_width + $sidr_close;
+
+// Breakpoints
+$screen-xs: 0;
+$screen-sm: $sidr_total;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1200px;
+$max-width: 1356px;
 
 // Bootstrap
 $grid-gutter-width: 30px;
@@ -41,20 +41,10 @@ $grid-breakpoints: (
 	sm: $screen-sm,
 	md: $screen-md,
 	lg: $screen-lg,
-	xl: $screen-xl
-);
-
-// Include Media
-$breakpoints: (
-  'mobile': $screen-sm,
-  'tablet': $screen-md,
-  'medium': $screen-md,
-  'large' : $screen-lg,
-  'xl'    : $screen-xl,
-  'max'   : $max-width,
-  'sidr_total': $sidr_total,
+	xl: $screen-xl,
+	xxl: 1201px,
 );
 
 @import "../vendor/bootstrap"; // Note: Unused CSS parts have been disabled
-@import "../vendor/include-media";
+//@import "../vendor/_include-media";
 @import "../modules/helpers";

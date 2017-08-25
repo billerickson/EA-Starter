@@ -4,19 +4,19 @@
     max-width: $max_width;
     margin: 0 auto;
 
-    @include media(">=tablet", "<large") {
+	@include media-breakpoint-between(md, lg) {
         .col-sm-first {
             clear: both;
         }
     }
 
-    @include media(">=large", "<xl") {
+	@include media-breakpoint-between(lg, xl ) {
         .col-md-first {
             clear: both;
         }
     }
 
-    @include media(">=xl") {
+	@include media-breakpoint-up(xl) {
         .col-lg-first {
             clear: both;
         }
@@ -35,7 +35,7 @@
 		& > .hentry {
 			@include make-col-ready;
 			@include make-col(12);
-			@include media(">=large") {
+			@include media-breakpoint-up(lg) {
 				@include make-col(10);
 			}
 		}

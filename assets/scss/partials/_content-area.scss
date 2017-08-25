@@ -3,7 +3,7 @@
 
 .site-inner {
 	padding: 20px 0;
-	@include media(">=medium") {
+	@include media-breakpoint-up(md) {
 		padding: 40px 0;
 	}
 }
