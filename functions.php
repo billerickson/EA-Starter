@@ -35,6 +35,11 @@ function ea_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Move jQuery to footer
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+	wp_enqueue_script( 'jquery' );
 }
 add_action( 'wp_enqueue_scripts', 'ea_scripts' );
 
