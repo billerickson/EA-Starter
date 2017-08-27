@@ -92,19 +92,19 @@
     }
 
     @if( $tablet ) {
-        @include media(">=tablet") {
+        @include media-breakpoint-up(md) {
             font-size: $tablet;
         }
     }
 
     @if( $medium ) {
-        @include media(">=medium") {
+        @include media-breakpoint-up(lg) {
             font-size: $medium;
         }
     }
 
     @if( $large ) {
-        @include media(">=large") {
+        @include media-breakpoint-up(xl) {
             font-size: $large;
         }
     }

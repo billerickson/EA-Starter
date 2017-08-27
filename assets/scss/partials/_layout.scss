@@ -1,24 +1,43 @@
 /* Add left/right padding to these containers */
 .wrap {
-    @include container-fixed( $grid-gutter-width );
+    @include make-container;
     max-width: $max_width;
     margin: 0 auto;
 
-    @include media(">=tablet", "<medium") {
+	@include media-breakpoint-between(md, lg) {
         .col-sm-first {
             clear: both;
         }
     }
 
-    @include media(">=medium", "<large") {
+	@include media-breakpoint-between(lg, xl ) {
         .col-md-first {
             clear: both;
         }
     }
 
-    @include media(">=large") {
+	@include media-breakpoint-up(xl) {
         .col-lg-first {
             clear: both;
         }
     }
+}
+
+/* Single
+--------------------------------------------- */
+
+.layout-standard {
+
+	.site-main {
+		@include make-row;
+		justify-content: center;
+
+		& > .hentry {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(lg) {
+				@include make-col(10);
+			}
+		}
+	}
 }

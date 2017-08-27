@@ -3,28 +3,8 @@
 
 .site-inner {
 	padding: 20px 0;
-	@include media(">=medium") {
+	@include media-breakpoint-up(md) {
 		padding: 40px 0;
-	}
-}
-
-/* Single
---------------------------------------------- */
-
-.layout-standard {
-
-	.site-main {
-		@include make-row;
-
-		.entry-header,
-		.entry-content,
-		.entry-footer,
-		.comments-area,
-		.post-navigation {
-			@include make-sm-column(12);
-			@include make-lg-column(10);
-			@include make-lg-column-offset(1);
-		}
 	}
 }
 

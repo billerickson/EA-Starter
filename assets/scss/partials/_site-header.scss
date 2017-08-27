@@ -31,13 +31,13 @@
 /* Admin Bar
 --------------------------------------------- */
 
-@include media(">tablet") {
+@include media-breakpoint-up(md) {
   .admin-bar .site-container {
     padding-top: 32px;
   }
 }
 
-@include media("<=tablet") {
+@include media-breakpoint-down(sm) {
   #wpadminbar {
     display: none !important;
   }
@@ -49,7 +49,7 @@
 .nav-primary {
 	float: right;
 	width: auto;
-	@include media("<tablet") {
+	@include media-breakpoint-down(sm) {
 		display: none;
 	}
 }
