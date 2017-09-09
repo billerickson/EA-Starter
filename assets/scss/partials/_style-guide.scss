@@ -194,27 +194,27 @@ h6 {
 }
 
 h1 {
-    @include font-sizes( 40px, 36px, 30px );
+    @include font-sizes( 30px, 36px, 40px );
 }
 
 h2 {
-    @include font-sizes( 36px, 30px, 24px );
+    @include font-sizes( 24px, 30px, 36px );
 }
 
 h3 {
-    @include font-sizes( 30px, 24px, 20px );
+    @include font-sizes( 20px, 24px, 30px );
 }
 
 h4 {
-    @include font-sizes( 24px, 20px, 18px );
+    @include font-sizes( 18px, 20px, 24px );
 }
 
 h5 {
-    @include font-sizes( 20px, 18px, 16px );
+    @include font-sizes( 16px, 18px, 20px );
 }
 
 h6 {
-    @include font-sizes( 18px, 16px );
+    @include font-sizes( 16px, 18px );
 }
 
 /* Objects

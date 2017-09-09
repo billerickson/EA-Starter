@@ -88,7 +88,7 @@
 @mixin font-sizes( $base: null, $tablet: null, $medium: null, $large: null ) {
 
     @if ( $base ) {
-        font-size: base;
+        font-size: $base;
     }
 
     @if( $tablet ) {
