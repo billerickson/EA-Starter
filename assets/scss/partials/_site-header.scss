@@ -46,6 +46,12 @@
 /* Site Navigation
 --------------------------------------------- */
 
+.mobile-menu-toggle {
+	@include media(">=tablet") {
+		display: none;
+	}
+}
+
 .nav-primary {
 	float: right;
 	width: auto;

@@ -22,7 +22,7 @@ function ea_header_navigation() {
 
   if( has_nav_menu( 'mobile' ) ) {
     echo '<div class="nav-mobile">';
-      echo '<a class="mobile-menu-toggle" href="#"><span class="label">menu</span><i class="icon-menu"></i></a>';
+      echo '<a class="mobile-menu-toggle" href="#"><i class="icon-menu"></i></a>';
     echo '</div>';
   }
 }
@@ -35,7 +35,7 @@ add_action( 'tha_header_bottom', 'ea_header_navigation' );
 function ea_mobile_menu() {
   if( has_nav_menu( 'mobile' ) ) {
     echo '<div id="sidr-mobile-menu" class="sidr right">';
-      echo '<a class="sidr-menu-close" href="#">X</a>';
+      echo '<a class="sidr-menu-close" href="#"><i class="icon-close"></i></a>';
       wp_nav_menu( array( 'theme_location' => 'mobile' ) );
     echo '</div>';
   }
