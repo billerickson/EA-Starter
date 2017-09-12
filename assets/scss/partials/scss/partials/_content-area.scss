@@ -1,0 +1,250 @@
+/* Content Area
+---------------------------------------------------------------------------------------------------- */
+
+.site-inner {
+	padding: 32px 0;
+	@include media-breakpoint-up(md) {
+		padding: 64px 0;
+	}
+}
+
+/* Entries
+--------------------------------------------- */
+
+.hentry {
+	margin-bottom: 40px;
+}
+
+.entry-header {
+
+	h6 {
+		text-align: center;
+	}
+}
+
+.entry-content .attachment a,
+.entry-content .gallery a {
+	border: none;
+}
+
+.entry-footer {
+	font-size: 18px;
+
+	p {
+		margin-bottom: #{$base-margin / 2};
+	}
+}
+
+.entry-date {
+	font-size: 18px;
+	text-align: center;
+
+	&::after {
+		@include small-divider;
+	}
+}
+
+/* Singular
+--------------------------------------------- */
+
+.single .entry-header {
+	padding-bottom: 16px;
+	@include media-breakpoint-up(md) {
+		padding-bottom: 32px;
+	}
+
+	h1 {
+		font-size: 40px;
+		@include media(">=tablet") {
+			font-size: 52px;
+		}
+	}
+}
+
+.page .entry-header {
+	padding-bottom: 16px;
+	@include media-breakpoint-up(lg) {
+		padding-bottom: 48px;
+	}
+}
+
+/* Entry Navigation
+--------------------------------------------- */
+
+.posts-navigation {
+	overflow: hidden;
+	width: 100%;
+
+	@include media("<tablet") {
+
+		.nav-previous,
+		.nav-next {
+			text-align: center;
+			margin-bottom: 16px;
+		}
+	}
+
+	@include media(">=tablet") {
+
+		.nav-previous {
+			float: right;
+		}
+
+		.nav-next {
+			float: left;
+		}
+	}
+
+	.nav-links > div:only-child {
+		float: none;
+		text-align: center;
+	}
+}
+
+
+/* Comments
+--------------------------------------------- */
+
+.comments-area {
+
+	.comment-list {
+
+		li {
+			border-top: 1px solid $border-color;
+			list-style-type: none;
+			padding: 16px 0 0;
+		}
+	}
+
+	.comment-respond {
+
+		input[type="email"],
+		input[type="text"],
+		input[type="url"] {
+			width: 50%
+		}
+
+		label {
+			display: block;
+			margin-right: 12px;
+
+			&[for="subscribe"] {
+				display: inline-block;
+			}
+		}
+
+	}
+}
+
+/* Socials
+--------------------------------------------- */
+
+p.socials {
+	font-size: 16px;
+	line-height: 1;
+
+	a {
+		color: $white;
+		text-decoration: none;
+		@include margin-no-edge( 0 8px );
+
+		&:hover,
+		&:active {
+			color: $orange_2;
+		}
+	}
+}
+
+/* Page CTA
+--------------------------------------------- */
+
+.page-cta {
+	text-align: center;
+
+	.share-wrapper {
+		position: relative;
+		margin: 20px 0 40px;
+
+		&.active .ea-share-count-wrap.popup {
+			display: block;
+		}
+
+		@include media(">=tablet") {
+			display: inline-block;
+			margin: 0 0 0 64px;
+		}
+	}
+
+}
+
+/* EA Share Count
+--------------------------------------------- */
+
+.ea-share-count-wrap {
+
+	&.popup {
+		background: $grey_2;
+		display: none;
+		width: 224px;
+		height: 44px;
+		margin: 0;
+		padding: 4px 4px 0;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include media("<tablet") {
+			bottom: -58px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: -7px;
+				left: 50%;
+				margin-left: -7.5px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 6.5px 7px 6.5px;
+				border-color: transparent transparent $grey_2 transparent;
+			}
+		}
+
+		@include media(">=tablet") {
+			top: -58px;
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: -7px;
+				left: 50%;
+				margin-left: -7.5px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 7px 6.5px 0 6.5px;
+				border-color: $grey_2 transparent transparent transparent;
+			}
+		}
+	}
+
+	.ea-share-count-button.style-fancy {
+		border-radius: 0;
+		height: 36px;
+		line-height: 36px;
+		margin: 0;
+
+		i {
+			font-size: 16px;
+			height: 36px;
+			line-height: 36px;
+			width: 36px;
+			padding: 0;
+			text-align: center;
+		}
+
+		.ea-share-count-label {
+			display: none;
+		}
+	}
+}

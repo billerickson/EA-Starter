@@ -1,0 +1,294 @@
+/* Defaults
+---------------------------------------------------------------------------------------------------- */
+
+/* Box Sizing
+--------------------------------------------- */
+
+html,
+input[type="search"] {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Typographical Elements
+--------------------------------------------- */
+
+body {
+	background: $beige;
+	color: $base-color;
+	font-family: $base-font-family;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.6;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 24px;
+	}
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.nav-menu .sub-menu,
+.sidr li.menu-item-has-children > .submenu-toggle {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition:    all 0.1s ease-in-out;
+	-ms-transition:     all 0.1s ease-in-out;
+	transition:         all 0.1s ease-in-out;
+}
+
+a {
+	color: $highlight;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: $orange_2;
+}
+
+p {
+	margin: 0 0 $base-margin;
+	padding: 0;
+}
+
+strong {
+	font-weight: 600;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+blockquote {
+	font-size: 26px;
+	font-style: italic;
+	font-weight: 600;
+	line-height: 1.2;
+	margin: 0 auto $base-margin;
+	padding: 0;
+	text-align: center;
+	max-width: 768px;
+	width: 100%;
+
+	&::before,
+	&::after {
+		@include small-divider;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 30px;
+	}
+
+	cite {
+		display: block;
+		font-size: 18px;
+		font-weight: 500;
+		margin-top: 17px;
+
+		&:before {
+			content: '— ';
+		}
+	}
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+code,
+pre {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-size: 12px;
+}
+
+code {
+	padding: 2px 4px;
+	white-space: nowrap;
+}
+
+pre {
+	display: block;
+	padding: 9.5px;
+	margin: 0 0 10px;
+	line-height: 18px;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+}
+
+pre code {
+	padding: 0;
+	color: inherit;
+	white-space: pre;
+	white-space: pre-wrap;
+	background-color: transparent;
+	border: 0;
+}
+
+cite {
+	font-style: normal;
+}
+
+hr,
+.clear-line,
+img.wp-more-tag {
+	border: none;
+	@include small-divider;
+	margin: $base-margin auto;
+}
+
+/* Extra Paragraph Styles
+--------------------------------------------- */
+
+p {
+
+	&.large {
+    	@include font-sizes( 26px, null, 32px );
+	}
+
+	&.small {
+	    font-size: 12px;
+	}
+
+	&.extra-margin {
+		margin-bottom: #{$base-margin * 2};
+	}
+}
+
+/* List Items
+--------------------------------------------- */
+
+ol {
+    margin: 0 0 $base-margin $base-margin;
+
+    li {
+        list-style-type: decimal;
+		padding-left: $base-margin / 4;
+    }
+
+    ol {
+        margin-bottom: 0;
+    }
+}
+
+ul {
+    margin: 0 0 $base-margin $base-margin;
+
+    li {
+        list-style-type: disc;
+		padding-left: $base-margin / 4;
+    }
+
+    ul {
+        margin-bottom: 0;
+    }
+}
+
+/* Headings
+--------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $base-color;
+	line-height: 1.2;
+	margin: 0;
+	margin-bottom: $base-margin / 2;
+	padding: 0;
+}
+
+h1 {
+    @include font-sizes( 40px, null, 52px );
+	font-weight: 500;
+
+	&.entry-title {
+		@include font-sizes( 52px, 52px, 72px, 100px );
+		letter-spacing: -.02em;
+		line-height: 1;
+		text-align: center;
+
+		&::after {
+			@include small-divider;
+		}
+	}
+}
+
+h2 {
+    @include font-sizes( 32px, null, 40px );
+	font-weight: 400;
+
+	&.has-divider::after {
+		@include small-divider;
+	}
+}
+
+h3 {
+    @include font-sizes( 26px, null, 32px );
+	font-weight: 400;
+}
+
+h4 {
+    @include font-sizes( 26px, null, 32px );
+	font-weight: 600;
+	font-style: italic;
+}
+
+h5 {
+    @include font-sizes( 24px, null, 26px );
+	font-weight: 400;
+	font-style: italic;
+}
+
+h6 {
+    @include font-sizes( 18px, null, 24px );
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.125em;
+	text-transform: uppercase;
+}
+
+/* Objects
+--------------------------------------------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+/* Visibility
+--------------------------------------------- */
+
+@include media("<tablet") {
+	.mobile-hide {
+		display: none;
+	}
+}
+
+@include media(">=tablet") {
+	.mobile-show {
+		display: none;
+	}
+}

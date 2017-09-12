@@ -6,7 +6,7 @@
  * Link: http://www.billerickson.net/column-class-generator/
 --------------------------------------------- */
 
-@include media-breakpoint-up(md) {
+@include media(">=tablet") {
 
 	.five-sixths,
 	.four-sixths,

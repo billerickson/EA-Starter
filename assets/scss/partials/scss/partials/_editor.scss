@@ -1,0 +1,31 @@
+body {
+	background: $white;
+    padding: 20px;
+}
+
+ul,
+ol {
+  margin: 0 0 30px 30px;
+}
+
+.feature-card {
+	border: 1px solid $grey_1;
+}
+
+div.mobile-show {
+	border: 1px solid $grey_2;
+	display: block;
+	margin-bottom: $base-margin;
+	opacity: .5;
+
+	&::before {
+		content: 'Only visible on mobile';
+		display: block;
+		font-family: 'Lato', sans-serif;
+		font-size: 12px;
+		letter-spacing: 1px;
+		text-align: center;
+		text-transform: uppercase;
+
+	}
+}

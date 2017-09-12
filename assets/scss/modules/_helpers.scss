@@ -60,6 +60,17 @@
 
 }
 
+/**
+ * Clearfix
+ *
+ */
+@mixin clearfix() {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
 
 /**
  * Icon Font
@@ -92,19 +103,19 @@
     }
 
     @if( $tablet ) {
-        @include media-breakpoint-up(md) {
+        @include media(">=tablet") {
             font-size: $tablet;
         }
     }
 
     @if( $medium ) {
-        @include media-breakpoint-up(lg) {
+        @include media(">=medium") {
             font-size: $medium;
         }
     }
 
     @if( $large ) {
-        @include media-breakpoint-up(xl) {
+        @include media(">=desktop") {
             font-size: $large;
         }
     }

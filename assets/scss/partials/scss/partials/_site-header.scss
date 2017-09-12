@@ -1,0 +1,289 @@
+/* Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	@include clearfix;
+	background: $white;
+	box-shadow: 0 2px 6px 0 rgba( $black, .3 );
+	position: relative;
+	width: 100%;
+
+	.wrap {
+		max-width: none;
+		padding: 0 8px;
+
+		@include media(">medium") {
+			padding: 0 $grid-gutter-width;
+		}
+	}
+
+	.sidr-open & {
+		z-index: 999999;
+	}
+}
+
+.site-branding {
+	float: left;
+
+	.site-title {
+		color: $base-color;
+		display: block;
+		float: left;
+		font-family: 'Lato', sans-serif;
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 3px;
+		line-height: 16px;
+		padding: 16px 0;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			color: $grey_4;
+		}
+
+		@include media(">=tablet") {
+			font-size: 16px;
+		}
+
+		.large {
+			display: block;
+		}
+
+		.small {
+			display: none;
+		}
+	}
+
+	.logo {
+		background: url(../images/bombeck-head.png) no-repeat center center;
+		background-size: contain;
+		display: block;
+		float: left;
+		margin: 4px 7px 4px 0;
+		width: 58px;
+		height: 40px;
+		position: relative;
+		z-index: 99;
+
+		@include media("<small") {
+			display: none;
+		}
+	}
+
+	@include media(">medium") {
+
+		.site-title {
+			padding: 16px 0 12px;
+
+			.large {
+				font-size: 24px;
+				padding: 4px 0;
+			}
+
+			.small {
+				display: block;
+				font-size: 14px;
+			}
+		}
+
+		.logo {
+			background: url(../images/logo@2x.png) no-repeat center center;
+			background-size: contain;
+			margin: 16px 0 0 0;
+			margin-bottom: -118px;
+			width: 100px;
+			height: 186px;
+
+			@include media(">#{$max-width + 172px}") {
+				width: 172px;
+				height: 320px;
+				margin-bottom: -246px;
+			}
+		}
+	}
+
+}
+
+/* Admin Bar
+--------------------------------------------- */
+
+@include media-breakpoint-up(md) {
+  .admin-bar .site-container {
+    padding-top: 32px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #wpadminbar {
+    display: none !important;
+  }
+}
+
+/* Site Navigation
+--------------------------------------------- */
+
+.mobile-menu-toggle {
+	background: $orange_1;
+	border-radius: 50%;
+	color: $white;
+	display: block;
+	font-size: 16px;
+	float: right;
+	line-height: 34px;
+	margin-top: 8px;
+	text-align: center;
+	width: 32px;
+	height: 32px;
+	text-decoration: none;
+
+	@include media-breakpoint-up(lg) {
+		display: none;
+	}
+
+	&:before {
+		@include icon-font;
+		content: "\e904";
+
+		.sidr-open & {
+			content: "\e901";
+		}
+	}
+
+	&:hover,
+	&:active {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+.nav-primary {
+	float: right;
+	padding-top: 32px;
+	width: auto;
+	@include media-breakpoint-down(md) {
+		display: none;
+	}
+
+	.menu-item.home {
+		display: none;
+	}
+}
+
+.nav-menu {
+	font-family: 'Lato', sans-serif;
+
+	ul {
+		clear: both;
+		line-height: 1;
+		margin: 0;
+		width: 100%;
+
+		li {
+			padding: 0;
+		}
+	}
+
+	.menu > li {
+		@include margin-no-edge( 0 13px );
+	}
+
+	.menu-item {
+		float: left;
+		list-style: none;
+
+		a {
+			border: none;
+			color: $base-color;
+			display: block;
+			font-size: 14px;
+			font-weight: 700;
+			letter-spacing: .07em;
+			line-height: 1.8;
+			position: relative;
+			text-transform: uppercase;
+			text-decoration: none;
+
+		}
+
+		&:hover > a {
+			color: $orange_2;
+		}
+
+		&:hover {
+			position: static;
+
+			& > .sub-menu {
+				left: auto;
+				opacity: 1;
+			}
+		}
+	}
+
+	.sub-menu {
+		background: $highlight;
+		left: -9999px;
+		opacity: 0;
+		padding: 10px 0;
+		position: absolute;
+		width: 250px;
+		z-index: 99;
+
+		a {
+			background: transparent;
+			color: $white;
+			padding: 8px 20px;
+			position: relative;
+			width: 250px;
+		}
+
+		.menu-item:hover > a,
+		.current-menu-item > a {
+			color: $white;
+		}
+
+		.sub-menu {
+			margin: -54px 0 0 199px;
+		}
+	}
+}
+
+/* Page Header
+---------------------------------------------------------------------------------------------------- */
+
+.page-header {
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	height: 52vw;
+	min-height: 375px;
+	max-height: 750px;
+	display: flex;
+	align-items: center;
+
+	&::before {
+		@include block-cover;
+		background: rgba( $black, .4 );
+		z-index: 1;
+	}
+
+	.wrap {
+		position: relative;
+		z-index: 2;
+	}
+
+	h1 {
+		color: $white;
+		margin: 0;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	h6 {
+		color: $white;
+		text-align: center;
+	}
+}

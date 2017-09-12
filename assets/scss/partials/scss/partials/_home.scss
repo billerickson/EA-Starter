@@ -1,0 +1,70 @@
+/* Home
+---------------------------------------------------------------------------------------------------- */
+
+.home {
+
+	.site-header {
+		background: transparent;
+		box-shadow: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 99;
+
+		.site-title {
+			display: none;
+		}
+
+		@include media("<=medium") {
+			z-index: 999999;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+
+		&.admin-bar .site-header {
+			top: 32px;
+		}
+	}
+
+	@include media("<=medium") {
+
+		.site-header .logo {
+			display: none;
+		}
+	}
+
+	.nav-menu .menu-item a {
+		color: $white;
+	}
+
+	.nav-menu .menu-item:hover a {
+		color: $orange_2;
+	}
+
+	.page-header {
+		height: 62.5vw;
+		min-height: 560px;
+		max-height: 900px;
+		display: block;
+
+		.wrap {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+
+			@include media(">large") {
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+
+	.feature-card {
+		@include media(">medium") {
+			margin-bottom: #{$base-margin * 2};
+		}
+	}
+
+}

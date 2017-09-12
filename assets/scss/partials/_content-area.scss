@@ -3,7 +3,7 @@
 
 .site-inner {
 	padding: 20px 0;
-	@include media-breakpoint-up(md) {
+	@include media(">=tablet") {
 		padding: 40px 0;
 	}
 }

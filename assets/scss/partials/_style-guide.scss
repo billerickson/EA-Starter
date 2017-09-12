@@ -132,6 +132,10 @@ img.wp-more-tag {
 	margin: 0 0 $base-margin;
 }
 
+.clearfix {
+	@include clearfix;
+}
+
 /* Extra Paragraph Styles
 --------------------------------------------- */
 
