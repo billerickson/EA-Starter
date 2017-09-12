@@ -21,11 +21,19 @@ if ( ! apply_filters( 'ea_display_sidebar', $display ) )
 	return;
 
 tha_sidebars_before();
-$classes = apply_filters( 'ea_sidebar_class', array( 'col-md-3' ) );
-echo '<div class="' . join( ' ', $classes ) . '"><aside class="sidebar-primary" role="complementary">';
+
+$classes = apply_filters( 'ea_sidebar_class', array() );
+if( !empty( $classes ) )
+	echo '<div class="' . join( ' ', $classes ) . '">';
+
+echo '<aside class="sidebar-primary" role="complementary">';
 	tha_sidebar_top();
 	if ( is_active_sidebar( $sidebar ) )
 		dynamic_sidebar( $sidebar );
 	tha_sidebar_bottom();
-echo '</aside></div>';
+echo '</aside>';
+
+if( !empty( $classes ) )
+	echo '</div>';
+	
 tha_sidebars_after();

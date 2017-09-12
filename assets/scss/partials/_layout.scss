@@ -2,24 +2,9 @@
 .wrap {
     max-width: map-get( $breakpoints, 'desktop' );
     margin: 0 auto;
-
-	@include media(">=small", "<medium") {
-        .col-sm-first {
-            clear: both;
-        }
-    }
-
-	@include media(">=medium", "<large") {
-        .col-md-first {
-            clear: both;
-        }
-    }
-
-	@include media(">=large") {
-        .col-lg-first {
-            clear: both;
-        }
-    }
+	padding-left:  ($grid-gutter-width / 2);
+	padding-right: ($grid-gutter-width / 2);
+	@include clearfix;
 }
 
 /* Single

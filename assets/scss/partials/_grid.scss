@@ -47,3 +47,22 @@
 @include media(">=large") {
   @include make-grid(lg);
 }
+
+// Clear floats
+@include media(">=small", "<medium") {
+    .col-sm-first {
+        clear: both;
+    }
+}
+
+@include media(">=medium", "<large") {
+    .col-md-first {
+        clear: both;
+    }
+}
+
+@include media(">=large") {
+    .col-lg-first {
+        clear: both;
+    }
+}

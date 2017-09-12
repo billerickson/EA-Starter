@@ -74,19 +74,41 @@ add_filter( 'body_class', 'ea_layout_body_class', 5 );
  	return sanitize_title_with_dashes( $layout );
  }
 
- /**
-  * Content/Sidebar Layout, Site Main Class
-  *
-  */
- function ea_content_sidebar_main_class( $classes ) {
-     if( 'full-width-content' !== ea_page_layout() ) {
-        $classes = array( 'col-md-9' );
-        if( 'sidebar-content' == ea_page_layout() )
-            $classes[] = 'col-md-push-3';
-    }
-    return $classes;
- }
- add_filter( 'ea_site_main_class', 'ea_content_sidebar_main_class' );
+/**
+ * Site Main open
+ *
+ */
+function ea_site_main_open() {
+
+	if( 'full-width-content' == ea_page_layout() )
+		return;
+
+	$classes = array( 'site-main-wrap', 'col-md-9' );
+	if( 'sidebar-content' == ea_page_layout() )
+		$classes[] = 'col-md-push-3';
+
+	echo '<div class="row"><div class="' . join( ' ', $classes ) . '">';
+
+}
+add_action( 'tha_content_wrap_before', 'ea_site_main_open' );
+
+/**
+ * Site Main close
+ *
+ */
+function ea_site_main_close() {
+
+	if( 'full-width-content' == ea_page_layout() )
+		return;
+
+	echo '</div>'; // .site-main-wrap
+
+	get_sidebar();
+
+	echo '</div>'; // .row
+
+}
+add_action( 'tha_content_wrap_after', 'ea_site_main_close' );
 
  /**
   * Sidebar classes

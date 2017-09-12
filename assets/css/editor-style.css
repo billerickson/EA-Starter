@@ -450,7 +450,8 @@ body {
   font-family: sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.6; }
+  line-height: 1.6;
+  margin: 0; }
 
 a,
 button,

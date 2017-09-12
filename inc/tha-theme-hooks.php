@@ -159,8 +159,16 @@ function tha_content_before() {
 	do_action( 'tha_content_before' );
 }
 
+function tha_content_wrap_before() {
+	do_action( 'tha_content_wrap_before' );
+}
+
 function tha_content_loop() {
 	do_action( 'tha_content_loop' );
+}
+
+function tha_content_wrap_after() {
+	do_action( 'tha_content_wrap_after' );
 }
 
 function tha_content_after() {
