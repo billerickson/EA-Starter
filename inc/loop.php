@@ -36,7 +36,8 @@ function ea_default_loop() {
 	else :
 
 		tha_entry_before();
-		get_template_part( 'partials/content', 'none' );
+		$context = apply_filters( 'ea_empty_loop_partial_context', 'none' );
+		get_template_part( 'partials/archive', $context );
 		tha_entry_after();
 
 	endif;
