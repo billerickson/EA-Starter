@@ -26,6 +26,11 @@ $sidr_width: 345px;
 $sidr_close: 44px;
 $sidr_total: $sidr_width + $sidr_close;
 
+// Grid
+$grid-max-width: 1200px;
+$grid-columns: 12;
+$grid-gutter-width: 32px;
+
 // Include Media
 $breakpoints: (
   'phone'  : 360px,
@@ -33,11 +38,8 @@ $breakpoints: (
   'tablet' : 768px, // required for include-media
   'medium' : 992px,
   'large'  : 1200px,
-  'desktop': 1200px, // required for include-media
+  'desktop': $grid-max-width + $grid-gutter-width, // required for include-media
 );
-
-$grid-columns: 12;
-$grid-gutter-width: 32px;
 
 @import "../vendor/_include-media";
 @import "../modules/helpers";
