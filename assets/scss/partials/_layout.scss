@@ -15,7 +15,7 @@
 	.site-main {
 		@include make-row;
 
-		& > .hentry {
+		& > .entry {
 			@include make-sm-column(12);
 			@include make-lg-column(10);
 			@include make-lg-column-offset(1);
