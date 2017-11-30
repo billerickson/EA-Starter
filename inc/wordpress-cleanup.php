@@ -65,6 +65,7 @@ function ea_clean_nav_menu_classes( $classes ) {
 		return $classes;
 
 	$allowed_classes = array(
+		'home',
 		'menu-item',
 		'current-menu-item',
 		'current-menu-ancestor',
@@ -88,7 +89,7 @@ function ea_clean_post_classes( $classes ) {
 	$key = array_search( 'hentry', $classes );
 	if( false !== $key )
 		$classes = array_replace( $classes, array( $key => 'entry' ) );
-		
+
     $allowed_classes = array(
   		'entry',
   		'type-' . get_post_type(),
