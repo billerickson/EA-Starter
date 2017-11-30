@@ -26,7 +26,7 @@ function ea_archive_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'ea_archive_body_classes' );
+//add_filter( 'body_class', 'ea_archive_body_classes' );
 
 /**
  * Archive Header
