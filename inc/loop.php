@@ -24,7 +24,7 @@ function ea_default_loop() {
 			tha_entry_before();
 
 			$partial = apply_filters( 'ea_loop_partial', is_singular() ? 'content' : 'archive' );
-			$context = apply_filters( 'ea_loop_partial_context', get_post_type() );
+			$context = apply_filters( 'ea_loop_partial_context', is_search() ? 'search' : get_post_type() );
 			get_template_part( 'partials/' . $partial, $context );
 
 			tha_entry_after();
@@ -44,21 +44,6 @@ function ea_default_loop() {
 
 }
 add_action( 'tha_content_loop', 'ea_default_loop' );
-
-/**
- * Entry Title
- *
- */
-function ea_entry_title() {
-
-    $title = apply_filters( 'ea_entry_title_text', get_the_title() );
-    if( $title && is_singular() ) {
-        echo '<h1 class="entry-title">' . $title . '</h1>';
-    } elseif( $title ) {
-        echo '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $title . '</a></h2>';
-    }
-}
-add_action( 'tha_entry_top', 'ea_entry_title' );
 
 /**
  * Post Comments

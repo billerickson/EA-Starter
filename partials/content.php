@@ -10,11 +10,10 @@
 
 echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
-	if( has_action( 'tha_entry_top' ) ) {
-		echo '<header class="entry-header">';
-			tha_entry_top();
-		echo '</header>';
-	}
+	echo '<header class="entry-header">';
+		echo '<h1 class="entry-title">' . get_the_title() . '</h1>';
+		tha_entry_top();
+	echo '</header>';
 
 	echo '<div class="entry-content">';
 		tha_entry_content_before();
