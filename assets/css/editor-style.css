@@ -750,20 +750,46 @@ input[type="search"]::-webkit-search-results-button {
 
 /* Post Elements
 ---------------------------------------------------------------------------------------------------- */
-/* Icons
+/* Tables
 --------------------------------------------- */
-.icon-font {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+.table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 32px; }
+  .table th,
+  .table td {
+    padding: 8px;
+    vertical-align: top;
+    border-top: 1px solid #ccc; }
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ccc; }
+  .table tbody + tbody {
+    border-top: 2px solid #ccc; }
+
+.table-bordered {
+  border: 1px solid #ccc; }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ccc; }
+  .table-bordered thead th,
+  .table-bordered thead td {
+    border-bottom-width: 2px; }
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #ccc; }
+
+@media (max-width: 767px) {
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar; }
+    .table-responsive.table-bordered {
+      border: 0; } }
 
 /* Gallery
 --------------------------------------------- */
