@@ -139,3 +139,13 @@ function ea_bg_image_style( $image_id = false, $image_size = 'full' ) {
 	if( !empty( $image_id ) )
 		return ' style="background-image: url(' . wp_get_attachment_image_url( $image_id, $image_size ) . ');"';
 }
+
+/**
+ * Get Icon
+ *
+ */
+function ea_icon( $slug = '' ) {
+	$icon_path = get_template_directory() . '/assets/icons/' . $slug . '.svg';
+	if( file_exists( $icon_path ) )
+		return file_get_contents( $icon_path );
+}

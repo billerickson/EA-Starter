@@ -22,7 +22,7 @@ function ea_header_navigation() {
 
   if( has_nav_menu( 'mobile' ) ) {
     echo '<div class="nav-mobile">';
-      echo '<a class="mobile-menu-toggle" href="#"><i class="icon-menu"></i></a>';
+      echo '<a class="mobile-menu-toggle" href="#">' . ea_icon( 'menu' ) . '</a>';
     echo '</div>';
   }
 }
@@ -35,7 +35,7 @@ add_action( 'tha_header_bottom', 'ea_header_navigation' );
 function ea_mobile_menu() {
   if( has_nav_menu( 'mobile' ) ) {
     echo '<div id="sidr-mobile-menu" class="sidr right">';
-      echo '<a class="sidr-menu-close" href="#"><i class="icon-close"></i></a>';
+      echo '<a class="sidr-menu-close" href="#">' . ea_icon( 'close' ) . '</a>';
       wp_nav_menu( array( 'theme_location' => 'mobile' ) );
     echo '</div>';
   }
@@ -71,8 +71,8 @@ function ea_archive_paginated_navigation() {
         'format'    => '?paged=%#%',
         'current'   => max( 1, get_query_var( 'paged' ) ),
         'total'     => $wp_query->max_num_pages,
-		'prev_text' => '<i class="icon-angle-left"></i>',
-		'next_text' => '<i class="icon-angle-right"></i>',
+		'prev_text' => ea_icon( 'angle-left' ),
+		'next_text' => ea_icon( 'angle-right' ),
 	) );
 
 	if( $navigation ) {
