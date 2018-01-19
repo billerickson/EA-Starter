@@ -2,32 +2,25 @@
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "logo nav";
+	padding: 16px;
 }
 
 .title-area {
-	float: left;
+	grid-area: logo;
 	width: 165px;
 
 	h1.site-title,
 	p.site-title {
 		margin: 0;
 	}
+}
 
-/*
-	.site-title a {
-		background-image: url(../images/logo@2x.png);
-	  	background-image: url(../images/logo.svg), none;
-	  	background-size: contain;
-	  	background-repeat: no-repeat;
-		background-position: center center;
-		display: block;
-		text-indent: -9999em;
-		width: 100%;
-		height: 0;
-		padding-bottom: 69px / 165px * 100%;
-	}
-*/
+.nav-primary {
+	grid-area: nav;
+	justify-self: right;
 }
 
 /* Admin Bar
@@ -54,14 +47,6 @@
 	}
 }
 
-.nav-primary {
-	float: right;
-	width: auto;
-	@include media("<tablet") {
-		display: none;
-	}
-}
-
 .nav-menu {
 
 	ul {
@@ -69,10 +54,6 @@
 		line-height: 1;
 		margin: 0;
 		width: 100%;
-	}
-
-	.menu > li:last-child > a {
-		padding-right: 0;
 	}
 
 	.menu-item {

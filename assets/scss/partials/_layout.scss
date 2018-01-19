@@ -1,24 +1,11 @@
-/* Add left/right padding to these containers */
-.wrap {
-    max-width: map-get( $breakpoints, 'desktop' );
-    margin: 0 auto;
-	padding-left:  ($grid-gutter-width / 2);
-	padding-right: ($grid-gutter-width / 2);
-	@include clearfix;
-}
+/* Layout
+---------------------------------------------------------------------------------------------------- */
 
-/* Single
---------------------------------------------- */
-
-.layout-standard {
-
-	.site-main {
-		@include make-row;
-
-		& > .entry {
-			@include make-sm-column(12);
-			@include make-lg-column(10);
-			@include make-lg-column-offset(1);
-		}
-	}
+.entry-header,
+.entry-footer,
+.post-navigation,
+.page-navigation,
+.comments-area {
+	margin: 1.5em auto;
+	max-width: 740px;
 }
