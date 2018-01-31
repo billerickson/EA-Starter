@@ -16,6 +16,25 @@
 }
 
 /**
+ * Center Image
+ *
+ */
+@mixin center-image() {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1;
+	grid-template-rows: 1;
+
+	img {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+/**
  * Block Cover
  * Creates a block that covers the full width/height of parent div. Typically used on a :before pseudo element
  */
