@@ -19,6 +19,7 @@ tha_content_before();
 	tha_content_loop();
 	tha_content_bottom();
 	echo '</main>';
+	get_sidebar();
 	tha_content_wrap_after();
 	echo '</div>';
 tha_content_after();

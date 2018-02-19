@@ -17,7 +17,7 @@ require get_template_directory() . '/inc/tha-theme-hooks.php';
 require get_template_directory() . '/inc/wordpress-cleanup.php';
 require get_template_directory() . '/inc/helper-functions.php';
 require get_template_directory() . '/inc/navigation.php';
-require get_template_directory() . '/inc/sidebar-layouts.php';
+//require get_template_directory() . '/inc/sidebar-layouts.php';
 require get_template_directory() . '/inc/loop.php';
 require get_template_directory() . '/inc/tinymce.php';
 

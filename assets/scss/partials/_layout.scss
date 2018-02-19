@@ -1,24 +1,82 @@
-/* Add left/right padding to these containers */
+/* Wrap
+--------------------------------------------- */
+
 .wrap {
     max-width: map-get( $breakpoints, 'desktop' );
     margin: 0 auto;
-	padding-left:  ($grid-gutter-width / 2);
-	padding-right: ($grid-gutter-width / 2);
+	padding-left:  ($grid-gutter / 2);
+	padding-right: ($grid-gutter / 2);
 	@include clearfix;
 }
 
-/* Single
+
+/* Sidebar Layouts
 --------------------------------------------- */
 
-.layout-standard {
+@include media("<medium") {
 
-	.site-main {
-		@include make-row;
+	.sidebar-primary {
+		max-width: 450px;
+		margin: 0 auto;
+	}
+}
 
-		& > .entry {
-			@include make-sm-column(12);
-			@include make-lg-column(10);
-			@include make-lg-column-offset(1);
+@include media(">=medium") {
+
+	// IE Fallback
+	.sidebar-content,
+	.content-sidebar {
+
+		.site-main {
+			float: left;
+			width: 768px / 1168px * 100%;
+		}
+
+		.sidebar-primary {
+			float: right;
+			width: 335px / 1168px * 100%;
+		}
+	}
+
+	.sidebar-content .site-main {
+		float: right;
+	}
+
+	.sidebar-content .sidebar-primary {
+		float: left;
+	}
+
+	// Modern Browsers
+	@supports( display:grid ) {
+
+		.sidebar-content,
+		.content-sidebar {
+
+			.content-area {
+				display: grid;
+				grid-column-gap: $grid-gutter;
+				grid-template-columns: 1fr 335px;
+				grid-template-areas: "content sidebar";
+			}
+
+			.site-main,
+			.sidebar-primary {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		.sidebar-content .content-area {
+			grid-template-areas: "sidebar content";
+			grid-template-columns: 335px 1fr;
+		}
+
+		.site-main {
+			grid-area: content;
+		}
+
+		.sidebar-primary {
+			grid-area: sidebar;
 		}
 	}
 }
