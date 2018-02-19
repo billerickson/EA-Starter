@@ -115,3 +115,15 @@ function ea_setup() {
 }
 endif;
 add_action( 'after_setup_theme', 'ea_setup' );
+
+/**
+ * Template Hierarchy
+ *
+ */
+function ea_template_hierarchy( $template ) {
+
+	if( is_home() || is_search() )
+		$template = get_query_template( 'archive' );
+	return $template;
+}
+add_filter( 'template_include', 'ea_template_hierarchy' );
