@@ -132,3 +132,18 @@ function ea_excerpt_more() {
 	return '&hellip;';
 }
 add_filter( 'excerpt_more', 'ea_excerpt_more' );
+
+/**
+ * Posts Navigation as Buttons
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/code/previous-next-links-as-button
+ *
+ * @param string $attr, link attributes
+ * @return string
+ */
+function be_pagination_posts_nav( $attr ) {
+	$attr .= ' class="button"';
+	return $attr;
+}
+add_filter( 'previous_posts_link_attributes', 'be_pagination_posts_nav' );
+add_filter( 'next_posts_link_attributes', 'be_pagination_posts_nav' );
