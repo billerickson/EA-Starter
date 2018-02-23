@@ -31,6 +31,23 @@
   line-height: 1.6;
   margin: 0; }
 
+.edit-post-visual-editor .wp-block-button .wp-block-button__link {
+  background: #50BD3A;
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+  -webkit-appearance: none; }
+  .edit-post-visual-editor .wp-block-button .wp-block-button__link:hover {
+    background-color: #3f962e;
+    color: #fff;
+    text-decoration: none; }
+
 .edit-post-visual-editor {
   /* Style Guide
 ---------------------------------------------------------------------------------------------------- */
@@ -48,15 +65,19 @@
 --------------------------------------------- */
   /* Objects
 --------------------------------------------- */
+  /* Alignments
+--------------------------------------------- */
   /* Post Elements
 ---------------------------------------------------------------------------------------------------- */
   /* Tables
 --------------------------------------------- */
   /* Gallery
 --------------------------------------------- */
-  /* Images
---------------------------------------------- */
   /* Screen Reader Text
+--------------------------------------------- */
+  /* Blocks
+---------------------------------------------------------------------------------------------------- */
+  /* Button
 --------------------------------------------- */ }
   .edit-post-visual-editor .editor-block-list__block {
     max-width: 1200px; }
@@ -143,11 +164,29 @@
       margin-top: 17px; }
     .edit-post-visual-editor blockquote p:last-of-type {
       margin-bottom: 0; }
+    .edit-post-visual-editor blockquote.is-large.wp-block-quote {
+      font-size: 22px;
+      margin: 0 0 32px;
+      padding: 0; }
+      @media (min-width: 768px) {
+        .edit-post-visual-editor blockquote.is-large.wp-block-quote {
+          font-size: 26px; } }
+      @media (min-width: 992px) {
+        .edit-post-visual-editor blockquote.is-large.wp-block-quote {
+          font-size: 32px; } }
+      .edit-post-visual-editor blockquote.is-large.wp-block-quote cite {
+        text-align: center; }
+    .edit-post-visual-editor blockquote.wp-block-pullquote {
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #333;
+      padding: 32px 0; }
   .edit-post-visual-editor hr,
+  .edit-post-visual-editor hr.wp-block-separator,
   .edit-post-visual-editor .clear-line,
   .edit-post-visual-editor img.wp-more-tag {
     overflow: hidden;
     width: 100%;
+    max-width: 100%;
     height: 1px;
     border: none;
     border-top: 1px solid #ccc;
@@ -225,14 +264,57 @@
         font-size: 18px; } }
   .edit-post-visual-editor embed,
   .edit-post-visual-editor iframe,
-  .edit-post-visual-editor img,
   .edit-post-visual-editor object,
-  .edit-post-visual-editor video,
-  .edit-post-visual-editor .wp-caption {
+  .edit-post-visual-editor video {
     max-width: 100%; }
   .edit-post-visual-editor img {
+    display: block;
     height: auto;
-    max-width: 100%; }
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */ }
+  .edit-post-visual-editor figure {
+    margin: 0 0 32px;
+    /* Extra wide images within figure tags don't overflow the content area. */
+    max-width: 100%;
+    position: relative; }
+  .edit-post-visual-editor .alignleft {
+    display: inline;
+    float: left;
+    margin-right: 32px; }
+  .edit-post-visual-editor .alignright {
+    display: inline;
+    float: right;
+    margin-left: 32px; }
+  .edit-post-visual-editor .aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  @media (min-width: 768px) {
+    .edit-post-visual-editor .alignfull {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      width: auto;
+      max-width: 1000%; }
+    .edit-post-visual-editor .alignwide {
+      margin-left: calc(25% - 25vw);
+      margin-right: calc(25% - 25vw);
+      width: auto;
+      max-width: 1000%; }
+    .edit-post-visual-editor .alignwide img,
+    .edit-post-visual-editor .alignfull img {
+      display: block;
+      margin: 0 auto; } }
+  .edit-post-visual-editor .wp-caption,
+  .edit-post-visual-editor .wp-block-image {
+    margin-bottom: 32px;
+    text-align: center; }
+    .edit-post-visual-editor .wp-caption figcaption,
+    .edit-post-visual-editor .wp-block-image figcaption {
+      font-style: italic;
+      font-size: 14px;
+      margin: 16px auto; }
   .edit-post-visual-editor .table {
     border-spacing: 0;
     border-collapse: collapse;
@@ -305,36 +387,6 @@
     border: 2px solid #ccc; }
   .edit-post-visual-editor .gallery-caption {
     margin-left: 0; }
-  .edit-post-visual-editor .avatar {
-    float: left; }
-  .edit-post-visual-editor .wp-caption {
-    margin: 0 0 32px; }
-    .edit-post-visual-editor .wp-caption img {
-      margin-bottom: 12px; }
-    .edit-post-visual-editor .wp-caption .wp-caption-text {
-      font-size: 14px;
-      text-align: center; }
-    .edit-post-visual-editor .wp-caption.alignleft {
-      float: left;
-      margin: 0 32px 32px 0; }
-    .edit-post-visual-editor .wp-caption.aligncenter {
-      margin: 0 auto 32px; }
-    .edit-post-visual-editor .wp-caption.alignright {
-      float: right;
-      margin: 0 0 32px 32px; }
-  .edit-post-visual-editor img.alignnone {
-    margin: 0; }
-  .edit-post-visual-editor img.alignleft {
-    float: left;
-    margin: 0 32px 32px 0; }
-  .edit-post-visual-editor img.aligncenter {
-    display: block;
-    margin: 0 auto 32px; }
-  .edit-post-visual-editor img.alignright {
-    float: right;
-    margin: 0 0 32px 32px; }
-  .edit-post-visual-editor img.block {
-    display: block; }
   .edit-post-visual-editor .screen-reader-text,
   .edit-post-visual-editor .screen-reader-text span,
   .edit-post-visual-editor .screen-reader-shortcut {
@@ -359,6 +411,9 @@
     /* Above WP toolbar. */
     text-decoration: none;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
+  .edit-post-visual-editor .wp-block-button {
+    margin-bottom: 32px;
+    text-align: center; }
   .edit-post-visual-editor .wp-block-quote:not(.is-large) {
     border-left: 0;
     padding-left: 0; }

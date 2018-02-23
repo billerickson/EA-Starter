@@ -133,16 +133,34 @@ blockquote {
     p:last-of-type {
         margin-bottom: 0;
     }
+
+	&.is-large.wp-block-quote {
+		@include font-sizes( 22px, 26px, 32px );
+		margin: 0 0 $base-margin;
+		padding: 0;
+
+		cite {
+			text-align: center;
+		}
+	}
+
+	&.wp-block-pullquote {
+		border-top: 2px solid $base-color;
+		border-bottom: 2px solid $base-color;
+		padding: $base-margin 0;
+	}
 }
 
 /* Horizontal Rule
 --------------------------------------------- */
 
 hr,
+hr.wp-block-separator,
 .clear-line,
 img.wp-more-tag {
 	overflow: hidden;
 	width: 100%;
+	max-width: 100%;
 	height: 1px;
 	border: none;
 	border-top: 1px solid $border_color;
@@ -204,14 +222,80 @@ h6 {
 
 embed,
 iframe,
-img,
 object,
-video,
-.wp-caption {
+video {
 	max-width: 100%;
 }
 
 img {
+	display: block;
 	height: auto;
+	/* Make sure images are scaled correctly. */
 	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 0 0 $base-margin;
+	/* Extra wide images within figure tags don't overflow the content area. */
+	max-width: 100%;
+	position: relative;
+}
+
+/* Alignments
+--------------------------------------------- */
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: $base-margin;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: $base-margin;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@include media(">=tablet") {
+
+    .alignfull {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        width: auto;
+        max-width: 1000%;
+    }
+
+    .alignwide {
+        margin-left: calc(25% - 25vw);
+        margin-right: calc(25% - 25vw);
+        width: auto;
+        max-width: 1000%;
+    }
+
+	.alignwide img,
+	.alignfull img {
+		display: block;
+		margin: 0 auto;
+	}
+
+}
+
+.wp-caption,
+.wp-block-image {
+	margin-bottom: $base-margin;
+	text-align: center;
+
+	figcaption {
+		font-style: italic;
+		font-size: 14px;
+		margin: #{$base-margin / 2} auto;
+	}
 }

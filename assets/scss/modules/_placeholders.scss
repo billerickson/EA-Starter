@@ -6,3 +6,23 @@
 	line-height: 1.6;
 	margin: 0;
 }
+
+%button {
+	background: $highlight;
+	border: none;
+	border-radius: 4px;
+	box-shadow: none;
+	color: $white;
+	cursor: pointer;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	width: auto;
+	-webkit-appearance: none;
+
+	&:hover {
+		background-color: darken( $highlight, 10%);
+		color: $white;
+		text-decoration: none;		
+	}
+}
