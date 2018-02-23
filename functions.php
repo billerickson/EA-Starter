@@ -42,6 +42,15 @@ function ea_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'ea_scripts' );
 
+/**
+ * Gutenberg scripts and styles
+ *
+ */
+function ea_gutenberg_scripts() {
+	wp_enqueue_style( 'ea', get_stylesheet_directory_uri() . '/assets/css/gutenberg.css', array(), filemtime( get_stylesheet_directory() . '/assets/css/gutenberg.css' ) );
+}
+add_action( 'enqueue_block_editor_assets', 'ea_gutenberg_styles' );
+
 
 if ( ! function_exists( 'ea_setup' ) ) :
 /**

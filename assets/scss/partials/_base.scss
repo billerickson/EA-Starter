@@ -1,7 +1,3 @@
-// Base Font
-$base-font-family: sans-serif;
-$base-margin: 32px;
-
 // Colors
 $white: #fff;
 $grey_1: #ccc;
@@ -39,6 +35,7 @@ $sidr_total: $sidr_width + $sidr_close;
 // Grid
 $grid-max-width: 1200px;
 $grid-gutter: 32px;
+$base-margin: 32px;
 
 // Include Media
 $breakpoints: (
@@ -52,3 +49,4 @@ $breakpoints: (
 
 @import "../vendor/_include-media";
 @import "../modules/helpers";
+@import "../modules/placeholders";

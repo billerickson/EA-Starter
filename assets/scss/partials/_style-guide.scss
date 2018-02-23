@@ -1,58 +1,20 @@
-/* Defaults
+/* Style Guide
 ---------------------------------------------------------------------------------------------------- */
-
-/* Box Sizing
---------------------------------------------- */
-
-html,
-input[type="search"] {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
 /* Typographical Elements
 --------------------------------------------- */
 
 body {
-	color: $base-color;
-	font-family: $base-font-family;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.6;
-	margin: 0;
-}
-
-a,
-button,
-input:focus,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-textarea:focus,
-.button,
-.nav-menu .sub-menu,
-.sidr li.menu-item-has-children > .submenu-toggle {
-	-webkit-transition: all 0.1s ease-in-out;
-	-moz-transition:    all 0.1s ease-in-out;
-	-ms-transition:     all 0.1s ease-in-out;
-	transition:         all 0.1s ease-in-out;
+	@extend %base-style;
 }
 
 a {
 	color: $highlight;
 	text-decoration: none;
-}
 
-a:hover {
-	text-decoration: underline;
-}
-
-p {
-	margin: 0 0 $base-margin;
-	padding: 0;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 strong {
@@ -63,28 +25,6 @@ ol,
 ul {
 	margin: 0;
 	padding: 0;
-}
-
-blockquote {
-	background: rgba(0,0,0,0.10);
-	margin: 0 0 $base-margin;
-	font-style: italic;
-	padding: 0;
-
-	cite {
-		display: block;
-		font-size: 18px;
-		font-weight: 500;
-		margin-top: 17px;
-
-		&:before {
-			content: '— ';
-		}
-	}
-
-    p:last-of-type {
-        margin-bottom: 0;
-    }
 }
 
 code,
@@ -122,25 +62,16 @@ cite {
 	font-style: normal;
 }
 
-hr,
-.clear-line,
-img.wp-more-tag {
-	overflow: hidden;
-	width: 100%;
-	height: 1px;
-	border: none;
-	border-top: 1px solid $border_color;
-	margin: 0 0 $base-margin;
-}
-
 .clearfix {
 	@include clearfix;
 }
 
-/* Extra Paragraph Styles
+/* Paragraph
 --------------------------------------------- */
 
 p {
+	margin: 0 0 $base-margin;
+	padding: 0;
 
 	&.large {
     	@include font-sizes( 18px, null, 20px );
@@ -181,6 +112,43 @@ ul {
         margin-bottom: 0;
     }
 }
+
+/* Blockquote
+--------------------------------------------- */
+
+blockquote {
+	background: transparent;
+	margin: 0 0 $base-margin;
+	@include font-sizes( 18px, 19px, 22px );
+	font-style: italic;
+	padding: 0;
+	text-align: center;
+
+	cite {
+		display: block;
+		font-size: 18px;
+		margin-top: 17px;
+	}
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+/* Horizontal Rule
+--------------------------------------------- */
+
+hr,
+.clear-line,
+img.wp-more-tag {
+	overflow: hidden;
+	width: 100%;
+	height: 1px;
+	border: none;
+	border-top: 1px solid $border_color;
+	margin: 0 0 $base-margin;
+}
+
 
 /* Headings
 --------------------------------------------- */

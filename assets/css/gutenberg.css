@@ -1,0 +1,366 @@
+/**
+ * Margin, No Edge
+ * Removes left margin from first item, right margin from last item
+ */
+/**
+ * Center Image
+ *
+ */
+/**
+ * Block Cover
+ * Creates a block that covers the full width/height of parent div. Typically used on a :before pseudo element
+ */
+/**
+ * Placeholder Color
+ *
+ */
+/**
+ * Clearfix
+ *
+ */
+/**
+ * Font Sizes
+ *
+**/
+.edit-post-visual-editor,
+.edit-post-visual-editor p, .edit-post-visual-editor body {
+  color: #333;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0; }
+
+.edit-post-visual-editor {
+  /* Style Guide
+---------------------------------------------------------------------------------------------------- */
+  /* Typographical Elements
+--------------------------------------------- */
+  /* Paragraph
+--------------------------------------------- */
+  /* List Items
+--------------------------------------------- */
+  /* Blockquote
+--------------------------------------------- */
+  /* Horizontal Rule
+--------------------------------------------- */
+  /* Headings
+--------------------------------------------- */
+  /* Objects
+--------------------------------------------- */
+  /* Post Elements
+---------------------------------------------------------------------------------------------------- */
+  /* Tables
+--------------------------------------------- */
+  /* Gallery
+--------------------------------------------- */
+  /* Images
+--------------------------------------------- */
+  /* Screen Reader Text
+--------------------------------------------- */ }
+  .edit-post-visual-editor .editor-block-list__block {
+    max-width: 1200px; }
+  .edit-post-visual-editor a {
+    color: #50BD3A;
+    text-decoration: none; }
+    .edit-post-visual-editor a:hover {
+      text-decoration: underline; }
+  .edit-post-visual-editor strong {
+    font-weight: 700; }
+  .edit-post-visual-editor ol,
+  .edit-post-visual-editor ul {
+    margin: 0;
+    padding: 0; }
+  .edit-post-visual-editor code,
+  .edit-post-visual-editor pre {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 12px; }
+  .edit-post-visual-editor code {
+    padding: 2px 4px;
+    white-space: nowrap; }
+  .edit-post-visual-editor pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    line-height: 18px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap; }
+  .edit-post-visual-editor pre code {
+    padding: 0;
+    color: inherit;
+    white-space: pre;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border: 0; }
+  .edit-post-visual-editor cite {
+    font-style: normal; }
+  .edit-post-visual-editor .clearfix:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .edit-post-visual-editor p {
+    margin: 0 0 32px;
+    padding: 0; }
+    .edit-post-visual-editor p.large {
+      font-size: 18px; }
+      @media (min-width: 992px) {
+        .edit-post-visual-editor p.large {
+          font-size: 20px; } }
+    .edit-post-visual-editor p.small {
+      font-size: 12px; }
+    .edit-post-visual-editor p.extra-margin {
+      margin-bottom: calc( 32px * 2); }
+  .edit-post-visual-editor ol {
+    margin: 0 0 32px 32px; }
+    .edit-post-visual-editor ol li {
+      list-style-type: decimal; }
+    .edit-post-visual-editor ol ol {
+      margin-bottom: 0; }
+  .edit-post-visual-editor ul {
+    margin: 0 0 32px 32px; }
+    .edit-post-visual-editor ul li {
+      list-style-type: disc; }
+    .edit-post-visual-editor ul ul {
+      margin-bottom: 0; }
+  .edit-post-visual-editor blockquote {
+    background: transparent;
+    margin: 0 0 32px;
+    font-size: 18px;
+    font-style: italic;
+    padding: 0;
+    text-align: center; }
+    @media (min-width: 768px) {
+      .edit-post-visual-editor blockquote {
+        font-size: 19px; } }
+    @media (min-width: 992px) {
+      .edit-post-visual-editor blockquote {
+        font-size: 22px; } }
+    .edit-post-visual-editor blockquote cite {
+      display: block;
+      font-size: 18px;
+      margin-top: 17px; }
+    .edit-post-visual-editor blockquote p:last-of-type {
+      margin-bottom: 0; }
+  .edit-post-visual-editor hr,
+  .edit-post-visual-editor .clear-line,
+  .edit-post-visual-editor img.wp-more-tag {
+    overflow: hidden;
+    width: 100%;
+    height: 1px;
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0 0 32px; }
+  .edit-post-visual-editor h1,
+  .edit-post-visual-editor h2,
+  .edit-post-visual-editor h3,
+  .edit-post-visual-editor h4,
+  .edit-post-visual-editor h5,
+  .edit-post-visual-editor h6 {
+    color: #333;
+    line-height: 1.2;
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0; }
+    .edit-post-visual-editor h1 a,
+    .edit-post-visual-editor h2 a,
+    .edit-post-visual-editor h3 a,
+    .edit-post-visual-editor h4 a,
+    .edit-post-visual-editor h5 a,
+    .edit-post-visual-editor h6 a {
+      color: #333; }
+      .edit-post-visual-editor h1 a:hover,
+      .edit-post-visual-editor h2 a:hover,
+      .edit-post-visual-editor h3 a:hover,
+      .edit-post-visual-editor h4 a:hover,
+      .edit-post-visual-editor h5 a:hover,
+      .edit-post-visual-editor h6 a:hover {
+        color: #50BD3A;
+        text-decoration: none; }
+  .edit-post-visual-editor h1 {
+    font-size: 30px; }
+    @media (min-width: 768px) {
+      .edit-post-visual-editor h1 {
+        font-size: 36px; } }
+    @media (min-width: 992px) {
+      .edit-post-visual-editor h1 {
+        font-size: 40px; } }
+  .edit-post-visual-editor h2 {
+    font-size: 24px; }
+    @media (min-width: 768px) {
+      .edit-post-visual-editor h2 {
+        font-size: 30px; } }
+    @media (min-width: 992px) {
+      .edit-post-visual-editor h2 {
+        font-size: 36px; } }
+  .edit-post-visual-editor h3 {
+    font-size: 20px; }
+    @media (min-width: 768px) {
+      .edit-post-visual-editor h3 {
+        font-size: 24px; } }
+    @media (min-width: 992px) {
+      .edit-post-visual-editor h3 {
+        font-size: 30px; } }
+  .edit-post-visual-editor h4 {
+    font-size: 18px; }
+    @media (min-width: 768px) {
+      .edit-post-visual-editor h4 {
+        font-size: 20px; } }
+    @media (min-width: 992px) {
+      .edit-post-visual-editor h4 {
+        font-size: 24px; } }
+  .edit-post-visual-editor h5 {
+    font-size: 16px; }
+    @media (min-width: 768px) {
+      .edit-post-visual-editor h5 {
+        font-size: 18px; } }
+    @media (min-width: 992px) {
+      .edit-post-visual-editor h5 {
+        font-size: 20px; } }
+  .edit-post-visual-editor h6 {
+    font-size: 16px; }
+    @media (min-width: 768px) {
+      .edit-post-visual-editor h6 {
+        font-size: 18px; } }
+  .edit-post-visual-editor embed,
+  .edit-post-visual-editor iframe,
+  .edit-post-visual-editor img,
+  .edit-post-visual-editor object,
+  .edit-post-visual-editor video,
+  .edit-post-visual-editor .wp-caption {
+    max-width: 100%; }
+  .edit-post-visual-editor img {
+    height: auto;
+    max-width: 100%; }
+  .edit-post-visual-editor .table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 32px; }
+    .edit-post-visual-editor .table th,
+    .edit-post-visual-editor .table td {
+      padding: 8px;
+      vertical-align: top;
+      border-top: 1px solid #ccc; }
+    .edit-post-visual-editor .table thead th {
+      vertical-align: bottom;
+      border-bottom: 2px solid #ccc; }
+    .edit-post-visual-editor .table tbody + tbody {
+      border-top: 2px solid #ccc; }
+  .edit-post-visual-editor .table-bordered {
+    border: 1px solid #ccc; }
+    .edit-post-visual-editor .table-bordered th,
+    .edit-post-visual-editor .table-bordered td {
+      border: 1px solid #ccc; }
+    .edit-post-visual-editor .table-bordered thead th,
+    .edit-post-visual-editor .table-bordered thead td {
+      border-bottom-width: 2px; }
+  .edit-post-visual-editor .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #ccc; }
+  @media (max-width: 767px) {
+    .edit-post-visual-editor .table-responsive {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar; }
+      .edit-post-visual-editor .table-responsive.table-bordered {
+        border: 0; } }
+  .edit-post-visual-editor .gallery {
+    margin: 0 auto 40px;
+    overflow: hidden;
+    width: 100%; }
+  .edit-post-visual-editor .gallery-item {
+    float: left;
+    margin: 10px 0 0;
+    text-align: center; }
+  .edit-post-visual-editor .gallery-columns-2 .gallery-item {
+    width: 50%; }
+  .edit-post-visual-editor .gallery-columns-3 .gallery-item {
+    width: 33%; }
+  .edit-post-visual-editor .gallery-columns-4 .gallery-item {
+    width: 25%; }
+  .edit-post-visual-editor .gallery-columns-5 .gallery-item {
+    width: 20%; }
+  .edit-post-visual-editor .gallery-columns-6 .gallery-item {
+    width: 16.6666%; }
+  .edit-post-visual-editor .gallery-columns-7 .gallery-item {
+    width: 14.2857%; }
+  .edit-post-visual-editor .gallery-columns-8 .gallery-item {
+    width: 12.5%; }
+  .edit-post-visual-editor .gallery-columns-9 .gallery-item {
+    width: 11.1111%; }
+  .edit-post-visual-editor .gallery-columns-2 .gallery-item:nth-child(2n+1),
+  .edit-post-visual-editor .gallery-columns-3 .gallery-item:nth-child(3n+1),
+  .edit-post-visual-editor .gallery-columns-4 .gallery-item:nth-child(4n+1),
+  .edit-post-visual-editor .gallery-columns-5 .gallery-item:nth-child(5n+1),
+  .edit-post-visual-editor .gallery-columns-6 .gallery-item:nth-child(6n+1),
+  .edit-post-visual-editor .gallery-columns-7 .gallery-item:nth-child(7n+1),
+  .edit-post-visual-editor .gallery-columns-8 .gallery-item:nth-child(8n+1),
+  .edit-post-visual-editor .gallery-columns-9 .gallery-item:nth-child(9n+1) {
+    clear: both; }
+  .edit-post-visual-editor .gallery img {
+    border: 2px solid #ccc; }
+  .edit-post-visual-editor .gallery-caption {
+    margin-left: 0; }
+  .edit-post-visual-editor .avatar {
+    float: left; }
+  .edit-post-visual-editor .wp-caption {
+    margin: 0 0 32px; }
+    .edit-post-visual-editor .wp-caption img {
+      margin-bottom: 12px; }
+    .edit-post-visual-editor .wp-caption .wp-caption-text {
+      font-size: 14px;
+      text-align: center; }
+    .edit-post-visual-editor .wp-caption.alignleft {
+      float: left;
+      margin: 0 32px 32px 0; }
+    .edit-post-visual-editor .wp-caption.aligncenter {
+      margin: 0 auto 32px; }
+    .edit-post-visual-editor .wp-caption.alignright {
+      float: right;
+      margin: 0 0 32px 32px; }
+  .edit-post-visual-editor img.alignnone {
+    margin: 0; }
+  .edit-post-visual-editor img.alignleft {
+    float: left;
+    margin: 0 32px 32px 0; }
+  .edit-post-visual-editor img.aligncenter {
+    display: block;
+    margin: 0 auto 32px; }
+  .edit-post-visual-editor img.alignright {
+    float: right;
+    margin: 0 0 32px 32px; }
+  .edit-post-visual-editor img.block {
+    display: block; }
+  .edit-post-visual-editor .screen-reader-text,
+  .edit-post-visual-editor .screen-reader-text span,
+  .edit-post-visual-editor .screen-reader-shortcut {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden; }
+  .edit-post-visual-editor .screen-reader-text:focus,
+  .edit-post-visual-editor .screen-reader-shortcut:focus {
+    clip: auto !important;
+    height: auto;
+    width: auto;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 15px 23px 14px;
+    color: #333;
+    background: #fff;
+    z-index: 100000;
+    /* Above WP toolbar. */
+    text-decoration: none;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
+  .edit-post-visual-editor .wp-block-quote:not(.is-large) {
+    border-left: 0;
+    padding-left: 0; }
+  .edit-post-visual-editor h1, .edit-post-visual-editor h2, .edit-post-visual-editor h3, .edit-post-visual-editor h4, .edit-post-visual-editor h5, .edit-post-visual-editor h6, .edit-post-visual-editor p, .edit-post-visual-editor p.large, .edit-post-visual-editor p.wp-block-subhead {
+    margin-bottom: 0; }
