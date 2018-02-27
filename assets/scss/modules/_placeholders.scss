@@ -17,12 +17,13 @@
 	padding: 10px;
 	text-align: center;
 	text-decoration: none;
+	transition: all 0.1s ease-in-out;
 	width: auto;
 	-webkit-appearance: none;
 
 	&:hover {
 		background-color: darken( $highlight, 10%);
 		color: $white;
-		text-decoration: none;		
+		text-decoration: none;
 	}
 }

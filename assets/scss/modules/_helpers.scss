@@ -16,6 +16,16 @@
 }
 
 /**
+ * Icon Position
+ *
+ */
+@mixin icon-position( $icon_size, $container_size ) {
+	margin-top: calc( ( #{$container_size} - #{$icon_size} ) / 2 );
+	width: $icon_size;
+	height: $icon_size;
+}
+
+/**
  * Center Image
  *
  */

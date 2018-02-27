@@ -3,6 +3,10 @@
  * Removes left margin from first item, right margin from last item
  */
 /**
+ * Icon Position
+ *
+ */
+/**
  * Center Image
  *
  */
@@ -44,6 +48,7 @@ input[type="submit"],
   padding: 10px;
   text-align: center;
   text-decoration: none;
+  transition: all 0.1s ease-in-out;
   width: auto;
   -webkit-appearance: none; }
   button:hover,

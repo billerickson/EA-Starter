@@ -3,6 +3,10 @@
  * Removes left margin from first item, right margin from last item
  */
 /**
+ * Icon Position
+ *
+ */
+/**
  * Center Image
  *
  */
@@ -35,12 +39,15 @@
   background: #50BD3A;
   border: none;
   border-radius: 4px;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   color: #fff;
   cursor: pointer;
   padding: 10px;
   text-align: center;
   text-decoration: none;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   width: auto;
   -webkit-appearance: none; }
   .edit-post-visual-editor .wp-block-button .wp-block-button__link:hover {
@@ -410,7 +417,8 @@
     z-index: 100000;
     /* Above WP toolbar. */
     text-decoration: none;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
   .edit-post-visual-editor .wp-block-button {
     margin-bottom: 32px;
     text-align: center; }
