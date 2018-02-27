@@ -9,8 +9,8 @@
 **/
 
 /*
- BEFORE MODIFYING THIS THEME:
- Please read the instructions here: https://github.com/billerickson/EA-Starter/wiki
+Please read the instructions here (private repo): https://github.com/billerickson/EA-Starter/wiki
+Devs, contact me if you need access
 */
 
 require get_template_directory() . '/inc/tha-theme-hooks.php';
