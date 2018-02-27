@@ -100,17 +100,6 @@ function ea_clean_post_classes( $classes ) {
 add_filter( 'post_class', 'ea_clean_post_classes', 5 );
 
 /**
- * Remove ancient Custom Fields Metabox because it's slow and most often useless anymore
- * ref: https://core.trac.wordpress.org/ticket/33885
- */
-function ea_remove_custom_fields_metabox() {
-	foreach ( get_post_types( '', 'names' ) as $post_type ) {
-		remove_meta_box( 'postcustom' , $post_type , 'normal' );
-	}
-}
-add_action( 'admin_menu' , 'ea_remove_custom_fields_metabox' );
-
-/**
  * Archive Title, remove prefix
  *
  */
