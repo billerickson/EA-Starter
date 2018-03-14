@@ -27,8 +27,7 @@ textarea:focus {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"],
-.button {
+input[type="submit"] {
 	@extend %button;
 }
 
@@ -36,14 +35,7 @@ input[type="submit"],
 	color: $white;
 }
 
-.button {
-	display: inline-block;
-
-	&.button-block {
-		display: block;
-		width: 100%;
-	}
-}
+@include button-styles;
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button {
