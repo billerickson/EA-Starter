@@ -125,10 +125,10 @@
   .edit-post-visual-editor p {
     margin: 0 0 32px;
     padding: 0; }
-    .edit-post-visual-editor p.large {
+    .edit-post-visual-editor p.large, .edit-post-visual-editor p.wp-block-subhead {
       font-size: 18px; }
       @media (min-width: 992px) {
-        .edit-post-visual-editor p.large {
+        .edit-post-visual-editor p.large, .edit-post-visual-editor p.wp-block-subhead {
           font-size: 20px; } }
     .edit-post-visual-editor p.small {
       font-size: 12px; }
