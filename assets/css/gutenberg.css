@@ -64,7 +64,7 @@
     font-weight: 400;
     line-height: 1.6;
     margin: 0; }
-  .edit-post-visual-editor .wp-block-button .wp-block-button__link, .edit-post-visual-editor .button, .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button {
+  .edit-post-visual-editor .wp-block-button .wp-block-button__link, .edit-post-visual-editor .button:not(.components-button), .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button:not(.components-button) {
     background: #50BD3A;
     border: none;
     border-radius: 4px;
@@ -78,7 +78,7 @@
     transition: all 0.1s ease-in-out;
     width: auto;
     -webkit-appearance: none; }
-    .edit-post-visual-editor .wp-block-button .wp-block-button__link:hover, .edit-post-visual-editor .button:hover, .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button:hover {
+    .edit-post-visual-editor .wp-block-button .wp-block-button__link:hover, .edit-post-visual-editor .button:hover:not(.components-button), .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button:hover:not(.components-button) {
       background-color: #3f962e;
       color: #fff;
       text-decoration: none; }
@@ -423,12 +423,12 @@
   .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .wp-block-quote:not(.is-large) {
     border-left: 0;
     padding-left: 0; }
-  .edit-post-visual-editor .button.button-block,
-  .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button.button-block {
+  .edit-post-visual-editor .button:not(.components-button).button-block,
+  .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button:not(.components-button).button-block {
     display: block;
     width: 100%; }
-  .wp-core-ui .edit-post-visual-editor .button, .wp-core-ui
-  .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button {
+  .wp-core-ui .edit-post-visual-editor .button:not(.components-button), .wp-core-ui
+  .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button:not(.components-button) {
     line-height: 26px;
     height: 46px;
     font-size: 16px; }
