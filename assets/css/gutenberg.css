@@ -57,14 +57,16 @@
 ---------------------------------------------------------------------------------------------------- */
   /* Button
 --------------------------------------------- */ }
-  .edit-post-visual-editor body, .edit-post-visual-editor .edit-post-visual-editor, .edit-post-visual-editor p {
+  .edit-post-visual-editor body, .edit-post-visual-editor .edit-post-visual-editor,
+  .edit-post-visual-editor p {
     color: #333;
     font-family: sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
     margin: 0; }
-  .edit-post-visual-editor .wp-block-button .wp-block-button__link, .edit-post-visual-editor .button:not(.components-button), .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button:not(.components-button) {
+  .edit-post-visual-editor .wp-block-button .wp-block-button__link, .edit-post-visual-editor .button:not(.components-button),
+  .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button:not(.components-button) {
     background: #50BD3A;
     border: none;
     border-radius: 4px;
@@ -78,7 +80,8 @@
     transition: all 0.1s ease-in-out;
     width: auto;
     -webkit-appearance: none; }
-    .edit-post-visual-editor .wp-block-button .wp-block-button__link:hover, .edit-post-visual-editor .button:hover:not(.components-button), .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button:hover:not(.components-button) {
+    .edit-post-visual-editor .wp-block-button .wp-block-button__link:hover, .edit-post-visual-editor .button:hover:not(.components-button),
+    .edit-post-visual-editor .wp-block-freeform.blocks-rich-text__tinymce .button:hover:not(.components-button) {
       background-color: #3f962e;
       color: #fff;
       text-decoration: none; }
@@ -126,7 +129,9 @@
     margin: 0 0 32px;
     padding: 0; }
     .edit-post-visual-editor p.large, .edit-post-visual-editor p.wp-block-subhead {
-      font-size: 18px; }
+      font-size: 18px;
+      font-style: normal;
+      opacity: 1; }
       @media (min-width: 992px) {
         .edit-post-visual-editor p.large, .edit-post-visual-editor p.wp-block-subhead {
           font-size: 20px; } }

@@ -52,9 +52,9 @@ input[type="submit"], .button:not(.components-button) {
   width: auto;
   -webkit-appearance: none; }
   button:hover,
-  input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover, .button:hover:not(.components-button) {
+  input:hover[type="button"],
+  input:hover[type="reset"],
+  input:hover[type="submit"], .button:hover:not(.components-button) {
     background-color: #3f962e;
     color: #fff;
     text-decoration: none; }
@@ -417,7 +417,9 @@ p {
   margin: 0 0 32px;
   padding: 0; }
   p.large, p.wp-block-subhead {
-    font-size: 18px; }
+    font-size: 18px;
+    font-style: normal;
+    opacity: 1; }
     @media (min-width: 992px) {
       p.large, p.wp-block-subhead {
         font-size: 20px; } }
