@@ -35,7 +35,10 @@ $sidr_total: $sidr_width + $sidr_close;
 // Grid
 $grid-max-width: 1200px;
 $grid-gutter: 32px;
-$base-margin: 32px;
+$base-margin: 16px;
+$wrap_edge: $base-margin;
+$margin_2x: $base-margin * 2;
+$margin_4x: $base-margin * 4;
 
 // Include Media
 $breakpoints: (

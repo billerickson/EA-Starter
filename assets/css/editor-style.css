@@ -34,6 +34,18 @@ body {
   line-height: 1.6;
   margin: 0; }
 
+blockquote,
+blockquote.wp-block-quote, .wp-caption.alignfull,
+.wp-block-image.alignfull {
+  margin-top: 32px;
+  margin-bottom: 32px; }
+  @media (min-width: 1200px) {
+    blockquote,
+    blockquote.wp-block-quote, .wp-caption.alignfull,
+    .wp-block-image.alignfull {
+      margin-top: 64px;
+      margin-bottom: 64px; } }
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -414,7 +426,7 @@ cite {
 /* Paragraph
 --------------------------------------------- */
 p {
-  margin: 0 0 32px;
+  margin: 0 0 16px;
   padding: 0; }
   p.large, p.wp-block-subhead {
     font-size: 18px;
@@ -426,7 +438,7 @@ p {
   p.small {
     font-size: 12px; }
   p.extra-margin {
-    margin-bottom: calc( 32px * 2); }
+    margin-bottom: 32px; }
 
 /* List Items
 --------------------------------------------- */
@@ -450,11 +462,9 @@ blockquote,
 blockquote.wp-block-quote {
   background: transparent;
   color: #333;
-  margin: 0;
-  margin-top: 128px;
-  margin-bottom: 128px;
   font-size: 20px;
   font-style: italic;
+  margin: 0;
   padding: 0;
   text-align: center; }
   @media (min-width: 992px) {
@@ -491,7 +501,7 @@ blockquote.wp-block-quote {
   blockquote.is-large,
   blockquote.wp-block-quote.is-large {
     font-size: 22px;
-    margin: 0 0 32px;
+    margin: 0 0 16px;
     padding: 0; }
     @media (min-width: 768px) {
       blockquote.is-large,
@@ -564,7 +574,7 @@ img.wp-more-tag {
   height: 1px;
   border: none;
   border-top: 1px solid #ccc;
-  margin: 0 0 32px; }
+  margin: 32px 0; }
 
 /* Headings
 --------------------------------------------- */
@@ -652,7 +662,8 @@ embed,
 iframe,
 object,
 video {
-  max-width: 100%; }
+  max-width: 100%;
+  margin-bottom: 16px; }
 
 img {
   display: block;
@@ -662,7 +673,7 @@ img {
   /* Adhere to container width. */ }
 
 figure {
-  margin: 0 0 32px;
+  margin: 0 0 16px;
   /* Extra wide images within figure tags don't overflow the content area. */
   max-width: 100%;
   position: relative; }
@@ -672,18 +683,24 @@ figure {
 .alignleft {
   display: inline;
   float: left;
-  margin-right: 32px; }
+  margin-right: 16px; }
 
 .alignright {
   display: inline;
   float: right;
-  margin-left: 32px; }
+  margin-left: 16px; }
 
 .aligncenter {
   clear: both;
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+.alignfull {
+  margin-left: -16px;
+  margin-right: -16px;
+  width: calc( 100% + 16px * 2);
+  max-width: calc( 100% + 16px * 2); }
 
 @media (min-width: 768px) {
   .alignfull {
@@ -708,8 +725,7 @@ figure {
   .wp-caption figcaption,
   .wp-block-image figcaption {
     font-style: italic;
-    font-size: 14px;
-    margin: 16px auto; }
+    font-size: 14px; }
 
 /* Forms
 --------------------------------------------- */
@@ -774,10 +790,10 @@ input[type="search"]::-webkit-search-results-button {
   border-collapse: collapse;
   width: 100%;
   max-width: 100%;
-  margin-bottom: 32px; }
+  margin-bottom: 16px; }
   .table th,
   .table td {
-    padding: 8px;
+    padding: 4px;
     vertical-align: top;
     border-top: 1px solid #ccc; }
   .table thead th {
