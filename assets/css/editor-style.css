@@ -27,7 +27,7 @@
  *
 **/
 body {
-  color: #333;
+  color: #000;
   font-family: sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -50,7 +50,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"], .button:not(.components-button) {
-  background: #50BD3A;
+  background: #59BACC;
   border: none;
   border-radius: 4px;
   box-shadow: none;
@@ -67,7 +67,7 @@ input[type="submit"], .button:not(.components-button) {
   input:hover[type="button"],
   input:hover[type="reset"],
   input:hover[type="submit"], .button:hover:not(.components-button) {
-    background-color: #3f962e;
+    background-color: #39a5b9;
     color: #fff;
     text-decoration: none; }
 
@@ -375,7 +375,7 @@ template {
 /* Typographical Elements
 --------------------------------------------- */
 a {
-  color: #50BD3A;
+  color: #59BACC;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -461,7 +461,7 @@ ul {
 blockquote,
 blockquote.wp-block-quote {
   background: transparent;
-  color: #333;
+  color: #000;
   font-size: 20px;
   font-style: italic;
   margin: 0;
@@ -474,7 +474,7 @@ blockquote.wp-block-quote {
   blockquote::before, blockquote::after,
   blockquote.wp-block-quote::before,
   blockquote.wp-block-quote::after {
-    background: #50BD3A;
+    background: #59BACC;
     content: '';
     display: block;
     width: 100%;
@@ -486,7 +486,7 @@ blockquote.wp-block-quote {
     margin: 25px auto 0; }
   blockquote cite,
   blockquote.wp-block-quote cite {
-    color: #333;
+    color: #000;
     display: block;
     font-size: 16px;
     font-weight: 700;
@@ -517,7 +517,7 @@ blockquote.wp-block-quote {
   blockquote.wp-block-pullquote,
   blockquote.wp-block-quote.wp-block-pullquote {
     border: none;
-    color: #333;
+    color: #000;
     padding: 0; }
     blockquote.wp-block-pullquote, blockquote.wp-block-pullquote.alignleft, blockquote.wp-block-pullquote.alignright,
     blockquote.wp-block-quote.wp-block-pullquote,
@@ -553,7 +553,7 @@ blockquote.wp-block-quote {
             font-size: 24px; } }
     blockquote.wp-block-pullquote cite,
     blockquote.wp-block-quote.wp-block-pullquote cite {
-      color: #333;
+      color: #000;
       font-size: 16px;
       font-weight: 400;
       text-transform: none; }
@@ -573,7 +573,7 @@ img.wp-more-tag {
   max-width: 100%;
   height: 1px;
   border: none;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #E0E0E0;
   margin: 32px 0; }
 
 /* Headings
@@ -584,7 +584,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #333;
+  color: #000;
   line-height: 1.2;
   margin: 0;
   margin-bottom: 16px;
@@ -595,14 +595,14 @@ h6 {
   h4 a,
   h5 a,
   h6 a {
-    color: #333; }
+    color: #000; }
     h1 a:hover,
     h2 a:hover,
     h3 a:hover,
     h4 a:hover,
     h5 a:hover,
     h6 a:hover {
-      color: #50BD3A;
+      color: #59BACC;
       text-decoration: none; }
 
 h1 {
@@ -733,8 +733,8 @@ input,
 select,
 textarea {
   background-color: #fff;
-  border: 1px solid #ccc;
-  color: #333;
+  border: 1px solid #E0E0E0;
+  color: #000;
   padding: 10px;
   width: 100%; }
 
@@ -748,14 +748,14 @@ textarea:focus {
   outline: none; }
 
 ::-moz-placeholder {
-  color: #333;
+  color: #000;
   opacity: 1; }
 
 ::-ms-input-placeholder {
-  color: #333; }
+  color: #000; }
 
 ::-webkit-input-placeholder {
-  color: #333; }
+  color: #000; }
 
 input:focus::-webkit-input-placeholder,
 input:focus::-moz-placeholder,
@@ -795,24 +795,24 @@ input[type="search"]::-webkit-search-results-button {
   .table td {
     padding: 4px;
     vertical-align: top;
-    border-top: 1px solid #ccc; }
+    border-top: 1px solid #E0E0E0; }
   .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #ccc; }
+    border-bottom: 2px solid #E0E0E0; }
   .table tbody + tbody {
-    border-top: 2px solid #ccc; }
+    border-top: 2px solid #E0E0E0; }
 
 .table-bordered {
-  border: 1px solid #ccc; }
+  border: 1px solid #E0E0E0; }
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #ccc; }
+    border: 1px solid #E0E0E0; }
   .table-bordered thead th,
   .table-bordered thead td {
     border-bottom-width: 2px; }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: #ccc; }
+  background-color: #FAFAFA; }
 
 @media (max-width: 767px) {
   .table-responsive {
@@ -871,7 +871,7 @@ input[type="search"]::-webkit-search-results-button {
   clear: both; }
 
 .gallery img {
-  border: 2px solid #ccc; }
+  border: 2px solid #E0E0E0; }
 
 .gallery-caption {
   margin-left: 0; }
