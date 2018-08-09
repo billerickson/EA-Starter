@@ -16,6 +16,7 @@ Devs, contact me if you need access
 
 require get_template_directory() . '/inc/tha-theme-hooks.php';
 require get_template_directory() . '/inc/wordpress-cleanup.php';
+require get_template_directory() . '/inc/login-logo.php';
 require get_template_directory() . '/inc/helper-functions.php';
 require get_template_directory() . '/inc/navigation.php';
 //require get_template_directory() . '/inc/sidebar-layouts.php';
