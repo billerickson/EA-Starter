@@ -22,9 +22,10 @@ textarea:focus {
 	outline: none;
 }
 
-@include placeholder-color( $base-color );
+@include placeholder-color( $grey_5 );
 
 button,
+button.wpforms-submit,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -40,4 +41,15 @@ input[type="submit"] {
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button {
 	display: none;
+}
+
+/* WPForms
+--------------------------------------------- */
+
+.site-container .wpforms-container {
+
+	.wpforms-field {
+		padding: 0;
+		margin-bottom: $base-margin;
+	}
 }
