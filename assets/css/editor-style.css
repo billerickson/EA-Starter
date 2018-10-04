@@ -70,6 +70,13 @@ button,
 button.wpforms-submit,
 input[type="button"],
 input[type="reset"],
+input[type="submit"], .button:not(.components-button), a, a svg {
+  transition: all 0.1s ease-in-out; }
+
+button,
+button.wpforms-submit,
+input[type="button"],
+input[type="reset"],
 input[type="submit"], .button:not(.components-button) {
   background: #59BACC;
   border: none;
@@ -81,7 +88,6 @@ input[type="submit"], .button:not(.components-button) {
   padding: 10px;
   text-align: center;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
   width: auto;
   -webkit-appearance: none; }
   button:hover,
