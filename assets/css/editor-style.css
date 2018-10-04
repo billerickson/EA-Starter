@@ -455,14 +455,14 @@ cite {
 p {
   margin: 0 0 16px;
   padding: 0; }
-  p.large, p.wp-block-subhead {
+  p.large, p.wp-block-subhead, p.has-large-font-size {
     font-size: 18px;
     font-style: normal;
     opacity: 1; }
     @media (min-width: 992px) {
-      p.large, p.wp-block-subhead {
+      p.large, p.wp-block-subhead, p.has-large-font-size {
         font-size: 20px; } }
-  p.small {
+  p.small, p.has-small-font-size {
     font-size: 12px; }
   p.extra-margin {
     margin-bottom: 32px; }
