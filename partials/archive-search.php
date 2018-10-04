@@ -8,7 +8,7 @@
  * @license      GPL-2.0+
 **/
 
-echo '<article class="' . join( ' ', get_post_class() ) . '">';
+echo '<article class="search-result">';
 
 	echo '<header class="entry-header">';
 		echo '<h2 class="entry-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
