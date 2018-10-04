@@ -85,14 +85,12 @@
     font-weight: 400;
     line-height: 1.6;
     margin: 0; }
-  .edit-post-visual-editor blockquote,
-  .edit-post-visual-editor blockquote.wp-block-quote, .edit-post-visual-editor .wp-caption.alignfull,
+  .edit-post-visual-editor .wp-caption.alignfull,
   .edit-post-visual-editor .wp-block-image.alignfull {
     margin-top: 32px;
     margin-bottom: 32px; }
     @media (min-width: 1200px) {
-      .edit-post-visual-editor blockquote,
-      .edit-post-visual-editor blockquote.wp-block-quote, .edit-post-visual-editor .wp-caption.alignfull,
+      .edit-post-visual-editor .wp-caption.alignfull,
       .edit-post-visual-editor .wp-block-image.alignfull {
         margin-top: 64px;
         margin-bottom: 64px; } }
@@ -190,26 +188,13 @@
     color: #000;
     font-size: 20px;
     font-style: italic;
-    margin: 0;
+    margin: 32px 0;
     padding: 0;
     text-align: center; }
     @media (min-width: 992px) {
       .edit-post-visual-editor blockquote,
       .edit-post-visual-editor blockquote.wp-block-quote {
         font-size: 24px; } }
-    .edit-post-visual-editor blockquote::before, .edit-post-visual-editor blockquote::after,
-    .edit-post-visual-editor blockquote.wp-block-quote::before,
-    .edit-post-visual-editor blockquote.wp-block-quote::after {
-      background: #59BACC;
-      content: '';
-      display: block;
-      width: 100%;
-      max-width: 286px;
-      height: 8px;
-      margin: 0 auto 25px; }
-    .edit-post-visual-editor blockquote::after,
-    .edit-post-visual-editor blockquote.wp-block-quote::after {
-      margin: 25px auto 0; }
     .edit-post-visual-editor blockquote cite,
     .edit-post-visual-editor blockquote.wp-block-quote cite {
       color: #000;
@@ -224,69 +209,6 @@
     .edit-post-visual-editor blockquote p:last-of-type,
     .edit-post-visual-editor blockquote.wp-block-quote p:last-of-type {
       margin-bottom: 0; }
-    .edit-post-visual-editor blockquote.is-large,
-    .edit-post-visual-editor blockquote.wp-block-quote.is-large {
-      font-size: 22px;
-      margin: 0 0 16px;
-      padding: 0; }
-      @media (min-width: 768px) {
-        .edit-post-visual-editor blockquote.is-large,
-        .edit-post-visual-editor blockquote.wp-block-quote.is-large {
-          font-size: 26px; } }
-      @media (min-width: 992px) {
-        .edit-post-visual-editor blockquote.is-large,
-        .edit-post-visual-editor blockquote.wp-block-quote.is-large {
-          font-size: 32px; } }
-      .edit-post-visual-editor blockquote.is-large cite,
-      .edit-post-visual-editor blockquote.wp-block-quote.is-large cite {
-        text-align: center; }
-    .edit-post-visual-editor blockquote.wp-block-pullquote,
-    .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote {
-      border: none;
-      color: #000;
-      padding: 0; }
-      .edit-post-visual-editor blockquote.wp-block-pullquote, .edit-post-visual-editor blockquote.wp-block-pullquote.alignleft, .edit-post-visual-editor blockquote.wp-block-pullquote.alignright,
-      .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote,
-      .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignleft,
-      .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignright {
-        max-width: 286px;
-        margin-top: 10px;
-        margin-bottom: 0; }
-        .edit-post-visual-editor blockquote.wp-block-pullquote,
-        .edit-post-visual-editor blockquote.wp-block-pullquote > p, .edit-post-visual-editor blockquote.wp-block-pullquote.alignleft,
-        .edit-post-visual-editor blockquote.wp-block-pullquote.alignleft > p, .edit-post-visual-editor blockquote.wp-block-pullquote.alignright,
-        .edit-post-visual-editor blockquote.wp-block-pullquote.alignright > p,
-        .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote,
-        .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote > p,
-        .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignleft,
-        .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignleft > p,
-        .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignright,
-        .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignright > p {
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 700; }
-          @media (min-width: 992px) {
-            .edit-post-visual-editor blockquote.wp-block-pullquote,
-            .edit-post-visual-editor blockquote.wp-block-pullquote > p, .edit-post-visual-editor blockquote.wp-block-pullquote.alignleft,
-            .edit-post-visual-editor blockquote.wp-block-pullquote.alignleft > p, .edit-post-visual-editor blockquote.wp-block-pullquote.alignright,
-            .edit-post-visual-editor blockquote.wp-block-pullquote.alignright > p,
-            .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote,
-            .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote > p,
-            .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignleft,
-            .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignleft > p,
-            .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignright,
-            .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote.alignright > p {
-              font-size: 24px; } }
-      .edit-post-visual-editor blockquote.wp-block-pullquote cite,
-      .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote cite {
-        color: #000;
-        font-size: 16px;
-        font-weight: 400;
-        text-transform: none; }
-        @media (min-width: 768px) {
-          .edit-post-visual-editor blockquote.wp-block-pullquote cite,
-          .edit-post-visual-editor blockquote.wp-block-quote.wp-block-pullquote cite {
-            font-size: 18px; } }
   .edit-post-visual-editor hr,
   .edit-post-visual-editor hr.wp-block-separator,
   .edit-post-visual-editor .clear-line,
