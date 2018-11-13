@@ -78,7 +78,8 @@ body.gutenberg-editor-page.wp-admin {
   body.gutenberg-editor-page.wp-admin .editor-post-title__block,
   body.gutenberg-editor-page.wp-admin .editor-default-block-appender,
   body.gutenberg-editor-page.wp-admin .editor-block-list__block {
-    max-width: 1200px; }
+    max-width: 920px;
+    margin: 0 auto; }
   body.gutenberg-editor-page.wp-admin .editor-block-list__block[data-align="wide"] {
     margin-left: calc(1 * (100vw / 12));
     margin-right: calc(1 * (100vw / 12));
@@ -224,7 +225,7 @@ body.gutenberg-editor-page.wp-admin {
       .editor-block-list__block .entry-comments,
       .editor-block-list__block .comment-respond,
       .editor-block-list__block .archive .site-main {
-        max-width: 1200px;
+        max-width: 920px;
         margin-left: auto;
         margin-right: auto; } }
   .editor-block-list__block .entry-content > * {
@@ -236,7 +237,7 @@ body.gutenberg-editor-page.wp-admin {
         max-width: calc(8 * (100vw / 12)); } }
     @media (min-width: 1232px) {
       .editor-block-list__block .entry-content > * {
-        max-width: 1200px;
+        max-width: 920px;
         margin-left: auto;
         margin-right: auto; } }
     .editor-block-list__block .entry-content > * > *:first-child {
