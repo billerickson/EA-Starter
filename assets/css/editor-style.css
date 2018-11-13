@@ -7,10 +7,6 @@
  *
  */
 /**
- * Center Image
- *
- */
-/**
  * Block Cover
  * Creates a block that covers the full width/height of parent div. Typically used on a :before pseudo element
  */
@@ -53,16 +49,6 @@ body {
   font-weight: 400;
   line-height: 1.6;
   margin: 0; }
-
-.wp-caption.alignfull,
-.wp-block-image.alignfull {
-  margin-top: 32px;
-  margin-bottom: 32px; }
-  @media (min-width: 1200px) {
-    .wp-caption.alignfull,
-    .wp-block-image.alignfull {
-      margin-top: 64px;
-      margin-bottom: 64px; } }
 
 button,
 button.wpforms-submit,
@@ -453,12 +439,12 @@ cite {
 p {
   margin: 0 0 16px;
   padding: 0; }
-  p.large, p.wp-block-subhead, p.has-large-font-size {
+  p.large, p.has-large-font-size, p.wp-block-subhead {
     font-size: 18px;
     font-style: normal;
     opacity: 1; }
     @media (min-width: 992px) {
-      p.large, p.wp-block-subhead, p.has-large-font-size {
+      p.large, p.has-large-font-size, p.wp-block-subhead {
         font-size: 20px; } }
   p.small, p.has-small-font-size {
     font-size: 12px; }
@@ -481,200 +467,31 @@ ul {
   ul ul {
     margin-bottom: 0; }
 
-/* Blockquote
+/* Color Options
 --------------------------------------------- */
-blockquote,
-blockquote.wp-block-quote {
-  background: transparent;
-  color: #000;
-  font-size: 20px;
-  font-style: italic;
-  margin: 32px 0;
-  padding: 0;
-  text-align: center; }
-  @media (min-width: 992px) {
-    blockquote,
-    blockquote.wp-block-quote {
-      font-size: 24px; } }
-  blockquote cite,
-  blockquote.wp-block-quote cite {
-    color: #000;
-    display: block;
-    font-size: 16px;
-    font-weight: 700;
-    margin-top: 16px; }
-    @media (min-width: 768px) {
-      blockquote cite,
-      blockquote.wp-block-quote cite {
-        font-size: 18px; } }
-  blockquote p:last-of-type,
-  blockquote.wp-block-quote p:last-of-type {
-    margin-bottom: 0; }
+.has-blue-color {
+  color: #59BACC; }
 
-/* Horizontal Rule
---------------------------------------------- */
-hr,
-hr.wp-block-separator,
-.clear-line,
-img.wp-more-tag {
-  overflow: hidden;
-  width: 100%;
-  max-width: 100%;
-  height: 1px;
-  border: none;
-  border-top: 1px solid #E0E0E0;
-  margin: 32px 0; }
+.has-blue-background-color {
+  background-color: #59BACC; }
 
-/* Headings
---------------------------------------------- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #000;
-  line-height: 1.2;
-  margin: 0;
-  margin-bottom: 16px;
-  padding: 0; }
-  h1 a,
-  h2 a,
-  h3 a,
-  h4 a,
-  h5 a,
-  h6 a {
-    color: #000; }
-    h1 a:hover,
-    h2 a:hover,
-    h3 a:hover,
-    h4 a:hover,
-    h5 a:hover,
-    h6 a:hover {
-      color: #59BACC;
-      text-decoration: none; }
+.has-green-color {
+  color: #58AD69; }
 
-h1 {
-  font-size: 30px; }
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 36px; } }
-  @media (min-width: 992px) {
-    h1 {
-      font-size: 40px; } }
+.has-green-background-color {
+  background-color: #58AD69; }
 
-h2 {
-  font-size: 24px; }
-  @media (min-width: 768px) {
-    h2 {
-      font-size: 30px; } }
-  @media (min-width: 992px) {
-    h2 {
-      font-size: 36px; } }
+.has-orange-color {
+  color: #FFBC49; }
 
-h3 {
-  font-size: 20px; }
-  @media (min-width: 768px) {
-    h3 {
-      font-size: 24px; } }
-  @media (min-width: 992px) {
-    h3 {
-      font-size: 30px; } }
+.has-orange-background-color {
+  background-color: #FFBC49; }
 
-h4 {
-  font-size: 18px; }
-  @media (min-width: 768px) {
-    h4 {
-      font-size: 20px; } }
-  @media (min-width: 992px) {
-    h4 {
-      font-size: 24px; } }
+.has-red-color {
+  color: #E2574C; }
 
-h5 {
-  font-size: 16px; }
-  @media (min-width: 768px) {
-    h5 {
-      font-size: 18px; } }
-  @media (min-width: 992px) {
-    h5 {
-      font-size: 20px; } }
-
-h6 {
-  font-size: 16px; }
-  @media (min-width: 768px) {
-    h6 {
-      font-size: 18px; } }
-
-/* Objects
---------------------------------------------- */
-embed,
-iframe,
-object,
-video {
-  max-width: 100%;
-  margin-bottom: 16px; }
-
-img {
-  display: block;
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
-
-figure {
-  margin: 0 0 16px;
-  /* Extra wide images within figure tags don't overflow the content area. */
-  max-width: 100%;
-  position: relative; }
-
-/* Alignments
---------------------------------------------- */
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 16px; }
-
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 16px; }
-
-.aligncenter {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-.alignfull {
-  margin-left: -16px;
-  margin-right: -16px;
-  width: calc( 100% + 16px * 2);
-  max-width: calc( 100% + 16px * 2); }
-
-@media (min-width: 768px) {
-  .alignfull {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    width: auto;
-    max-width: 1000%; }
-  .alignwide {
-    margin-left: calc(25% - 25vw);
-    margin-right: calc(25% - 25vw);
-    width: auto;
-    max-width: 1000%; }
-  .alignwide img,
-  .alignfull img {
-    display: block;
-    margin: 0 auto; } }
-
-.wp-caption,
-.wp-block-image {
-  margin-bottom: 32px;
-  text-align: center; }
-  .wp-caption figcaption,
-  .wp-block-image figcaption {
-    font-style: italic;
-    font-size: 14px; }
+.has-red-background-color {
+  background-color: #E2574C; }
 
 /* Forms
 --------------------------------------------- */
@@ -778,181 +595,3 @@ input[type="search"]::-webkit-search-results-button {
     margin-top: 8px; }
   .site-container .wpforms-container .wpforms-field-label {
     margin-bottom: 8px; }
-
-/* Post Elements
----------------------------------------------------------------------------------------------------- */
-/* Tables
---------------------------------------------- */
-.table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 16px; }
-  .table th,
-  .table td {
-    padding: 4px;
-    vertical-align: top;
-    border-top: 1px solid #E0E0E0; }
-  .table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #E0E0E0; }
-  .table tbody + tbody {
-    border-top: 2px solid #E0E0E0; }
-
-.table-bordered {
-  border: 1px solid #E0E0E0; }
-  .table-bordered th,
-  .table-bordered td {
-    border: 1px solid #E0E0E0; }
-  .table-bordered thead th,
-  .table-bordered thead td {
-    border-bottom-width: 2px; }
-
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #FAFAFA; }
-
-@media (max-width: 767px) {
-  .table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar; }
-    .table-responsive.table-bordered {
-      border: 0; } }
-
-/* Gallery
---------------------------------------------- */
-.gallery {
-  margin: 0 auto 40px;
-  overflow: hidden;
-  width: 100%; }
-
-.gallery-item {
-  float: left;
-  margin: 10px 0 0;
-  text-align: center; }
-
-.gallery-columns-2 .gallery-item {
-  width: 50%; }
-
-.gallery-columns-3 .gallery-item {
-  width: 33%; }
-
-.gallery-columns-4 .gallery-item {
-  width: 25%; }
-
-.gallery-columns-5 .gallery-item {
-  width: 20%; }
-
-.gallery-columns-6 .gallery-item {
-  width: 16.6666%; }
-
-.gallery-columns-7 .gallery-item {
-  width: 14.2857%; }
-
-.gallery-columns-8 .gallery-item {
-  width: 12.5%; }
-
-.gallery-columns-9 .gallery-item {
-  width: 11.1111%; }
-
-.gallery-columns-2 .gallery-item:nth-child(2n+1),
-.gallery-columns-3 .gallery-item:nth-child(3n+1),
-.gallery-columns-4 .gallery-item:nth-child(4n+1),
-.gallery-columns-5 .gallery-item:nth-child(5n+1),
-.gallery-columns-6 .gallery-item:nth-child(6n+1),
-.gallery-columns-7 .gallery-item:nth-child(7n+1),
-.gallery-columns-8 .gallery-item:nth-child(8n+1),
-.gallery-columns-9 .gallery-item:nth-child(9n+1) {
-  clear: both; }
-
-.gallery img {
-  border: 2px solid #E0E0E0; }
-
-.gallery-caption {
-  margin-left: 0; }
-
-/* Screen Reader Text
---------------------------------------------- */
-.screen-reader-text,
-.screen-reader-text span,
-.screen-reader-shortcut {
-  position: absolute !important;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  width: 1px;
-  border: 0;
-  overflow: hidden; }
-
-.screen-reader-text:focus,
-.screen-reader-shortcut:focus {
-  clip: auto !important;
-  height: auto;
-  width: auto;
-  display: block;
-  font-size: 1em;
-  font-weight: bold;
-  padding: 15px 23px 14px;
-  color: #333;
-  background: #fff;
-  z-index: 100000;
-  /* Above WP toolbar. */
-  text-decoration: none;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); }
-
-/*
- * Column Classes
- *
- * Width: 1140px
- * Gutter: 30px
- * Link: http://www.billerickson.net/column-class-generator/
---------------------------------------------- */
-@media (min-width: 768px) {
-  .five-sixths,
-  .four-sixths,
-  .four-fifths,
-  .one-fifth,
-  .one-fourth,
-  .one-half,
-  .one-sixth,
-  .one-third,
-  .three-fourths,
-  .three-fifths,
-  .three-sixths,
-  .two-fourths,
-  .two-fifths,
-  .two-sixths,
-  .two-thirds {
-    float: left;
-    margin-left: 2.6315789473684%; }
-  .one-half,
-  .three-sixths,
-  .two-fourths {
-    width: 48.684210526316%; }
-  .one-third,
-  .two-sixths {
-    width: 31.578947368421%; }
-  .four-sixths,
-  .two-thirds {
-    width: 65.789473684211%; }
-  .one-fourth {
-    width: 23.026315789474%; }
-  .three-fourths {
-    width: 74.342105263158%; }
-  .one-fifth {
-    width: 17.894736842105%; }
-  .two-fifths {
-    width: 38.421052631579%; }
-  .three-fifths {
-    width: 58.947368421053%; }
-  .four-fifths {
-    width: 79.473684210526%; }
-  .one-sixth {
-    width: 14.473684210526%; }
-  .five-sixths {
-    width: 82.894736842105%; }
-  .first {
-    clear: both;
-    margin-left: 0; } }
