@@ -12,7 +12,7 @@ get_header();
 
 tha_content_before();
 
-	echo '<div class="content-area wrap">';
+	echo '<div class="' . ea_class( 'content-area', 'wrap', apply_filters( 'ea_content_area_wrap', false ) ) . '">';
 	tha_content_wrap_before();
 	echo '<main class="site-main" role="main">';
 	tha_content_top();
