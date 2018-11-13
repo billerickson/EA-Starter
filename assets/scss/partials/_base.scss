@@ -43,9 +43,12 @@ $sidr_width: 345px;
 $sidr_close: 44px;
 $sidr_total: $sidr_width + $sidr_close;
 
+// Content
+$content-width: 920px;
+$block-margin: 20px;
+
 // Grid
 $grid-width: 1200px;
-$content-width: 920px;
 $grid-gutter: 32px;
 $base-margin: 16px;
 $wrap_edge: $base-margin;
