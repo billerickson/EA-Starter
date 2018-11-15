@@ -127,15 +127,19 @@
 
 .wp-block-image {
 
-	figcaption {
-		color: $base-color;
-		text-align: left;
-		font-size: 12px;
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
 	}
 
-	&.page-header {
-		margin-bottom: 0;
+	figcaption {
+		color: $grey_7;
+		text-align: left;
+		font-size: 14px;
+		font-style: italic;
 	}
+
 }
 
 /* Button
