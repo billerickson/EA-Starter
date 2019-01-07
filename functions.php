@@ -144,6 +144,9 @@ function ea_setup() {
 	// -- Wide Images
 	add_theme_support( 'align-wide' );
 
+	// -- Disable custom font sizes
+	add_theme_support( 'disable-custom-font-sizes' );
+
 	// -- Editor Font Styles
 	add_theme_support( 'editor-font-sizes', array(
 		array(
@@ -164,14 +167,6 @@ function ea_setup() {
 			'size'      => 20,
 			'slug'      => 'large'
 		),
-/*
-		array(
-			'name'      => __( 'larger', 'ea_genesis_child' ),
-			'shortName' => __( 'XL', 'ea_genesis_child' ),
-			'size'      => 24,
-			'slug'      => 'larger'
-		)
-*/
 	) );
 
 	// -- Disable Custom Colors
