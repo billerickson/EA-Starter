@@ -21,7 +21,7 @@ echo '</head>';
 echo '<body class="' . join( ' ', get_body_class() ) . '">';
 tha_body_top();
 echo '<div class="site-container">';
-	echo '<a class="skip-link screen-reader-text" href="#main-content">' . esc_html__( 'Skip to content', 'ea' ) . '</a>';
+	echo '<a class="skip-link screen-reader-text" href="#main-content">' . esc_html__( 'Skip to content', 'ea-starter' ) . '</a>';
 
 	tha_header_before();
 	echo '<header class="site-header" role="banner"><div class="wrap">';

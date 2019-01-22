@@ -81,11 +81,8 @@ if ( ! function_exists( 'ea_setup' ) ) :
 function ea_setup() {
 	/*
 	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on ea, use a find and replace
-	 * to change 'ea' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'ea', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'ea-starter', get_template_directory() . '/languages' );
 
 	// Editor Styles
 	add_theme_support( 'editor-styles' );
@@ -120,8 +117,8 @@ function ea_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'ea' ),
-		'mobile'  => esc_html__( 'Mobile Menu', 'ea' ),
+		'primary' => esc_html__( 'Primary', 'ea-starter' ),
+		'mobile'  => esc_html__( 'Mobile Menu', 'ea-starter' ),
 	) );
 
 	/*
@@ -147,20 +144,20 @@ function ea_setup() {
 	// -- Editor Font Styles
 	add_theme_support( 'editor-font-sizes', array(
 		array(
-			'name'      => __( 'small', 'ea_genesis_child' ),
-			'shortName' => __( 'S', 'ea_genesis_child' ),
+			'name'      => __( 'small', 'ea-starter' ),
+			'shortName' => __( 'S', 'ea-starter' ),
 			'size'      => 12,
 			'slug'      => 'small'
 		),
 		array(
-			'name'      => __( 'regular', 'ea_genesis_child' ),
-			'shortName' => __( 'M', 'ea_genesis_child' ),
+			'name'      => __( 'regular', 'ea-starter' ),
+			'shortName' => __( 'M', 'ea-starter' ),
 			'size'      => 16,
 			'slug'      => 'regular'
 		),
 		array(
-			'name'      => __( 'large', 'ea_genesis_child' ),
-			'shortName' => __( 'L', 'ea_genesis_child' ),
+			'name'      => __( 'large', 'ea-starter' ),
+			'shortName' => __( 'L', 'ea-starter' ),
 			'size'      => 20,
 			'slug'      => 'large'
 		),
@@ -172,22 +169,22 @@ function ea_setup() {
 	// -- Editor Color Palette
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => __( 'Blue', 'ea_genesis_child' ),
+			'name'  => __( 'Blue', 'ea-starter' ),
 			'slug'  => 'blue',
 			'color'	=> '#59BACC',
 		),
 		array(
-			'name'  => __( 'Green', 'ea_genesis_child' ),
+			'name'  => __( 'Green', 'ea-starter' ),
 			'slug'  => 'green',
 			'color' => '#58AD69',
 		),
 		array(
-			'name'  => __( 'Orange', 'ea_genesis_child' ),
+			'name'  => __( 'Orange', 'ea-starter' ),
 			'slug'  => 'orange',
 			'color' => '#FFBC49',
 		),
 		array(
-			'name'	=> __( 'Red', 'ea_genesis_child' ),
+			'name'	=> __( 'Red', 'ea-starter' ),
 			'slug'	=> 'red',
 			'color'	=> '#E2574C',
 		),

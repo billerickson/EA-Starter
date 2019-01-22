@@ -16,7 +16,7 @@
  function ea_widgets_init() {
 
  	register_sidebar( ea_widget_area_args( array(
- 		'name' => esc_html__( 'Primary Sidebar', 'ea' ),
+ 		'name' => esc_html__( 'Primary Sidebar', 'ea-starter' ),
  	) ) );
 
  }

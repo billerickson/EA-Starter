@@ -21,7 +21,7 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 		the_content();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ea-starter' ),
 			'after'  => '</div>',
 		) );
 
