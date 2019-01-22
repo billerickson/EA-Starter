@@ -87,9 +87,6 @@ function ea_setup() {
 	 */
 	load_theme_textdomain( 'ea', get_template_directory() . '/languages' );
 
-	// Structural Wraps
-	add_theme_support( 'ea-structural-wraps', array( 'header', 'site-inner', 'footer' ) );
-
 	// Editor Styles
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'assets/css/editor-style.css' );
