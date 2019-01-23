@@ -144,8 +144,32 @@ function ea_bg_image_style( $image_id = false, $image_size = 'full' ) {
  * Get Icon
  *
  */
-function ea_icon( $slug = '' ) {
-	$icon_path = get_template_directory() . '/assets/icons/' . $slug . '.svg';
-	if( file_exists( $icon_path ) )
-		return file_get_contents( $icon_path );
+function ea_icon( $atts = array() ) {
+
+	$atts = shortcode_atts( array(
+		'icon'	=> false,
+		'group'	=> 'utility',
+		'size'	=> 16,
+		'class'	=> false,
+	), $atts );
+
+	if( empty( $atts['icon'] ) )
+		return;
+
+	$icon_path = get_template_directory() . '/assets/icons/' . $atts['group'] . '/' . $atts['icon'] . '.svg';
+	if( ! file_exists( $icon_path ) )
+		return;
+
+	$icon = file_get_contents( $icon_path );
+
+	$class = 'svg-icon';
+	if( !empty( $atts['class'] ) )
+		$class .= ' ' . esc_attr( $atts['class'] );
+
+	$repl = sprintf( '<svg class="' . $class . '" width="%d" height="%d" aria-hidden="true" role="img" focusable="false" ', $atts['size'], $atts['size'] );
+	$svg  = preg_replace( '/^<svg /', $repl, trim( $icon ) ); // Add extra attributes to SVG code.
+	$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg ); // Remove newlines & tabs.
+	$svg  = preg_replace( '/>\s*</', '><', $svg ); // Remove white space between SVG tags.
+
+	return $svg;
 }

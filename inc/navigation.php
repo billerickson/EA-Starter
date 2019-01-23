@@ -71,8 +71,8 @@ function ea_archive_paginated_navigation() {
         'format'    => '?paged=%#%',
         'current'   => max( 1, get_query_var( 'paged' ) ),
         'total'     => $wp_query->max_num_pages,
-		'prev_text' => ea_icon( 'angle-left' ),
-		'next_text' => ea_icon( 'angle-right' ),
+		'prev_text' => ea_icon( array( 'icon' => 'angle-left' ) ),
+		'next_text' => ea_icon( array( 'icon' => 'angle-right' ) ),
 	) );
 
 	if( $navigation ) {
