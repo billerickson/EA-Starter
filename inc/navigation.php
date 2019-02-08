@@ -19,28 +19,8 @@ function ea_header_navigation() {
 		wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
 		echo '</nav>';
 	}
-
-	if( has_nav_menu( 'mobile' ) ) {
-		echo '<div class="nav-mobile">';
-		echo '<a class="mobile-menu-toggle" href="#">' . ea_icon( 'menu' ) . '</a>';
-		echo '</div>';
-	}
 }
 add_action( 'tha_header_bottom', 'ea_header_navigation' );
-
-/**
- * Mobile Menu
- *
- */
-function ea_mobile_menu() {
-	if( has_nav_menu( 'mobile' ) ) {
-		echo '<div id="sidr-mobile-menu" class="sidr right">';
-		echo '<a class="sidr-menu-close" href="#">' . ea_icon( 'close' ) . '</a>';
-		wp_nav_menu( array( 'theme_location' => 'mobile' ) );
-		echo '</div>';
-	}
-}
-add_action( 'wp_footer', 'ea_mobile_menu' );
 
 /**
  * Archive Navigation
