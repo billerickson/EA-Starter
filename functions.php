@@ -134,6 +134,9 @@ function ea_setup() {
 
 	// Gutenberg
 
+	// -- Responsive embeds
+	add_theme_support( 'responsive-embeds' );
+
 	// -- Wide Images
 	add_theme_support( 'align-wide' );
 
