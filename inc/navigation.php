@@ -83,4 +83,4 @@ function ea_archive_paginated_navigation() {
 	}
 
 }
-//add_action( 'tha_content_while_after', 'ea_archive_navigation' );
+//add_action( 'tha_content_while_after', 'ea_archive_paginated_navigation' );
