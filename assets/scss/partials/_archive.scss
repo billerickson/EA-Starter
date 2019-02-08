@@ -1,0 +1,30 @@
+/* Archive
+---------------------------------------------------------------------------------------------------- */
+
+/* Entry Navigation
+--------------------------------------------- */
+
+.posts-navigation {
+	border-top: 1px solid $grey_3;
+	overflow: hidden;
+	padding-top: 24px;
+	text-align: center;
+	width: 100%;
+
+	.page-numbers {
+		color: $base-color;
+		display: inline-block;
+		min-width: 30px;
+		line-height: 30px;
+		border-radius: 3px;
+		padding: 0 10px;
+		text-decoration: none;
+
+		&:not(.dots):hover,
+		&.current,
+		&.active {
+			background: $highlight;
+			color: $white;
+		}
+	}
+}
