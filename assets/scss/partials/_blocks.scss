@@ -191,7 +191,7 @@ $default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
 }
 
 // Other Buttons
-.ea-starter-button, // rename to a theme-prefixed button class
+.be-button, // rename to a theme-prefixed button class
 .site-container div.wpforms-container-full .wpforms-form input[type=submit],
 .site-container div.wpforms-container-full .wpforms-form button[type=submit],
 .site-container div.wpforms-container-full .wpforms-form .wpforms-page-button {
