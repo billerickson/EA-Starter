@@ -16,11 +16,8 @@
 
 /*
 	.site-title a {
-		background-image: url(../images/logo@2x.png);
-	  	background-image: url(../images/logo.svg), none;
+	  	background: url(../images/logo.svg) no-repeat center;
 	  	background-size: contain;
-	  	background-repeat: no-repeat;
-		background-position: center center;
 		display: block;
 		text-indent: -9999em;
 		width: 100%;
