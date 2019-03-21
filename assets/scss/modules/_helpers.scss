@@ -2,16 +2,15 @@
  * Grid, Center Last
  *
  */
-@mixin grid-center-last( $columns ) {
-	$total_columns: $columns * 2;
+@mixin two-column-grid-center-last() {
 	display: grid;
-	grid-template-columns: repeat( $total_columns, 1fr );
+	grid-template-columns: repeat( 4, 1fr );
 
 	& > * {
-		grid-column: span $columns;
+		grid-column: span 2;
 
 		&:nth-last-child(1):nth-child(odd) {
-			grid-column: $columns / span $columns;
+			grid-column: 2 / span 2;
 		}
 	}
 }
