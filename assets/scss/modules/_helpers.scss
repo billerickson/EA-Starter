@@ -1,4 +1,22 @@
 /**
+ * Grid, Center Last
+ *
+ */
+@mixin grid-center-last( $columns ) {
+	$total_columns: $columns * 2;
+	display: grid;
+	grid-template-columns: repeat( $total_columns, 1fr );
+
+	& > * {
+		grid-column: span $columns;
+
+		&:nth-last-child(1):nth-child(odd) {
+			grid-column: $columns / span $columns;
+		}
+	}
+}
+
+/**
  * Margin, No Edge
  * Removes left margin from first item, right margin from last item
  */
