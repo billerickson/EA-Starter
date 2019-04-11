@@ -46,6 +46,15 @@ function ea_default_loop() {
 add_action( 'tha_content_loop', 'ea_default_loop' );
 
 /**
+ * Entry Title
+ *
+ */
+function ea_entry_title() {
+	echo '<h1 class="entry-title">' . get_the_title() . '</h1>';
+}
+add_action( 'tha_entry_top', 'ea_entry_title' );
+
+/**
  * Post Comments
  *
  */

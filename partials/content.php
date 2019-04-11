@@ -10,10 +10,11 @@
 
 echo '<article class="' . join( ' ', get_post_class() ) . '">';
 
-	echo '<header class="entry-header">';
-		echo '<h1 class="entry-title">' . get_the_title() . '</h1>';
+	if( ea_has_action( 'tha_entry_top' ) ) {
+		echo '<header class="entry-header">';
 		tha_entry_top();
-	echo '</header>';
+		echo '</header>';
+	}
 
 	echo '<div class="entry-content">';
 		tha_entry_content_before();
@@ -28,7 +29,7 @@ echo '<article class="' . join( ' ', get_post_class() ) . '">';
 		tha_entry_content_after();
 	echo '</div>';
 
-	if( has_action( 'tha_entry_bottom' ) ) {
+	if( ea_has_action( 'tha_entry_bottom' ) ) {
 		echo '<footer class="entry-footer">';
 			tha_entry_bottom();
 		echo '</footer>';
