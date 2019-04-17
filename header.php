@@ -19,6 +19,9 @@ echo '<head>';
 echo '</head>';
 
 echo '<body class="' . join( ' ', get_body_class() ) . '">';
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
 tha_body_top();
 echo '<div class="site-container">';
 	echo '<a class="skip-link screen-reader-text" href="#main-content">' . esc_html__( 'Skip to content', 'ea-starter' ) . '</a>';
