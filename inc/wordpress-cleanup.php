@@ -158,6 +158,16 @@ function ea_archive_title_remove_prefix( $title ) {
 add_filter( 'get_the_archive_title', 'ea_archive_title_remove_prefix' );
 
 /**
+ * Comment form, button class
+ *
+ */
+function ea_comment_form_button_class( $args ) {
+	$args['class_submit'] = 'submit wp-block-button__link';
+	return $args;
+}
+add_filter( 'comment_form_defaults', 'ea_comment_form_button_class' );
+
+/**
  * Excerpt More
  *
  */
@@ -175,7 +185,7 @@ add_filter( 'excerpt_more', 'ea_excerpt_more' );
  * @return string
  */
 function be_pagination_posts_nav( $attr ) {
-	$attr .= ' class="button"';
+	$attr .= ' class="wp-block-button__link"';
 	return $attr;
 }
 add_filter( 'previous_posts_link_attributes', 'be_pagination_posts_nav' );
