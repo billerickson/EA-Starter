@@ -29,6 +29,9 @@ require get_template_directory() . '/inc/display-posts.php';
 require get_template_directory() . '/inc/instantpage.php';
 require get_template_directory() . '/inc/wpforms.php';
 
+add_filter( 'get_comment_date', '__return_empty_string' );
+add_filter( 'get_comment_time', '__return_empty_string' );
+
 /**
  * Enqueue scripts and styles.
  */

@@ -50,14 +50,14 @@ add_action( 'tha_header_bottom', 'ea_mobile_menu', 11 );
 function ea_nav_add_dropdown_icons( $output, $item, $depth, $args ) {
 
 	// Only add class to 'top level' items on the 'primary' menu.
-	if ( ! isset( $args->theme_location ) || 'primary' !== $args->theme_location || $depth ) {
+	if ( ! isset( $args->theme_location ) || 'primary' !== $args->theme_location ) {
 		return $output;
 	}
 
 	if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
 		// Add SVG icon to parent items.
-		$icon = ea_icon( array( 'icon' => 'angle-down', 'size' => 16 ) );
+		$icon = ea_icon( array( 'icon' => 'navigate-down', 'size' => 16 ) );
 
 		$output .= sprintf(
 			'<span class="submenu-expand" tabindex="-1">%s</span>',
@@ -98,8 +98,8 @@ function ea_archive_paginated_navigation() {
         'format'    => '?paged=%#%',
         'current'   => max( 1, get_query_var( 'paged' ) ),
         'total'     => $wp_query->max_num_pages,
-		'prev_text' => ea_icon( array( 'icon' => 'angle-left' ) ),
-		'next_text' => ea_icon( array( 'icon' => 'angle-right' ) ),
+		'prev_text' => 'Previous',
+		'next_text' => 'Next',
 	) );
 
 	if( $navigation ) {
