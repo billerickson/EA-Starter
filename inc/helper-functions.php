@@ -180,8 +180,10 @@ function ea_icon( $atts = array() ) {
 	$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg ); // Remove newlines & tabs.
 	$svg  = preg_replace( '/>\s*</', '><', $svg ); // Remove white space between SVG tags.
 
-	if( !empty( $atts['label'] ) )
+	if( !empty( $atts['label'] ) ) {
 		$svg = str_replace( '<svg class', '<svg aria-label="' . esc_attr( $atts['label'] ) . '" class', $svg );
+		$svg = str_replace( 'aria-hidden="true"', '', $svg );
+	}
 
 	return $svg;
 }
