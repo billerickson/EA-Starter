@@ -26,7 +26,6 @@ require get_template_directory() . '/inc/tinymce.php';
 require get_template_directory() . '/inc/disable-editor.php';
 require get_template_directory() . '/inc/amp.php';
 require get_template_directory() . '/inc/display-posts.php';
-require get_template_directory() . '/inc/instantpage.php';
 require get_template_directory() . '/inc/wpforms.php';
 
 /**
