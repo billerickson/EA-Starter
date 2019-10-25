@@ -1,8 +1,8 @@
 /**
- * Color
+ * Brand Color
  *
  */
-@function color( $key, $variant: null ) {
+@function brand-color( $key, $variant: null ) {
 	@if map-has-key( $brand_colors, $key ) {
 		$color: map-get( $brand_colors, $key );
 		@if ( 'lighten' == $variant ) {
@@ -22,5 +22,7 @@
 			}
 		}
 		@return $color;
+	} @else {
+		@error "The #{$key} color could not be found in $brand_colors";
 	}
 }
