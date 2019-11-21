@@ -1,14 +1,20 @@
-// @codekit-prepend "smoothscroll.js"
-
 jQuery(function($){
 
 	// Mobile Menu
-	$('.mobile-menu-toggle').click(function(){
-		$('.mobile-menu-toggle, .nav-primary').toggleClass('active');
+	$('.menu-toggle').click(function(){
+		$('.search-toggle, .header-search').removeClass('active');
+		$('.menu-toggle, .nav-menu').toggleClass('active');
 	});
 	$('.menu-item-has-children > .submenu-expand').click(function(e){
 		$(this).toggleClass('expanded');
 		e.preventDefault();
+	});
+
+	// Search toggle
+	$('.search-toggle').click(function(){
+		$('.menu-toggle, .nav-menu').removeClass('active');
+		$('.search-toggle, .header-search').toggleClass('active');
+		$('.site-header .search-field').focus();
 	});
 
 });

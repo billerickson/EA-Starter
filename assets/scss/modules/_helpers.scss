@@ -1,4 +1,18 @@
 /**
+ * Button Reset
+ *
+ */
+@mixin button-reset() {
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	padding: 0;
+	outline: none;
+	cursor: pointer;
+}
+
+/**
  * Grid, Center Last
  *
  */

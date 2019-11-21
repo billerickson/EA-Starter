@@ -12,9 +12,6 @@ echo '</div>'; // .site-inner
 tha_footer_before();
 echo '<footer class="site-footer" role="contentinfo"><div class="wrap">';
 tha_footer_top();
-
-echo '<p>Copyright &copy; ' . date( 'Y' ) . '</p>';
-
 tha_footer_bottom();
 echo '</div></footer>';
 tha_footer_after();

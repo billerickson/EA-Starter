@@ -94,42 +94,6 @@ function ea_class( $base_classes, $optional_class, $conditional ) {
 }
 
 /**
- * Column Classes
- *
- * Adds "-first" classes when appropriate for clearing float
- * @see /assets/scss/partials/layout.scss
- *
- * @param array $classes, bootstrap-style classes, ex: array( 'col-lg-4', 'col-md-6' )
- * @param int $current, current post in loop
- * @param bool $join, whether to join classes (return string) or not (return array)
- * @return string/array $classes
- */
-function ea_column_class( $classes = array(), $current = false, $join = true ) {
-
-	if( false === $current )
-		return $classes;
-
-	$columns = array( 2, 3, 4, 6 );
-	foreach( $columns as $column ) {
-		if( 0 == $current % $column ) {
-
-			$col = 12 / $column;
-			foreach( $classes as $class ) {
-				if( false != strstr( $class, (string) $col ) && false == strstr( $class, '12' ) ) {
-					$classes[] = str_replace( $col, 'first', $class );
-				}
-			}
-		}
-	}
-
-	if( $join ) {
-		return join( ' ', $classes );
-	} else {
-		return $classes;
-	}
-}
-
-/**
  *  Background Image Style
  *
  * @param int $image_id
@@ -169,23 +133,27 @@ function ea_icon( $atts = array() ) {
 	if( ! file_exists( $icon_path ) )
 		return;
 
-	$icon = file_get_contents( $icon_path );
+		$icon = file_get_contents( $icon_path );
 
-	$class = 'svg-icon';
-	if( !empty( $atts['class'] ) )
-		$class .= ' ' . esc_attr( $atts['class'] );
+		$class = 'svg-icon';
+		if( !empty( $atts['class'] ) )
+			$class .= ' ' . esc_attr( $atts['class'] );
 
-	$repl = sprintf( '<svg class="' . $class . '" width="%d" height="%d" aria-hidden="true" role="img" focusable="false" ', $atts['size'], $atts['size'] );
-	$svg  = preg_replace( '/^<svg /', $repl, trim( $icon ) ); // Add extra attributes to SVG code.
-	$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg ); // Remove newlines & tabs.
-	$svg  = preg_replace( '/>\s*</', '><', $svg ); // Remove white space between SVG tags.
+		if( false !== $atts['size'] ) {
+			$repl = sprintf( '<svg class="' . $class . '" width="%d" height="%d" aria-hidden="true" role="img" focusable="false" ', $atts['size'], $atts['size'] );
+			$svg  = preg_replace( '/^<svg /', $repl, trim( $icon ) ); // Add extra attributes to SVG code.
+		} else {
+			$svg = preg_replace( '/^<svg /', '<svg class="' . $class . '"', trim( $icon ) );
+		}
+		$svg  = preg_replace( "/([\n\t]+)/", ' ', $svg ); // Remove newlines & tabs.
+		$svg  = preg_replace( '/>\s*</', '><', $svg ); // Remove white space between SVG tags.
 
-	if( !empty( $atts['label'] ) ) {
-		$svg = str_replace( '<svg class', '<svg aria-label="' . esc_attr( $atts['label'] ) . '" class', $svg );
-		$svg = str_replace( 'aria-hidden="true"', '', $svg );
-	}
+		if( !empty( $atts['label'] ) ) {
+			$svg = str_replace( '<svg class', '<svg aria-label="' . esc_attr( $atts['label'] ) . '" class', $svg );
+			$svg = str_replace( 'aria-hidden="true"', '', $svg );
+		}
 
-	return $svg;
+		return $svg;
 }
 
 /**
@@ -197,4 +165,14 @@ function ea_has_action( $hook ) {
 	do_action( $hook );
 	$output = ob_get_clean();
 	return !empty( $output );
+}
+
+/**
+ * Breadcrumbs
+ *
+ */
+function ea_breadcrumbs() {
+	if ( function_exists('yoast_breadcrumb') ) {
+		yoast_breadcrumb( '<p id="breadcrumbs" class="breadcrumb">','</p>' );
+	}
 }

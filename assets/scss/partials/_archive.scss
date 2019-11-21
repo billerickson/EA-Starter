@@ -1,30 +1,105 @@
-/* Archive
----------------------------------------------------------------------------------------------------- */
+.archive {
+
+	.site-main {
+
+		.block-area {
+			grid-column: 1 / -1;
+			margin-bottom: 48px;
+		}
+
+		@include media(">small", "<medium") {
+			@include columns(2);
+		}
+
+		@include media(">=medium") {
+			@include columns(4);
+		}
+	}
+}
+
+/* Archive Header
+--------------------------------------------- */
+
+.archive-description {
+	text-align: center;
+	width: 100%;
+	max-width: $content-width;
+	margin: 0 auto $grid-gap;
+
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+
+	.search-form {
+		margin: 0 auto;
+	}
+
+}
+
+.author-archive-description {
+
+	.avatar {
+		border-radius: 50%;
+		display: block;
+		margin: 0 auto 16px;
+	}
+
+	h3:last-child {
+		@include media(">=tablet") {
+			margin-top: 48px;
+		}
+	}
+}
+
+.author-title {
+	color: $grey_8;
+	@include font-sizes( 18px, 20px );
+	font-weight: 700;
+	text-transform: uppercase;
+}
 
 /* Entry Navigation
 --------------------------------------------- */
 
-.posts-navigation {
-	border-top: 1px solid $grey_3;
-	overflow: hidden;
-	padding-top: 24px;
+.pagination {
+	border-top: 1px solid $border-color;
+	font-size: 16px;
 	text-align: center;
-	width: 100%;
+	padding-top: 22px;
 
-	.page-numbers {
-		color: $base-color;
-		display: inline-block;
-		min-width: 30px;
-		line-height: 30px;
-		border-radius: 3px;
-		padding: 0 10px;
-		text-decoration: none;
+	ul {
+		margin: 0;
 
-		&:not(.dots):hover,
-		&.current,
-		&.active {
-			background: $highlight;
-			color: $white;
+		li {
+			list-style-type: none;
+			display: inline-block;
+
+			a {
+				color: $base-color;
+				border-radius: 50%;
+				display: block;
+				font-weight: 400;
+				text-decoration: none;
+				width: 29px;
+				height: 29px;
+				line-height: 29px;
+				text-align: center;
+			}
+
+			&.pagination-next a,
+			&.pagination-previous a {
+				width: auto;
+			}
+
+			&:hover > a {
+				color: $highlight;
+			}
+
+			&.active > a {
+				background: $highlight;
+				color: $white;
+				font-weight: 700;
+			}
 		}
 	}
 }

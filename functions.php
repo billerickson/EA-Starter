@@ -14,41 +14,84 @@ Please read the instructions here (private repo): https://github.com/billerickso
 Devs, contact me if you need access
 */
 
-require get_template_directory() . '/inc/tha-theme-hooks.php';
-require get_template_directory() . '/inc/wordpress-cleanup.php';
-require get_template_directory() . '/inc/login-logo.php';
-require get_template_directory() . '/inc/helper-functions.php';
-require get_template_directory() . '/inc/navigation.php';
-//require get_template_directory() . '/inc/sidebar-layouts.php';
-//require get_template_directory() . '/inc/custom-logo.php';
-require get_template_directory() . '/inc/loop.php';
-require get_template_directory() . '/inc/tinymce.php';
-require get_template_directory() . '/inc/disable-editor.php';
-require get_template_directory() . '/inc/amp.php';
-require get_template_directory() . '/inc/display-posts.php';
-require get_template_directory() . '/inc/wpforms.php';
+// General cleanup
+include_once( get_template_directory() . '/inc/wordpress-cleanup.php' );
+
+// Theme
+include_once( get_template_directory() . '/inc/tha-theme-hooks.php' );
+include_once( get_template_directory() . '/inc/layouts.php' );
+include_once( get_template_directory() . '/inc/helper-functions.php' );
+include_once( get_template_directory() . '/inc/navigation.php' );
+include_once( get_template_directory() . '/inc/loop.php' );
+include_once( get_template_directory() . '/inc/author-box.php' );
+include_once( get_template_directory() . '/inc/template-tags.php' );
+include_once( get_template_directory() . '/inc/site-footer.php' );
+
+// Editor
+include_once( get_template_directory() . '/inc/disable-editor.php' );
+include_once( get_template_directory() . '/inc/tinymce.php' );
+
+// Functionality
+include_once( get_template_directory() . '/inc/login-logo.php' );
+include_once( get_template_directory() . '/inc/category-landing-page.php' );
+include_once( get_template_directory() . '/inc/block-area.php' );
+include_once( get_template_directory() . '/inc/social-links.php' );
+include_once( get_template_directory() . '/inc/post-listing.php' );
+
+// Plugin Support
+include_once( get_template_directory() . '/inc/acf.php' );
+include_once( get_template_directory() . '/inc/amp.php' );
+include_once( get_template_directory() . '/inc/pwa.php' );
+include_once( get_template_directory() . '/inc/shared-counts.php' );
+include_once( get_template_directory() . '/inc/wpforms.php' );
 
 /**
  * Enqueue scripts and styles.
  */
 function ea_scripts() {
 
-	wp_enqueue_style( 'ea-fonts', ea_theme_fonts_url() );
-	wp_enqueue_style( 'ea-style', get_template_directory_uri() . '/assets/css/main.css', array(), filemtime( get_template_directory() . '/assets/css/main.css' ) );
-	wp_enqueue_script( 'ea-global', get_template_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/js/global-min.js' ), true );
+	if( ! ea_is_amp() ) {
+		wp_enqueue_script( 'ea-global', get_template_directory_uri() . '/assets/js/global-min.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/js/global-min.js' ), true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
+
+		// Move jQuery to footer
+		if( ! is_admin() ) {
+			wp_deregister_script( 'jquery' );
+			wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+			wp_enqueue_script( 'jquery' );
+		}
+
 	}
 
-	// Move jQuery to footer
-	if( ! is_admin() ) {
-		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-		wp_enqueue_script( 'jquery' );
+	wp_register_style( 'ea-fonts', ea_theme_fonts_url() );
+	wp_register_style( 'ea-fonts', ea_theme_fonts_url() );
+	wp_register_style( 'ea-critical', get_stylesheet_directory_uri() . '/assets/css/critical.css', array(), filemtime( get_template_directory() . '/assets/css/critical.css' ) );
+	wp_register_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), filemtime( get_template_directory() . '/assets/css/main.css' ) );
+
+	if( $using_critical_css = true ) {
+		wp_enqueue_style( 'ea-critical' );
+		wp_dequeue_style( 'wp-block-library' );
+		add_action( 'wp_footer', 'ea_enqueue_noncritical_css', 1 );
+	} else {
+		ea_enqueue_noncritical_css();
 	}
+
 }
 add_action( 'wp_enqueue_scripts', 'ea_scripts' );
+
+/**
+ * Enqueue Non-Critical CSS
+ *
+ */
+function ea_enqueue_noncritical_css() {
+	wp_enqueue_style( 'wp-block-library' );
+	wp_enqueue_style( 'ea-critical' );
+	wp_enqueue_style( 'ea-style' );
+	wp_enqueue_style( 'ea-fonts' );
+}
 
 /**
  * Gutenberg scripts and styles
@@ -65,13 +108,7 @@ add_action( 'enqueue_block_editor_assets', 'ea_gutenberg_scripts' );
  *
  */
 function ea_theme_fonts_url() {
-	$font_families = apply_filters( 'ea_theme_fonts', array( 'Source+Sans+Pro:400,400i,700,700i' ) );
-	$query_args = array(
-		'family' => implode( '|', $font_families ),
-		'subset' => 'latin,latin-ext',
-	);
-	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	return esc_url_raw( $fonts_url );
+	return false;
 }
 
 if ( ! function_exists( 'ea_setup' ) ) :
@@ -124,7 +161,8 @@ function ea_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'ea-starter' ),
+		'primary' => esc_html__( 'Primary Navigation Menu', 'ea-starter' ),
+		'secondary' => esc_html__( 'Secondary Navigation Menu', 'ea-starter' ),
 	) );
 
 	/*
@@ -153,21 +191,21 @@ function ea_setup() {
 	// -- Editor Font Styles
 	add_theme_support( 'editor-font-sizes', array(
 		array(
-			'name'      => __( 'small', 'ea-starter' ),
+			'name'      => __( 'Small', 'ea-starter' ),
 			'shortName' => __( 'S', 'ea-starter' ),
-			'size'      => 12,
+			'size'      => 14,
 			'slug'      => 'small'
 		),
 		array(
-			'name'      => __( 'regular', 'ea-starter' ),
+			'name'      => __( 'Normal', 'ea-starter' ),
 			'shortName' => __( 'M', 'ea-starter' ),
-			'size'      => 16,
-			'slug'      => 'regular'
+			'size'      => 20,
+			'slug'      => 'normal'
 		),
 		array(
-			'name'      => __( 'large', 'ea-starter' ),
+			'name'      => __( 'Large', 'ea-starter' ),
 			'shortName' => __( 'L', 'ea-starter' ),
-			'size'      => 20,
+			'size'      => 24,
 			'slug'      => 'large'
 		),
 	) );
@@ -178,24 +216,14 @@ function ea_setup() {
 	// -- Editor Color Palette
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => __( 'Blue', 'ea-starter' ),
+			'name'  => __( 'Blue', 'ea_starter' ),
 			'slug'  => 'blue',
-			'color'	=> '#59BACC',
+			'color'	=> '#05306F',
 		),
 		array(
-			'name'  => __( 'Green', 'ea-starter' ),
-			'slug'  => 'green',
-			'color' => '#58AD69',
-		),
-		array(
-			'name'  => __( 'Orange', 'ea-starter' ),
-			'slug'  => 'orange',
-			'color' => '#FFBC49',
-		),
-		array(
-			'name'	=> __( 'Red', 'ea-starter' ),
-			'slug'	=> 'red',
-			'color'	=> '#E2574C',
+			'name'  => __( 'Grey', 'ea_starter' ),
+			'slug'  => 'grey',
+			'color' => '#FAFAFA',
 		),
 	) );
 
