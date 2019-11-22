@@ -25,7 +25,6 @@ class BE_ACF_Customizations {
 
 		// Dynamic options
 		add_filter( 'acf/load_field', array( $this, 'dynamic_layouts' ) );
-		add_filter( 'acf/load_field/name=ea_page_layout', array( $this, 'page_layout' ) );
 	}
 
 	/**
@@ -87,20 +86,5 @@ class BE_ACF_Customizations {
 
 		return $field;
 	}
-
-	/**
-	 * Page Layout
-	 *
-	 */
-	function page_layout( $field ) {
-		$field['choices'] = [];
-		$layouts = ea_page_layout_options();
-		foreach( $layouts as $layout ) {
-			$label = str_replace( '-', ' ', $layout );
-			$field['choices'][ $layout ] = ucwords( $label );
-		}
-		return $field;
-	}
-
 }
 new BE_ACF_Customizations();
