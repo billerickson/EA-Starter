@@ -30,7 +30,7 @@ function ea_author_intro() {
 
 	echo '<h3 class="has-text-align-center">Recent Articles by ' . get_the_author_meta( 'first_name' ) . '</h3>';
 }
-add_action( 'ea_archive_header_after', 'ea_author_intro', );
+add_action( 'ea_archive_header_after', 'ea_author_intro' );
 
 /**
  * Author Box
