@@ -68,8 +68,8 @@ function ea_scripts() {
 
 	wp_register_style( 'ea-fonts', ea_theme_fonts_url() );
 	wp_register_style( 'ea-fonts', ea_theme_fonts_url() );
-	wp_register_style( 'ea-critical', get_stylesheet_directory_uri() . '/assets/css/critical.css', array(), filemtime( get_template_directory() . '/assets/css/critical.css' ) );
-	wp_register_style( 'ea-style', get_stylesheet_directory_uri() . '/assets/css/main.css', array(), filemtime( get_template_directory() . '/assets/css/main.css' ) );
+	wp_register_style( 'ea-critical', get_template_directory_uri() . '/assets/css/critical.css', array(), filemtime( get_template_directory() . '/assets/css/critical.css' ) );
+	wp_register_style( 'ea-style', get_template_directory_uri() . '/assets/css/main.css', array(), filemtime( get_template_directory() . '/assets/css/main.css' ) );
 
 	if( $using_critical_css = true ) {
 		wp_enqueue_style( 'ea-critical' );
