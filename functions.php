@@ -14,6 +14,8 @@ Please read the instructions here (private repo): https://github.com/billerickso
 Devs, contact me if you need access
 */
 
+define( 'EA_STARTER_VERSION', filemtime( get_template_directory() . '/assets/css/main.css' ) );
+
 // General cleanup
 include_once( get_template_directory() . '/inc/wordpress-cleanup.php' );
 
