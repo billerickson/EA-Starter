@@ -25,7 +25,6 @@ include_once( get_template_directory() . '/inc/layouts.php' );
 include_once( get_template_directory() . '/inc/helper-functions.php' );
 include_once( get_template_directory() . '/inc/navigation.php' );
 include_once( get_template_directory() . '/inc/loop.php' );
-include_once( get_template_directory() . '/inc/author-box.php' );
 include_once( get_template_directory() . '/inc/template-tags.php' );
 include_once( get_template_directory() . '/inc/site-footer.php' );
 
@@ -35,15 +34,12 @@ include_once( get_template_directory() . '/inc/tinymce.php' );
 
 // Functionality
 include_once( get_template_directory() . '/inc/login-logo.php' );
-include_once( get_template_directory() . '/inc/category-landing-page.php' );
 include_once( get_template_directory() . '/inc/block-area.php' );
 include_once( get_template_directory() . '/inc/social-links.php' );
-include_once( get_template_directory() . '/inc/post-listing.php' );
 
 // Plugin Support
 include_once( get_template_directory() . '/inc/acf.php' );
 include_once( get_template_directory() . '/inc/amp.php' );
-include_once( get_template_directory() . '/inc/pwa.php' );
 include_once( get_template_directory() . '/inc/shared-counts.php' );
 include_once( get_template_directory() . '/inc/wpforms.php' );
 
