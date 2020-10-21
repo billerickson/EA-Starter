@@ -29,7 +29,7 @@ function ea_archive_header() {
 
 	$title = $subtitle = $description = $more = false;
 
-	if( is_home() ) {
+	if( is_home() && get_option( 'page_for_posts' ) ) {
 		$title = get_the_title( get_option( 'page_for_posts' ) );
 
 	} elseif( is_search() ) {
