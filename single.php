@@ -36,6 +36,8 @@ function ea_single_after_entry() {
 
 	// Sharing
 	do_action( 'ea_entry_footer_share' );
+	
+	echo '</div>';
 
 }
 add_action( 'tha_content_while_after', 'ea_single_after_entry', 8 );
