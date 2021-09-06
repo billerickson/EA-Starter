@@ -8,12 +8,6 @@
  * @license      GPL-2.0+
 **/
 
-/*
-BEFORE MODIFYING THIS THEME:
-Please read the instructions here (private repo): https://github.com/billerickson/EA-Starter/wiki
-Devs, contact me if you need access
-*/
-
 define( 'EA_STARTER_VERSION', filemtime( get_template_directory() . '/assets/css/main.css' ) );
 
 // General cleanup
