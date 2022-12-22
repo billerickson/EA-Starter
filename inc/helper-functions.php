@@ -142,7 +142,9 @@ function ea_icon( $atts = array() ) {
 	if( ! file_exists( $icon_path ) )
 		return;
 
-		$icon = file_get_contents( $icon_path );
+		ob_start();
+		readfile( $icon_path );
+		$icon = ob_get_clean();
 
 		$class = 'svg-icon';
 		if( !empty( $atts['class'] ) )
